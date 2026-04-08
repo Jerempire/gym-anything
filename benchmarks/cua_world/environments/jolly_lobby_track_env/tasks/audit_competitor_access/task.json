@@ -1,0 +1,40 @@
+{
+  "id": "audit_competitor_access@1",
+  "version": "1.0",
+  "env_id": "jolly_lobby_track_env@0.1",
+  "description": "Perform a security audit by identifying all visits from the competitor company 'Nexus Industries'. Export the filtered list of visitors from 'Nexus Industries' to /home/ga/Documents/nexus_audit.csv. If CSV export is not available, export to a PDF or text file named 'nexus_audit.pdf' or 'nexus_audit.txt' in the /home/ga/Documents/ directory, ensuring the file contains only the records for 'Nexus Industries'.",
+  "difficulty": "medium",
+  "init": {
+    "timeout_sec": 300,
+    "max_steps": 50,
+    "reward_type": "sparse"
+  },
+  "hooks": {
+    "pre_task": "/workspace/tasks/audit_competitor_access/setup_task.sh",
+    "post_task": "/workspace/tasks/audit_competitor_access/export_result.sh"
+  },
+  "metadata": {
+    "expected_filename_csv": "nexus_audit.csv",
+    "expected_filename_pdf": "nexus_audit.pdf",
+    "expected_filename_txt": "nexus_audit.txt",
+    "output_dir": "/home/ga/Documents",
+    "target_company": "Nexus Industries",
+    "positive_samples": [
+      "Sarah Lee",
+      "Tom Borg"
+    ],
+    "negative_samples": [
+      "John Doe",
+      "Mike Smith",
+      "Jane Doe",
+      "Acme Corp",
+      "Globex Inc"
+    ]
+  },
+  "success": {
+    "mode": "program",
+    "spec": {
+      "program": "verifier.py::verify_audit_competitor_access"
+    }
+  }
+}

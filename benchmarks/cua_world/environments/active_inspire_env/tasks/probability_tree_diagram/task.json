@@ -1,0 +1,52 @@
+{
+  "id": "probability_tree_diagram@1",
+  "version": "1.0",
+  "env_id": "active_inspire_env@0.1",
+  "name": "Create Probability Tree Diagram Lesson",
+  "description": "Create a 3-page math lesson flipchart on Compound Probability for 8th grade in ActivInspire. The first page must be titled 'Compound Probability' and include definitions for 'Tree Diagram', 'Outcome', and 'Probability'. The second page should feature a tree diagram representing flipping a fair coin twice, including branches for 'Heads' and 'Tails' (probability 1/2), the four final outcomes (HH, HT, TH, TT), and their final probabilities (1/4). The third page must be titled 'Practice Problems' and contain at least two probability questions. Save the completed flipchart to /home/ga/Documents/Flipcharts/probability_tree_diagram.flipchart. Login credentials: ga / password123.",
+  "difficulty": "hard",
+  "tags": [
+    "education",
+    "math",
+    "diagram",
+    "multi-page",
+    "shapes",
+    "text"
+  ],
+  "init": {
+    "timeout_sec": 600,
+    "max_steps": 80,
+    "reward_type": "sparse"
+  },
+  "hooks": {
+    "pre_task": "/workspace/tasks/probability_tree_diagram/setup_task.sh",
+    "post_task": "/workspace/tasks/probability_tree_diagram/export_result.sh"
+  },
+  "metadata": {
+    "expected_filename": "probability_tree_diagram.flipchart",
+    "expected_directory": "/home/ga/Documents/Flipcharts",
+    "expected_full_path": "/home/ga/Documents/Flipcharts/probability_tree_diagram.flipchart",
+    "expected_page_count": 3,
+    "required_terms": [
+      "Compound Probability",
+      "Tree Diagram",
+      "Outcome",
+      "Probability",
+      "Heads",
+      "Tails",
+      "HH",
+      "HT",
+      "TH",
+      "TT",
+      "1/2",
+      "1/4"
+    ],
+    "min_line_count": 6
+  },
+  "success": {
+    "mode": "program",
+    "spec": {
+      "program": "verifier.py::verify_probability_tree_diagram"
+    }
+  }
+}

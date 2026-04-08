@@ -1,0 +1,29 @@
+{
+  "id": "checkin_returning_visitor@1",
+  "version": "1.0",
+  "env_id": "jolly_lobby_track_env@0.1",
+  "description": "Process a returning visitor check-in for Sarah Chen (Company: Deloitte). Import the historical visitor records from ~/Documents/historical_visitors.csv and register a new visit for her using her existing profile. Set the host to Michael Torres and the purpose to Contractor, then complete the sign-in process so she appears as a currently signed-in visitor with the updated details.",
+  "difficulty": "medium",
+  "init": {
+    "timeout_sec": 300,
+    "max_steps": 50,
+    "reward_type": "sparse"
+  },
+  "hooks": {
+    "pre_task": "/workspace/tasks/checkin_returning_visitor/setup_task.sh",
+    "post_task": "/workspace/tasks/checkin_returning_visitor/export_result.sh"
+  },
+  "metadata": {
+    "visitor_name": "Sarah Chen",
+    "company": "Deloitte",
+    "expected_host": "Michael Torres",
+    "expected_purpose": "Contractor",
+    "csv_path": "/home/ga/Documents/historical_visitors.csv"
+  },
+  "success": {
+    "mode": "program",
+    "spec": {
+      "program": "verifier.py::verify_checkin_returning_visitor"
+    }
+  }
+}

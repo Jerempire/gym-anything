@@ -1,0 +1,44 @@
+{
+  "id": "fire_drill_evacuation_map@1",
+  "version": "1.0",
+  "env_id": "active_inspire_env@0.1",
+  "name": "Create Fire Drill Evacuation Map",
+  "description": "As a school safety coordinator, create a digital classroom evacuation map flipchart in ActivInspire for fire safety week. The flipchart must include a page titled 'Fire Drill Route' or 'Evacuation Plan' showing a room layout with a large rectangle. Include a labeled 'Teacher Desk' and at least four 'Student Tables'. Mark the 'Door' or 'Exit' and draw at least three arrows indicating the evacuation path from the tables to the exit. Save the flipchart to /home/ga/Documents/Flipcharts/fire_evacuation_plan.flipchart.",
+  "difficulty": "medium",
+  "tags": [
+    "safety",
+    "diagram",
+    "shapes",
+    "arrows",
+    "labels"
+  ],
+  "init": {
+    "timeout_sec": 480,
+    "max_steps": 60,
+    "reward_type": "sparse"
+  },
+  "hooks": {
+    "pre_task": "/workspace/tasks/fire_drill_evacuation_map/setup_task.sh",
+    "post_task": "/workspace/tasks/fire_drill_evacuation_map/export_result.sh"
+  },
+  "metadata": {
+    "expected_filename": "fire_evacuation_plan.flipchart",
+    "expected_path": "/home/ga/Documents/Flipcharts/fire_evacuation_plan.flipchart",
+    "required_text": [
+      "Fire",
+      "Evacuation",
+      "Teacher",
+      "Desk",
+      "Door",
+      "Exit"
+    ],
+    "min_shapes": 6,
+    "min_arrows": 3
+  },
+  "success": {
+    "mode": "program",
+    "spec": {
+      "program": "verifier.py::verify_fire_drill_evacuation_map"
+    }
+  }
+}

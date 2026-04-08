@@ -1,0 +1,48 @@
+{
+  "id": "historical_newspaper_frontpage@1",
+  "version": "1.0",
+  "env_id": "active_inspire_env@0.1",
+  "name": "Create Historical Newspaper Front Page",
+  "description": "A history teacher needs a model 'front page' for a student project about the American Revolution. Create a 2-page flipchart saved as /home/ga/Documents/Flipcharts/independence_gazette.flipchart with the following requirements:\n\nPage 1 — The Front Page:\n- Masthead: 'The Independence Gazette'\n- Dateline: 'Philadelphia, July 5, 1776'\n- Main Headline: 'Independence Declared!'\n- Byline: 'By Benjamin Harris'\n- Layout: Include at least two vertical column dividers.\n- Article Body: Write at least two sentences mentioning the 'Continental Congress' and the 'Declaration of Independence'.\n- Sidebar Headline: 'King George Responds'\n\nPage 2 — Student Instructions:\n- Title: 'Your Assignment'\n- Instructions: List requirements for the students.\n- Visual: Include a rectangular border or highlight box for the instructions.",
+  "difficulty": "hard",
+  "tags": [
+    "education",
+    "history",
+    "design",
+    "layout",
+    "multi-page",
+    "text",
+    "shapes"
+  ],
+  "init": {
+    "timeout_sec": 600,
+    "max_steps": 80,
+    "reward_type": "sparse"
+  },
+  "hooks": {
+    "pre_task": "/workspace/tasks/historical_newspaper_frontpage/setup_task.sh",
+    "post_task": "/workspace/tasks/historical_newspaper_frontpage/export_result.sh"
+  },
+  "metadata": {
+    "expected_filename": "independence_gazette.flipchart",
+    "expected_path": "/home/ga/Documents/Flipcharts/independence_gazette.flipchart",
+    "required_text": [
+      "Independence Gazette",
+      "Philadelphia",
+      "1776",
+      "Independence Declared",
+      "Benjamin Harris",
+      "Continental Congress",
+      "King George",
+      "Assignment"
+    ],
+    "min_page_count": 2,
+    "min_shape_count": 3
+  },
+  "success": {
+    "mode": "program",
+    "spec": {
+      "program": "verifier.py::verify_historical_newspaper"
+    }
+  }
+}

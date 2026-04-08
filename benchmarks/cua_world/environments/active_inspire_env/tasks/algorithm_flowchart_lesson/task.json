@@ -1,0 +1,52 @@
+{
+  "id": "algorithm_flowchart_lesson@1",
+  "version": "1.0",
+  "env_id": "active_inspire_env@0.1",
+  "name": "Create Algorithm Flowchart Lesson",
+  "description": "As a 6th-grade Computer Science teacher, create a 2-page ActivInspire flipchart to introduce algorithms and flowcharts. Page 1, titled 'Flowchart Symbols', must contain a key with an Oval labeled 'Start / End', a Rectangle labeled 'Process', and a Diamond labeled 'Decision'. Page 2, titled 'Morning Routine Algorithm', must feature a flowchart starting with an Oval 'Start' node, followed by an 'Alarm Rings' Rectangle, leading to an 'Is it a weekday?' Diamond decision with 'Yes' ('Get Up') and 'No' ('Sleep In') branches connected in a logical flow. Save the file to /home/ga/Documents/Flipcharts/algorithm_flowchart.flipchart.",
+  "difficulty": "medium",
+  "tags": [
+    "education",
+    "cs",
+    "flowchart",
+    "shapes",
+    "diagram",
+    "multi-page"
+  ],
+  "init": {
+    "timeout_sec": 480,
+    "max_steps": 60,
+    "reward_type": "sparse"
+  },
+  "hooks": {
+    "pre_task": "/workspace/tasks/algorithm_flowchart_lesson/setup_task.sh",
+    "post_task": "/workspace/tasks/algorithm_flowchart_lesson/export_result.sh"
+  },
+  "metadata": {
+    "expected_filename": "algorithm_flowchart.flipchart",
+    "expected_path": "/home/ga/Documents/Flipcharts/algorithm_flowchart.flipchart",
+    "required_page_count": 2,
+    "required_text": [
+      "Symbols",
+      "Start",
+      "Process",
+      "Decision",
+      "Morning",
+      "Alarm",
+      "Weekday",
+      "Sleep"
+    ],
+    "required_shapes": [
+      "rectangle",
+      "oval",
+      "diamond",
+      "line"
+    ]
+  },
+  "success": {
+    "mode": "program",
+    "spec": {
+      "program": "verifier.py::verify_algorithm_flowchart"
+    }
+  }
+}

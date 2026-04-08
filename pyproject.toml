@@ -1,0 +1,126 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gym-anything"
+version = "0.1.0"
+description = "A unified runtime and benchmark suite for computer-use agent research."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [
+    {name = "Pranjal Aggarwal"},
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "jsonschema>=4.20",
+    "numpy>=1.26",
+    "paramiko>=3.4",
+    "Pillow>=10.0",
+    "pycryptodome>=3.20",
+    "PyYAML>=6.0",
+    "requests>=2.31",
+    "rich>=13.0",
+]
+
+[project.optional-dependencies]
+benchmark = [
+    "openpyxl>=3.1",
+    "Pillow>=10.0",
+    "statsmodels>=0.14",
+]
+agents = [
+    "anthropic>=0.50",
+    "backoff>=2.2",
+    "litellm>=1.52",
+    "loguru>=0.7",
+    "openai>=1.0",
+    "python-dotenv>=1.0",
+    "tqdm>=4.66",
+]
+services = [
+    "Flask>=3.0",
+    "flask-cors>=4.0",
+    "httpx>=0.27",
+    "hypercorn>=0.17",
+    "psutil>=5.9",
+    "quart>=0.19",
+    "quart-cors>=0.7",
+    "requests>=2.31",
+]
+vlm = [
+    "anthropic>=0.50",
+    "openai>=1.0",
+]
+all = [
+    "gym-anything[benchmark,agents,services,vlm]",
+]
+
+[project.urls]
+Homepage = "https://cmu-l3.github.io/gym-anything/"
+Documentation = "https://cmu-l3.github.io/gym-anything/docs/"
+Repository = "https://github.com/cmu-l3/gym-anything"
+Issues = "https://github.com/cmu-l3/gym-anything/issues"
+
+[project.scripts]
+gym-anything = "gym_anything.cli:main"
+gym-anything-dashboard = "gym_anything.remote.dashboard_app:main"
+gym-anything-master = "gym_anything.remote.master:main"
+gym-anything-trajectory-viewer = "gym_anything.dashboards.trajectory.app:main"
+gym-anything-worker = "gym_anything.remote.worker:main"
+
+[tool.setuptools]
+include-package-data = true
+package-dir = {"" = ".", "gym_anything" = "src/gym_anything"}
+packages = [
+    "gym_anything",
+    "gym_anything.config",
+    "gym_anything.dashboards",
+    "gym_anything.dashboards.trajectory",
+    "gym_anything.presets",
+    "gym_anything.recording",
+    "gym_anything.remote",
+    "gym_anything.remote.monitoring",
+    "gym_anything.runners",
+    "gym_anything.runtime",
+    "gym_anything.runtime.recording",
+    "gym_anything.runtime.runners",
+    "gym_anything.tui",
+    "gym_anything.verification",
+    "agents",
+    "agents.evaluation",
+    "agents.agents",
+    "agents.shared",
+    "benchmarks",
+    "benchmarks.cua_world",
+    "benchmarks.cua_world.registry",
+]
+
+[tool.setuptools.package-data]
+gym_anything = [
+    "dashboards/trajectory/templates/*.html",
+    "presets/*.json",
+    "presets/**/*.json",
+    "presets/**/*.sh",
+    "presets/**/Dockerfile",
+    "remote/monitoring/templates/*.html",
+    "runtime/runners/*.def",
+    "runtime/runners/windows_setup/*.py",
+]
+benchmarks = [
+    "cua_world/splits/*.json",
+    "cua_world/reports/*.json",
+    "cua_world/reports/*.txt",
+]

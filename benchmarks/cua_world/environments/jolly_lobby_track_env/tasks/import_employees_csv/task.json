@@ -1,0 +1,39 @@
+{
+  "id": "import_employees_csv@1",
+  "version": "1.0",
+  "env_id": "jolly_lobby_track_env@0.1",
+  "description": "Import the 5 new intern records from '~/Documents/interns.csv' into the Jolly Lobby Track Host/Employee list. Map the CSV fields 'Full Name' to Name, 'Dept' to Department, and 'Email Address' to Email.",
+  "difficulty": "medium",
+  "init": {
+    "timeout_sec": 300,
+    "max_steps": 40,
+    "reward_type": "sparse"
+  },
+  "hooks": {
+    "pre_task": "/workspace/tasks/import_employees_csv/setup_task.sh",
+    "post_task": "/workspace/tasks/import_employees_csv/export_result.sh"
+  },
+  "metadata": {
+    "csv_path": "/home/ga/Documents/interns.csv",
+    "expected_names": [
+      "Alice Intern",
+      "Bob Intern",
+      "Charlie Intern",
+      "Dana Intern",
+      "Evan Intern"
+    ],
+    "expected_emails": [
+      "alice.intern@example.com",
+      "bob.intern@example.com",
+      "charlie.intern@example.com",
+      "dana.intern@example.com",
+      "evan.intern@example.com"
+    ]
+  },
+  "success": {
+    "mode": "program",
+    "spec": {
+      "program": "verifier.py::verify_import_employees"
+    }
+  }
+}

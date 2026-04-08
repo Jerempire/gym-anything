@@ -1,0 +1,34 @@
+{
+  "id": "add_text_annotation@1",
+  "version": "1.0",
+  "env_id": "active_inspire_env@0.1",
+  "name": "Add Text Annotation",
+  "description": "Create a new ActivInspire flipchart and add a text annotation containing the text 'Welcome to Today's Lesson'. Save the flipchart to /home/ga/Documents/Flipcharts/lesson_with_text.flipchart.",
+  "difficulty": "easy",
+  "init": {
+    "timeout_sec": 240,
+    "max_steps": 40,
+    "reward_type": "sparse"
+  },
+  "hooks": {
+    "pre_task": "/workspace/tasks/add_text_annotation/setup_task.sh",
+    "post_task": "/workspace/tasks/add_text_annotation/export_result.sh"
+  },
+  "metadata": {
+    "expected_text": "Welcome to Today's Lesson",
+    "expected_filename": "lesson_with_text.flipchart",
+    "expected_directory": "/home/ga/Documents/Flipcharts",
+    "expected_full_path": "/home/ga/Documents/Flipcharts/lesson_with_text.flipchart"
+  },
+  "success": {
+    "mode": "program",
+    "spec": {
+      "program": "verifier.py::verify_add_text_annotation"
+    }
+  },
+  "tags": [
+    "text",
+    "annotation",
+    "basic"
+  ]
+}

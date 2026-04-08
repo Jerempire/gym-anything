@@ -1,0 +1,54 @@
+{
+  "id": "basketball_play_diagram@1",
+  "version": "1.0",
+  "env_id": "active_inspire_env@0.1",
+  "name": "Create Basketball Playbook",
+  "description": "A high school basketball coach needs a digital playbook. Create a 3-page ActivInspire flipchart containing a 'Half Court Setup' page with a half-court diagram (large rectangle, key rectangle, and hoop circle), an 'Offensive Starters' page with labels for PG, SG, SF, PF, and C, and a 'Pick and Roll' page featuring labels 'O1', 'X1', and 'Screen' with a movement indicator line or arrow. Save the file as /home/ga/Documents/Flipcharts/basketball_playbook.flipchart.",
+  "difficulty": "medium",
+  "tags": [
+    "sports",
+    "coaching",
+    "diagram",
+    "shapes",
+    "multi-page"
+  ],
+  "init": {
+    "timeout_sec": 480,
+    "max_steps": 60,
+    "reward_type": "sparse"
+  },
+  "hooks": {
+    "pre_task": "/workspace/tasks/basketball_play_diagram/setup_task.sh",
+    "post_task": "/workspace/tasks/basketball_play_diagram/export_result.sh"
+  },
+  "metadata": {
+    "expected_filename": "basketball_playbook.flipchart",
+    "expected_directory": "/home/ga/Documents/Flipcharts",
+    "expected_full_path": "/home/ga/Documents/Flipcharts/basketball_playbook.flipchart",
+    "expected_page_count": 3,
+    "required_text": [
+      "Half Court",
+      "Offensive Starters",
+      "Pick and Roll",
+      "Screen"
+    ],
+    "required_positions": [
+      "PG",
+      "SG",
+      "SF",
+      "PF",
+      "C"
+    ],
+    "required_shapes": [
+      "Rectangle",
+      "Circle",
+      "Line"
+    ]
+  },
+  "success": {
+    "mode": "program",
+    "spec": {
+      "program": "verifier.py::verify_basketball_playbook"
+    }
+  }
+}

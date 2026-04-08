@@ -1,0 +1,42 @@
+{
+  "id": "states_of_matter_model@1",
+  "version": "1.0",
+  "env_id": "active_inspire_env@0.1",
+  "name": "States of Matter Particle Model",
+  "description": "Create a 3-page ActivInspire flipchart demonstrating the particle model for Solids, Liquids, and Gases. The first page must be titled 'Solid State' and contain a rectangle container filled with at least 9 Blue circles representing tightly packed particles. The second page must be titled 'Liquid State' and contain a rectangle container filled with at least 9 Blue circles representing loosely arranged particles. The third page must be titled 'Gas State' and contain a rectangle container filled with at least 5 Red circles representing high-energy particles moving freely. Ensure all particles are placed inside their respective containers. Save the final flipchart to /home/ga/Documents/Flipcharts/particle_model.flipchart.",
+  "difficulty": "medium",
+  "tags": [
+    "science",
+    "diagram",
+    "multi-page",
+    "shapes",
+    "colors"
+  ],
+  "init": {
+    "timeout_sec": 420,
+    "max_steps": 60,
+    "reward_type": "sparse"
+  },
+  "hooks": {
+    "pre_task": "/workspace/tasks/states_of_matter_model/setup_task.sh",
+    "post_task": "/workspace/tasks/states_of_matter_model/export_result.sh"
+  },
+  "metadata": {
+    "expected_filename": "particle_model.flipchart",
+    "expected_full_path": "/home/ga/Documents/Flipcharts/particle_model.flipchart",
+    "expected_page_count": 3,
+    "min_particles_solid": 9,
+    "min_particles_gas": 5,
+    "required_text": [
+      "Solid",
+      "Liquid",
+      "Gas"
+    ]
+  },
+  "success": {
+    "mode": "program",
+    "spec": {
+      "program": "verifier.py::verify_states_of_matter_model"
+    }
+  }
+}

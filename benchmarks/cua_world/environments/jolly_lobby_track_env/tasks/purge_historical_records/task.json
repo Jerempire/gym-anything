@@ -1,0 +1,29 @@
+{
+  "id": "purge_historical_records@1",
+  "version": "1.0",
+  "env_id": "jolly_lobby_track_env@0.1",
+  "description": "Perform a data compliance cleanup by purging old visitor records. Import the historical data from /home/ga/Desktop/legacy_visitor_log.csv and delete all records with a visit date prior to January 1, 2023. Export the remaining records to /home/ga/Documents/audit_proof.csv.",
+  "difficulty": "medium",
+  "init": {
+    "timeout_sec": 420,
+    "max_steps": 40,
+    "reward_type": "sparse"
+  },
+  "hooks": {
+    "pre_task": "/workspace/tasks/purge_historical_records/setup_task.sh",
+    "post_task": "/workspace/tasks/purge_historical_records/export_result.sh"
+  },
+  "metadata": {
+    "import_file": "/home/ga/Desktop/legacy_visitor_log.csv",
+    "export_file": "/home/ga/Documents/audit_proof.csv",
+    "target_deleted_name": "Arthur Dent",
+    "target_kept_name": "Ford Prefect",
+    "cutoff_date": "2023-01-01"
+  },
+  "success": {
+    "mode": "program",
+    "spec": {
+      "program": "verifier.py::verify_purge_historical_records"
+    }
+  }
+}

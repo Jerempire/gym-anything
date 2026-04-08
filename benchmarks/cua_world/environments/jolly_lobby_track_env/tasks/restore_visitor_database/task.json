@@ -1,0 +1,28 @@
+{
+  "id": "restore_visitor_database@1",
+  "version": "1.0",
+  "env_id": "jolly_lobby_track_env@0.1",
+  "description": "Restore the Lobby Track visitor database using the backup file located at C:\\LobbyTrackBackup\\LobbyTrackDB_backup.mdb (/home/ga/.wine/drive_c/LobbyTrackBackup/LobbyTrackDB_backup.mdb). After restoring the records, create a confirmation file at C:\\LobbyTrackBackup\\restore_confirmation.txt containing the text 'Database restored successfully' and the approximate number of records restored.",
+  "difficulty": "medium",
+  "init": {
+    "timeout_sec": 300,
+    "max_steps": 40,
+    "reward_type": "sparse"
+  },
+  "hooks": {
+    "pre_task": "/workspace/tasks/restore_visitor_database/setup_task.sh",
+    "post_task": "/workspace/tasks/restore_visitor_database/export_result.sh"
+  },
+  "metadata": {
+    "backup_path_win": "C:\\LobbyTrackBackup\\LobbyTrackDB_backup.mdb",
+    "backup_path_linux": "/home/ga/.wine/drive_c/LobbyTrackBackup/LobbyTrackDB_backup.mdb",
+    "confirmation_path": "/home/ga/.wine/drive_c/LobbyTrackBackup/restore_confirmation.txt",
+    "expected_text": "Database restored successfully"
+  },
+  "success": {
+    "mode": "program",
+    "spec": {
+      "program": "verifier.py::verify_restore_visitor_database"
+    }
+  }
+}

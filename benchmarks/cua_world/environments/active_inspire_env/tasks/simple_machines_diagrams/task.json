@@ -1,0 +1,58 @@
+{
+  "id": "simple_machines_diagrams@1",
+  "version": "1.0",
+  "env_id": "active_inspire_env@0.1",
+  "name": "Create Simple Machines Diagrams",
+  "description": "A 3rd-grade science teacher needs a visual aid flipchart to introduce Simple Machines. Create a 3-page ActivInspire flipchart saved to /home/ga/Documents/Flipcharts/simple_machines_lesson.flipchart. Page 1 must feature the title 'Simple Machines' and a list of the six types: Lever, Wheel and Axle, Pulley, Inclined Plane, Wedge, and Screw. Page 2 must be titled 'The Lever' and include the definition 'A rigid bar resting on a pivot' along with a diagram using shapes (triangle for the fulcrum, rectangle/line for the beam, and a shape for the load) and text labels 'Fulcrum' and 'Load'. Page 3 must be titled 'The Inclined Plane' and include the definition 'A flat supporting surface tilted at an angle' along with a diagram using shapes (triangle for the ramp and a shape for the object) and the text label 'Ramp'.",
+  "difficulty": "medium",
+  "tags": [
+    "education",
+    "science",
+    "diagrams",
+    "shapes",
+    "multi-page"
+  ],
+  "init": {
+    "timeout_sec": 480,
+    "max_steps": 60,
+    "reward_type": "sparse"
+  },
+  "hooks": {
+    "pre_task": "/workspace/tasks/simple_machines_diagrams/setup_task.sh",
+    "post_task": "/workspace/tasks/simple_machines_diagrams/export_result.sh"
+  },
+  "metadata": {
+    "expected_filename": "simple_machines_lesson.flipchart",
+    "expected_directory": "/home/ga/Documents/Flipcharts",
+    "expected_full_path": "/home/ga/Documents/Flipcharts/simple_machines_lesson.flipchart",
+    "required_terms_page1": [
+      "Simple Machines",
+      "Lever",
+      "Wheel",
+      "Pulley",
+      "Inclined Plane",
+      "Wedge",
+      "Screw"
+    ],
+    "required_terms_page2": [
+      "rigid bar",
+      "pivot",
+      "Fulcrum",
+      "Load"
+    ],
+    "required_terms_page3": [
+      "tilted",
+      "angle",
+      "Ramp"
+    ],
+    "min_triangles": 2,
+    "min_rectangles_lines": 1,
+    "min_total_shapes": 5
+  },
+  "success": {
+    "mode": "program",
+    "spec": {
+      "program": "verifier.py::verify_simple_machines_diagrams"
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "id": "lesson_opener_flipchart@1",
+  "version": "1.0",
+  "env_id": "active_inspire_env@0.1",
+  "name": "Create Multi-Page Lesson Opener Flipchart",
+  "description": "A 7th grade social studies teacher needs a lesson opener flipchart for a unit on the American Revolution. Create a 3-page flipchart where Page 1 is titled 'Do Now' and includes the phrase 'American Revolution' in a prompt about student knowledge; Page 2 is titled 'Learning Objectives' (or 'Objectives') and lists at least two goals; and Page 3 is titled 'Vocabulary' (or 'Key Vocabulary') and contains four colored rectangle boxes for the terms Revolution, Colony, Independence, and Patriot. Login as ga / password123 and save the flipchart to /home/ga/Documents/Flipcharts/american_revolution_opener.flipchart",
+  "difficulty": "hard",
+  "tags": [
+    "education",
+    "social-studies",
+    "multi-page",
+    "text",
+    "shapes",
+    "lesson-planning"
+  ],
+  "init": {
+    "timeout_sec": 480,
+    "max_steps": 60
+  },
+  "hooks": {
+    "pre_task": "/workspace/tasks/lesson_opener_flipchart/setup_task.sh",
+    "post_task": "/workspace/tasks/lesson_opener_flipchart/export_result.sh"
+  },
+  "metadata": {
+    "expected_filename": "american_revolution_opener.flipchart",
+    "expected_directory": "/home/ga/Documents/Flipcharts",
+    "expected_full_path": "/home/ga/Documents/Flipcharts/american_revolution_opener.flipchart",
+    "expected_page_count": 3,
+    "required_terms": [
+      "Do Now",
+      "Objective",
+      "Vocabulary",
+      "Colony",
+      "Independence",
+      "Patriot"
+    ],
+    "required_rect_count": 4,
+    "subject": "7th Grade Social Studies - American Revolution"
+  },
+  "success": {
+    "mode": "program",
+    "spec": {
+      "program": "verifier.py::verify_lesson_opener_flipchart"
+    }
+  }
+}

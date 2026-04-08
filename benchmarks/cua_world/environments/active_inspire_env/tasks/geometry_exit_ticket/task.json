@@ -1,0 +1,48 @@
+{
+  "id": "geometry_exit_ticket@1",
+  "version": "1.0",
+  "env_id": "active_inspire_env@0.1",
+  "name": "Create Geometry Exit Ticket Flipchart",
+  "description": "Create a 5-page formative assessment 'Exit Ticket' flipchart for Ms. Rivera's 4th grade geometry lesson on angles. The flipchart must include a title page with \"Geometry Exit Ticket: Types of Angles\" and \"Ms. Rivera\", followed by individual pages for an acute angle labeled \"Acute\", a right angle labeled \"Right\", and an obtuse angle labeled \"Obtuse\". The final page should be a self-assessment titled \"How did you do?\" featuring three colored circles (green, yellow, red) labeled \"Got it\", \"Almost\", and \"Help\". Save the completed file to /home/ga/Documents/Flipcharts/geometry_exit_ticket.flipchart.",
+  "difficulty": "medium",
+  "tags": [
+    "education",
+    "math",
+    "geometry",
+    "multi-page",
+    "shapes",
+    "drawing",
+    "assessment"
+  ],
+  "init": {
+    "timeout_sec": 600,
+    "max_steps": 80,
+    "reward_type": "sparse"
+  },
+  "hooks": {
+    "pre_task": "/workspace/tasks/geometry_exit_ticket/setup_task.sh",
+    "post_task": "/workspace/tasks/geometry_exit_ticket/export_result.sh"
+  },
+  "metadata": {
+    "expected_filename": "geometry_exit_ticket.flipchart",
+    "expected_directory": "/home/ga/Documents/Flipcharts",
+    "expected_full_path": "/home/ga/Documents/Flipcharts/geometry_exit_ticket.flipchart",
+    "expected_page_count": 5,
+    "required_text": [
+      "Exit Ticket",
+      "Rivera",
+      "Acute",
+      "Right",
+      "Obtuse",
+      "How did you do"
+    ],
+    "min_lines": 6,
+    "min_circles": 3
+  },
+  "success": {
+    "mode": "program",
+    "spec": {
+      "program": "verifier.py::verify_geometry_exit_ticket"
+    }
+  }
+}

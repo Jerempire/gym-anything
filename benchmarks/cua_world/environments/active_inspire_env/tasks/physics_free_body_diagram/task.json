@@ -1,0 +1,49 @@
+{
+  "id": "physics_free_body_diagram@1",
+  "version": "1.0",
+  "env_id": "active_inspire_env@0.1",
+  "name": "Physics Free Body Diagrams",
+  "description": "Create a 3-page physics lesson flipchart about Free Body Diagrams (FBDs) in ActivInspire. Page 1 must include the title 'Free Body Diagrams' and subtitle 'Newton's Laws of Motion'. Page 2, titled 'Object at Rest', should illustrate a box on a horizontal surface with labeled force vectors for 'Fg' (Gravity) and 'Fn' (Normal Force), along with the text 'Fnet = 0'. Page 3, titled 'Object on Ramp', should illustrate a box on an inclined plane with labeled force vectors for 'Fg' (straight down), 'Fn' (perpendicular to the ramp), and 'Ff' (Friction, pointing up the ramp). Save the completed flipchart to /home/ga/Documents/Flipcharts/physics_fbd.flipchart.",
+  "difficulty": "medium",
+  "tags": [
+    "physics",
+    "diagrams",
+    "rotation",
+    "vectors",
+    "education"
+  ],
+  "init": {
+    "timeout_sec": 480,
+    "max_steps": 60,
+    "reward_type": "sparse"
+  },
+  "hooks": {
+    "pre_task": "/workspace/tasks/physics_free_body_diagram/setup_task.sh",
+    "post_task": "/workspace/tasks/physics_free_body_diagram/export_result.sh"
+  },
+  "metadata": {
+    "expected_filename": "physics_fbd.flipchart",
+    "expected_path": "/home/ga/Documents/Flipcharts/physics_fbd.flipchart",
+    "expected_page_count": 3,
+    "required_text": [
+      "Free Body",
+      "Newton",
+      "Rest",
+      "Fg",
+      "Fn",
+      "Fnet",
+      "Ramp",
+      "Ff"
+    ],
+    "required_shapes": [
+      "Triangle",
+      "Rectangle"
+    ]
+  },
+  "success": {
+    "mode": "program",
+    "spec": {
+      "program": "verifier.py::verify_physics_fbd"
+    }
+  }
+}

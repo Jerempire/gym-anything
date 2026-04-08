@@ -1,0 +1,41 @@
+{
+  "id": "phonemic_sound_boxes@1",
+  "version": "1.0",
+  "env_id": "active_inspire_env@0.1",
+  "name": "Create Phonemic Sound Boxes Activity",
+  "description": "Create a phonemic awareness 'Sound Boxes' activity in ActivInspire for a Kindergarten class. Create a new flipchart titled 'Sound Boxes' and import the image of a Cat (/home/ga/Pictures/ActivInspire/cat.jpg) with 3 square boxes below it. Also import the image of a Frog (/home/ga/Pictures/ActivInspire/frog.jpg) with 4 square boxes below it. Include at least 5 red circular chips at the bottom of the page for students to use as counters. Save the final flipchart to /home/ga/Documents/Flipcharts/phonemic_awareness.flipchart.",
+  "difficulty": "medium",
+  "init": {
+    "timeout_sec": 480,
+    "max_steps": 60,
+    "reward_type": "sparse"
+  },
+  "hooks": {
+    "pre_task": "/workspace/tasks/phonemic_sound_boxes/setup_task.sh",
+    "post_task": "/workspace/tasks/phonemic_sound_boxes/export_result.sh"
+  },
+  "metadata": {
+    "expected_filename": "phonemic_awareness.flipchart",
+    "expected_path": "/home/ga/Documents/Flipcharts/phonemic_awareness.flipchart",
+    "required_text": "Sound Boxes",
+    "min_rectangles": 7,
+    "min_circles": 5,
+    "image_assets": [
+      "cat.jpg",
+      "frog.jpg"
+    ]
+  },
+  "success": {
+    "mode": "program",
+    "spec": {
+      "program": "verifier.py::verify_phonemic_sound_boxes"
+    }
+  },
+  "tags": [
+    "education",
+    "literacy",
+    "shapes",
+    "images",
+    "layout"
+  ]
+}

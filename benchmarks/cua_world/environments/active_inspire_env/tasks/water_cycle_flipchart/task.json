@@ -1,0 +1,46 @@
+{
+  "id": "water_cycle_flipchart@1",
+  "version": "1.0",
+  "env_id": "active_inspire_env@0.1",
+  "name": "Create Water Cycle Science Lesson Flipchart",
+  "description": "A 5th grade science teacher needs a 3-page flipchart lesson on the water cycle. The flipchart must include an introductory page titled 'The Water Cycle' with a subtitle naming the three main stages (Evaporation, Condensation, and Precipitation), a visual diagram page with at least three labeled shapes representing these stages, and a 'Quick Check' assessment page with at least two written questions. Login as ga / password123 and save the completed flipchart to /home/ga/Documents/Flipcharts/water_cycle_lesson.flipchart.",
+  "difficulty": "hard",
+  "tags": [
+    "education",
+    "science",
+    "multi-page",
+    "diagram",
+    "shapes",
+    "text",
+    "water-cycle"
+  ],
+  "init": {
+    "timeout_sec": 480,
+    "max_steps": 60
+  },
+  "hooks": {
+    "pre_task": "/workspace/tasks/water_cycle_flipchart/setup_task.sh",
+    "post_task": "/workspace/tasks/water_cycle_flipchart/export_result.sh"
+  },
+  "metadata": {
+    "expected_filename": "water_cycle_lesson.flipchart",
+    "expected_directory": "/home/ga/Documents/Flipcharts",
+    "expected_full_path": "/home/ga/Documents/Flipcharts/water_cycle_lesson.flipchart",
+    "expected_page_count": 3,
+    "required_terms": [
+      "Water Cycle",
+      "Evaporation",
+      "Condensation",
+      "Precipitation",
+      "Quick Check"
+    ],
+    "required_shape_count": 3,
+    "subject": "5th Grade Science - Water Cycle"
+  },
+  "success": {
+    "mode": "program",
+    "spec": {
+      "program": "verifier.py::verify_water_cycle_flipchart"
+    }
+  }
+}

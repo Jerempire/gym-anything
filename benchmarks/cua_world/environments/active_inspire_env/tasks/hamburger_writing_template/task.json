@@ -1,0 +1,47 @@
+{
+  "id": "hamburger_writing_template@1",
+  "version": "1.0",
+  "env_id": "active_inspire_env@0.1",
+  "name": "Create Hamburger Writing Template",
+  "description": "An elementary school teacher needs a 'Hamburger Paragraph' visual aid to teach structured writing. Create a 3-page ActivInspire flipchart saved as '/home/ga/Documents/Flipcharts/hamburger_paragraph.flipchart'. The flipchart must include a title page with the text 'Hamburger Paragraph', a model page featuring a vertically stacked burger diagram made of shapes labeled 'Topic Sentence' (top bun), 'Detail 1', 'Detail 2', 'Detail 3' (fillings), and 'Conclusion' (bottom bun), and a practice page titled 'My Paragraph' containing at least three horizontal lines for writing.",
+  "difficulty": "medium",
+  "tags": [
+    "education",
+    "ela",
+    "shapes",
+    "diagram",
+    "multi-page"
+  ],
+  "init": {
+    "timeout_sec": 480,
+    "max_steps": 60,
+    "reward_type": "sparse"
+  },
+  "hooks": {
+    "pre_task": "/workspace/tasks/hamburger_writing_template/setup_task.sh",
+    "post_task": "/workspace/tasks/hamburger_writing_template/export_result.sh"
+  },
+  "metadata": {
+    "expected_filename": "hamburger_paragraph.flipchart",
+    "expected_directory": "/home/ga/Documents/Flipcharts",
+    "expected_full_path": "/home/ga/Documents/Flipcharts/hamburger_paragraph.flipchart",
+    "expected_page_count": 3,
+    "required_text": [
+      "Hamburger Paragraph",
+      "Topic Sentence",
+      "Detail 1",
+      "Detail 2",
+      "Detail 3",
+      "Conclusion",
+      "My Paragraph"
+    ],
+    "min_shapes": 5,
+    "min_lines": 3
+  },
+  "success": {
+    "mode": "program",
+    "spec": {
+      "program": "verifier.py::verify_hamburger_writing_template"
+    }
+  }
+}

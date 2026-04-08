@@ -1,0 +1,57 @@
+{
+  "id": "color_wheel_art_lesson@1",
+  "version": "1.0",
+  "env_id": "active_inspire_env@0.1",
+  "name": "Create Color Wheel & Art Elements Flipchart",
+  "description": "Create a 3-page Art Lesson flipchart in ActivInspire to serve as a structured visual aid for a color theory lesson. The first page must include the title \"Color Theory\", the subtitle \"Elements of Art\", and at least one decorative shape. The second page must feature a color wheel diagram with at least 6 distinct shapes (Red, Yellow, Blue, Orange, Green, and Violet/Purple) that are labeled and filled with their respective colors. The third page must be titled \"Elements of Art\" and contain a text list of the seven elements: Line, Shape, Form, Space, Color, Value, and Texture. Save the completed flipchart to /home/ga/Documents/Flipcharts/color_wheel_art.flipchart.",
+  "difficulty": "medium",
+  "tags": [
+    "art",
+    "education",
+    "shapes",
+    "colors",
+    "multi-page",
+    "design"
+  ],
+  "init": {
+    "timeout_sec": 600,
+    "max_steps": 80,
+    "reward_type": "sparse"
+  },
+  "hooks": {
+    "pre_task": "/workspace/tasks/color_wheel_art_lesson/setup_task.sh",
+    "post_task": "/workspace/tasks/color_wheel_art_lesson/export_result.sh"
+  },
+  "metadata": {
+    "expected_filename": "color_wheel_art.flipchart",
+    "expected_path": "/home/ga/Documents/Flipcharts/color_wheel_art.flipchart",
+    "required_page_count": 3,
+    "required_primary_colors": [
+      "Red",
+      "Yellow",
+      "Blue"
+    ],
+    "required_secondary_colors": [
+      "Orange",
+      "Green",
+      "Violet",
+      "Purple"
+    ],
+    "required_elements": [
+      "Line",
+      "Shape",
+      "Form",
+      "Space",
+      "Color",
+      "Value",
+      "Texture"
+    ],
+    "min_shape_count": 6
+  },
+  "success": {
+    "mode": "program",
+    "spec": {
+      "program": "verifier.py::verify_color_wheel_art"
+    }
+  }
+}

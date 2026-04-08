@@ -1,0 +1,46 @@
+{
+  "id": "student_certificate_template@1",
+  "version": "1.0",
+  "env_id": "active_inspire_env@0.1",
+  "name": "Create Student Certificate Template",
+  "description": "Design a 'Student of the Month' certificate template in ActivInspire as a single-page flipchart. The certificate must include a large decorative rectangular border framing the page, the title 'Student of the Month' centered at the top, and form fields for 'Awarded to:', 'Date:', and 'Signed:' (or 'Teacher:'), each followed by a horizontal line. Include at least two Star or Circle shapes for decoration. Save the completed template to /home/ga/Documents/Flipcharts/student_certificate.flipchart.",
+  "difficulty": "medium",
+  "tags": [
+    "design",
+    "layout",
+    "shapes",
+    "text",
+    "education"
+  ],
+  "init": {
+    "timeout_sec": 420,
+    "max_steps": 60,
+    "reward_type": "sparse"
+  },
+  "hooks": {
+    "pre_task": "/workspace/tasks/student_certificate_template/setup_task.sh",
+    "post_task": "/workspace/tasks/student_certificate_template/export_result.sh"
+  },
+  "metadata": {
+    "expected_filename": "student_certificate.flipchart",
+    "expected_directory": "/home/ga/Documents/Flipcharts",
+    "expected_full_path": "/home/ga/Documents/Flipcharts/student_certificate.flipchart",
+    "required_text": [
+      "Student of the Month",
+      "Awarded to",
+      "Date",
+      "Signed"
+    ],
+    "required_shapes": {
+      "border": 1,
+      "lines": 3,
+      "decorations": 2
+    }
+  },
+  "success": {
+    "mode": "program",
+    "spec": {
+      "program": "verifier.py::verify_student_certificate"
+    }
+  }
+}

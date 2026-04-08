@@ -1,0 +1,48 @@
+{
+  "id": "classroom_schedule_flipchart@1",
+  "version": "1.0",
+  "env_id": "active_inspire_env@0.1",
+  "name": "Create Daily Classroom Schedule Display Flipchart",
+  "description": "An elementary school teacher needs a daily schedule display for their classroom. Create a 2-page flipchart. Page 1 should be titled 'Daily Schedule' and feature at least 5 vertically arranged blocks with distinct fill colors, each containing a time and activity: '8:00 - Morning Meeting', '9:00 - Reading', '10:00 - Math', '11:00 - Science', and '12:00 - Lunch'. Page 2 should be titled 'Homework' and include at least 3 labeled boxes for Math, Reading, and one other subject of your choice, each listing a homework assignment. Login as ga / password123 and save the flipchart to /home/ga/Documents/Flipcharts/daily_schedule.flipchart",
+  "difficulty": "hard",
+  "tags": [
+    "education",
+    "classroom-management",
+    "schedule",
+    "multi-page",
+    "shapes",
+    "colors",
+    "daily-routine"
+  ],
+  "init": {
+    "timeout_sec": 480,
+    "max_steps": 60
+  },
+  "hooks": {
+    "pre_task": "/workspace/tasks/classroom_schedule_flipchart/setup_task.sh",
+    "post_task": "/workspace/tasks/classroom_schedule_flipchart/export_result.sh"
+  },
+  "metadata": {
+    "expected_filename": "daily_schedule.flipchart",
+    "expected_directory": "/home/ga/Documents/Flipcharts",
+    "expected_full_path": "/home/ga/Documents/Flipcharts/daily_schedule.flipchart",
+    "expected_page_count": 2,
+    "required_terms": [
+      "Schedule",
+      "Morning Meeting",
+      "Reading",
+      "Math",
+      "Science",
+      "Lunch",
+      "Homework"
+    ],
+    "required_rect_count": 8,
+    "subject": "Elementary - Classroom Management"
+  },
+  "success": {
+    "mode": "program",
+    "spec": {
+      "program": "verifier.py::verify_classroom_schedule_flipchart"
+    }
+  }
+}

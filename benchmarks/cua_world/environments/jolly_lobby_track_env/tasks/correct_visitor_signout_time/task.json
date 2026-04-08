@@ -1,0 +1,29 @@
+{
+  "id": "correct_visitor_signout_time@1",
+  "version": "1.0",
+  "env_id": "jolly_lobby_track_env@0.1",
+  "description": "A visitor named 'Elena Fisher' (Company: 'Uncharted Supplies') is currently signed in, but security footage shows she actually left the building earlier today at 12:15 PM. Correct her record by signing her out with a Sign Out Time of 12:15 PM and export the daily visitor log to /home/ga/Documents/corrected_log.csv.",
+  "difficulty": "medium",
+  "init": {
+    "timeout_sec": 300,
+    "max_steps": 50,
+    "reward_type": "sparse"
+  },
+  "hooks": {
+    "pre_task": "/workspace/tasks/correct_visitor_signout_time/setup_task.sh",
+    "post_task": "/workspace/tasks/correct_visitor_signout_time/export_result.sh"
+  },
+  "metadata": {
+    "target_visitor_first": "Elena",
+    "target_visitor_last": "Fisher",
+    "target_company": "Uncharted Supplies",
+    "target_time_string": "12:15",
+    "expected_export_path": "/home/ga/Documents/corrected_log.csv"
+  },
+  "success": {
+    "mode": "program",
+    "spec": {
+      "program": "verifier.py::verify_correct_visitor_signout_time"
+    }
+  }
+}

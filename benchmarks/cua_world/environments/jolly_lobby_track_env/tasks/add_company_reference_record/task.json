@@ -1,0 +1,31 @@
+{
+  "id": "add_company_reference_record@1",
+  "version": "1.0",
+  "env_id": "jolly_lobby_track_env@0.1",
+  "description": "Add a new vendor to the Company reference list in Jolly Lobby Track to ensure standardized data entry. Create a new record for the company \"Aramark\" located in \"Philadelphia\" and ensure the record is saved in the list.",
+  "difficulty": "medium",
+  "init": {
+    "timeout_sec": 300,
+    "max_steps": 40,
+    "reward_type": "sparse"
+  },
+  "hooks": {
+    "pre_task": "/workspace/tasks/add_company_reference_record/setup_task.sh",
+    "post_task": "/workspace/tasks/add_company_reference_record/export_result.sh"
+  },
+  "metadata": {
+    "target_company": "Aramark",
+    "target_city": "Philadelphia",
+    "db_search_pattern": "LobbyTrack*.mdb",
+    "expected_text_evidence": [
+      "Aramark",
+      "Philadelphia"
+    ]
+  },
+  "success": {
+    "mode": "program",
+    "spec": {
+      "program": "verifier.py::verify_add_company_reference_record"
+    }
+  }
+}

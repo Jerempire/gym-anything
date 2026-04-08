@@ -1,0 +1,29 @@
+{
+  "id": "customize_field_labels@1",
+  "version": "1.0",
+  "env_id": "jolly_lobby_track_env@0.1",
+  "description": "Customize the Jolly Lobby Track interface to meet security protocols by changing the field label for the employee/host selection to 'Escort'. Register a new visitor named Viktor Antonov from City 17 Logistics with Eli Vance as the Escort (add the employee if they do not exist). Capture a screenshot of the application window showing the updated label and save it to /home/ga/Desktop/escort_label_verification.png.",
+  "difficulty": "medium",
+  "init": {
+    "timeout_sec": 300,
+    "max_steps": 50,
+    "reward_type": "sparse"
+  },
+  "hooks": {
+    "pre_task": "/workspace/tasks/customize_field_labels/setup_task.sh",
+    "post_task": "/workspace/tasks/customize_field_labels/export_result.sh"
+  },
+  "metadata": {
+    "expected_label": "Escort",
+    "visitor_name": "Viktor Antonov",
+    "host_name": "Eli Vance",
+    "company_name": "City 17 Logistics",
+    "evidence_path": "/home/ga/Desktop/escort_label_verification.png"
+  },
+  "success": {
+    "mode": "program",
+    "spec": {
+      "program": "verifier.py::verify_customize_field_labels"
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "id": "export_contractor_activity@1",
+  "version": "1.0",
+  "env_id": "jolly_lobby_track_env@0.1",
+  "description": "Export a report of all 'Contractor' activity from the visitor log to /home/ga/Documents/contractor_activity.csv. The exported file must contain only visitors with the purpose 'Contractor'.",
+  "difficulty": "medium",
+  "init": {
+    "timeout_sec": 300,
+    "max_steps": 50,
+    "reward_type": "sparse"
+  },
+  "hooks": {
+    "pre_task": "/workspace/tasks/export_contractor_activity/setup_task.sh",
+    "post_task": "/workspace/tasks/export_contractor_activity/export_result.sh"
+  },
+  "metadata": {
+    "expected_filename": "contractor_activity.csv",
+    "expected_path": "/home/ga/Documents/contractor_activity.csv",
+    "required_strings": [
+      "Gary",
+      "Spark",
+      "FixIt"
+    ],
+    "forbidden_strings": [
+      "Alice",
+      "Candidate",
+      "Bob",
+      "Sales"
+    ],
+    "min_lines": 2
+  },
+  "success": {
+    "mode": "program",
+    "spec": {
+      "program": "verifier.py::verify_export_contractor_activity"
+    }
+  }
+}

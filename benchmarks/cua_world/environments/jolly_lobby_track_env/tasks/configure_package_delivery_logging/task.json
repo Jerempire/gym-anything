@@ -1,0 +1,35 @@
+{
+  "id": "configure_package_delivery_logging@1",
+  "version": "1.0",
+  "env_id": "jolly_lobby_track_env@0.1",
+  "description": "Configure Jolly Lobby Track for logging package deliveries. Create a Visitor Group named 'Deliveries' that includes a 'Tracking Number' text field. Streamline the registration process for this group by disabling photo capture and agreement signing. Register a test record in the 'Deliveries' group with First Name 'FedEx', Last Name 'Express', and Tracking Number '1Z999AA10123456784', ensuring the record is saved and visible in the log.",
+  "difficulty": "medium",
+  "init": {
+    "timeout_sec": 480,
+    "max_steps": 60,
+    "reward_type": "sparse"
+  },
+  "hooks": {
+    "pre_task": "/workspace/tasks/configure_package_delivery_logging/setup_task.sh",
+    "post_task": "/workspace/tasks/configure_package_delivery_logging/export_result.sh"
+  },
+  "metadata": {
+    "target_group": "Deliveries",
+    "target_field": "Tracking Number",
+    "test_fname": "FedEx",
+    "test_lname": "Express",
+    "test_tracking": "1Z999AA10123456784",
+    "db_search_strings": [
+      "Deliveries",
+      "Tracking Number",
+      "1Z999AA10123456784",
+      "FedEx"
+    ]
+  },
+  "success": {
+    "mode": "program",
+    "spec": {
+      "program": "verifier.py::verify_configure_package_delivery_logging"
+    }
+  }
+}

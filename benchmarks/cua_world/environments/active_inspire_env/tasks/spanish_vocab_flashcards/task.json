@@ -1,0 +1,48 @@
+{
+  "id": "spanish_vocab_flashcards@1",
+  "version": "1.0",
+  "env_id": "active_inspire_env@0.1",
+  "name": "Create Spanish Vocabulary Flashcards",
+  "description": "Create a 4-page vocabulary flashcard flipchart for a Spanish unit on 'La Casa' (The House) in ActivInspire. Page 1 must include the text 'La Casa' and 'Vocabulario' along with a decorative shape. Page 2 must include the Spanish text 'La cocina', English text 'Kitchen', and a colored rectangle. Page 3 must include the Spanish text 'El dormitorio', English text 'Bedroom', and a colored rectangle. Page 4 must include the Spanish text 'El baño', English text 'Bathroom', and a colored rectangle. Save the completed flipchart to /home/ga/Documents/Flipcharts/la_casa_vocabulario.flipchart.",
+  "difficulty": "medium",
+  "tags": [
+    "education",
+    "language",
+    "multi-page",
+    "text",
+    "shapes",
+    "flashcards"
+  ],
+  "init": {
+    "timeout_sec": 600,
+    "max_steps": 80,
+    "reward_type": "sparse"
+  },
+  "hooks": {
+    "pre_task": "/workspace/tasks/spanish_vocab_flashcards/setup_task.sh",
+    "post_task": "/workspace/tasks/spanish_vocab_flashcards/export_result.sh"
+  },
+  "metadata": {
+    "expected_filename": "la_casa_vocabulario.flipchart",
+    "expected_directory": "/home/ga/Documents/Flipcharts",
+    "expected_full_path": "/home/ga/Documents/Flipcharts/la_casa_vocabulario.flipchart",
+    "expected_page_count": 4,
+    "required_terms": [
+      "La Casa",
+      "Vocabulario",
+      "La cocina",
+      "Kitchen",
+      "El dormitorio",
+      "Bedroom",
+      "El baño",
+      "Bathroom"
+    ],
+    "min_shape_count": 4
+  },
+  "success": {
+    "mode": "program",
+    "spec": {
+      "program": "verifier.py::verify_spanish_vocab_flashcards"
+    }
+  }
+}

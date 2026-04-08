@@ -1,0 +1,44 @@
+{
+  "id": "inner_solar_system_diagram@1",
+  "version": "1.0",
+  "env_id": "active_inspire_env@0.1",
+  "name": "Inner Solar System Diagram",
+  "description": "Create a scientific diagram of the inner solar system in ActivInspire. The diagram should feature a large yellow circle on the left representing the Sun, followed by four smaller circles to the right representing the terrestrial planets in order: Mercury, Venus, Earth, and Mars. Include a line or arrow between the Sun and Earth labeled \"1 AU\" to define the Astronomical Unit. Ensure all celestial bodies are clearly labeled with their names. Save the completed flipchart to /home/ga/Documents/Flipcharts/inner_solar_system.flipchart.",
+  "difficulty": "medium",
+  "tags": [
+    "science",
+    "diagram",
+    "shapes",
+    "educational",
+    "activinspire"
+  ],
+  "init": {
+    "timeout_sec": 480,
+    "max_steps": 60,
+    "reward_type": "sparse"
+  },
+  "hooks": {
+    "pre_task": "/workspace/tasks/inner_solar_system_diagram/setup_task.sh",
+    "post_task": "/workspace/tasks/inner_solar_system_diagram/export_result.sh"
+  },
+  "metadata": {
+    "expected_filename": "inner_solar_system.flipchart",
+    "expected_path": "/home/ga/Documents/Flipcharts/inner_solar_system.flipchart",
+    "required_labels": [
+      "Sun",
+      "Mercury",
+      "Venus",
+      "Earth",
+      "Mars",
+      "1 AU"
+    ],
+    "min_shapes": 5,
+    "required_color": "Yellow"
+  },
+  "success": {
+    "mode": "program",
+    "spec": {
+      "program": "verifier.py::verify_solar_system_diagram"
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "id": "add_barcode_to_badge@1",
+  "version": "1.0",
+  "env_id": "jolly_lobby_track_env@0.1",
+  "description": "Modify the standard Visitor badge template in Jolly Lobby Track to include a barcode. Position the barcode at the bottom of the badge and configure it to encode the dynamic 'Visitor ID' field. Save the updated template.",
+  "difficulty": "medium",
+  "init": {
+    "timeout_sec": 300,
+    "max_steps": 40,
+    "reward_type": "sparse"
+  },
+  "hooks": {
+    "pre_task": "/workspace/tasks/add_barcode_to_badge/setup_task.sh",
+    "post_task": "/workspace/tasks/add_barcode_to_badge/export_result.sh"
+  },
+  "metadata": {
+    "feature_keywords": [
+      "Barcode",
+      "Code39",
+      "Code128",
+      "QR",
+      "VisitorID",
+      "Visitor ID"
+    ],
+    "expected_file_extensions": [
+      "btf",
+      "xml",
+      "tpl",
+      "bdg"
+    ]
+  },
+  "success": {
+    "mode": "program",
+    "spec": {
+      "program": "verifier.py::verify_add_barcode_to_badge"
+    }
+  }
+}

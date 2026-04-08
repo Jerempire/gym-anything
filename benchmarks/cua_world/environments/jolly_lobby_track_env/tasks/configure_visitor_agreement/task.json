@@ -1,0 +1,31 @@
+{
+  "id": "configure_visitor_agreement@1",
+  "version": "1.0",
+  "env_id": "jolly_lobby_track_env@0.1",
+  "description": "You are a receptionist at Morrison & Associates Law Firm. The managing partner has asked you to configure the visitor agreement in Lobby Track so that all visitors must acknowledge a confidentiality policy before being granted access to the building. Enable the visitor agreement feature and enter the following text exactly: \"By signing in, I acknowledge that I may be exposed to confidential information during my visit. I agree not to disclose, copy, or distribute any information obtained during my visit to Morrison & Associates. All visitors are subject to security screening upon exit.\" Save a screenshot confirming the configuration to /home/ga/visitor_agreement_configured.png",
+  "difficulty": "medium",
+  "init": {
+    "timeout_sec": 600,
+    "max_steps": 40,
+    "reward_type": "sparse"
+  },
+  "hooks": {
+    "pre_task": "/workspace/tasks/configure_visitor_agreement/setup_task.sh",
+    "post_task": "/workspace/tasks/configure_visitor_agreement/export_result.sh"
+  },
+  "metadata": {
+    "expected_screenshot_path": "/home/ga/visitor_agreement_configured.png",
+    "required_text_phrases": [
+      "confidential information",
+      "Morrison & Associates",
+      "security screening"
+    ],
+    "config_dir": "/home/ga/.wine/drive_c"
+  },
+  "success": {
+    "mode": "program",
+    "spec": {
+      "program": "verifier.py::verify_configure_visitor_agreement"
+    }
+  }
+}

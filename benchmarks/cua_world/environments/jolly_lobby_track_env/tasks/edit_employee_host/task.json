@@ -1,0 +1,40 @@
+{
+  "id": "edit_employee_host@1",
+  "version": "1.0",
+  "env_id": "jolly_lobby_track_env@0.1",
+  "description": "Update the host record for 'Sarah Mitchell' in Lobby Track with the following information: Department 'Product Development', Phone '555-867-5309', and Email 's.mitchell@proddev.example.com'. Ensure the changes are saved to replace the outdated Marketing department information.",
+  "difficulty": "medium",
+  "init": {
+    "timeout_sec": 300,
+    "max_steps": 50,
+    "reward_type": "sparse"
+  },
+  "hooks": {
+    "pre_task": "/workspace/tasks/edit_employee_host/setup_task.sh",
+    "post_task": "/workspace/tasks/edit_employee_host/export_result.sh"
+  },
+  "metadata": {
+    "target_name": "Sarah Mitchell",
+    "old_values": {
+      "department": "Marketing",
+      "phone": "555-123-4567",
+      "email": "sarah.mitchell@marketing.example.com"
+    },
+    "new_values": {
+      "department": "Product Development",
+      "phone": "555-867-5309",
+      "email": "s.mitchell@proddev.example.com"
+    },
+    "db_search_patterns": [
+      "Product Development",
+      "555-867-5309",
+      "s.mitchell@proddev.example.com"
+    ]
+  },
+  "success": {
+    "mode": "program",
+    "spec": {
+      "program": "verifier.py::verify_edit_employee_host"
+    }
+  }
+}

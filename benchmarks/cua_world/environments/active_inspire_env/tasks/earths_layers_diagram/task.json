@@ -1,0 +1,50 @@
+{
+  "id": "earths_layers_diagram@1",
+  "version": "1.0",
+  "env_id": "active_inspire_env@0.1",
+  "name": "Earth's Layers Cross-Section Diagram",
+  "description": "Create a 2-page educational flipchart about Earth's internal structure. Page 1 must contain a labeled and color-coded diagram showing a cross-section of the Crust, Mantle, Outer Core, and Inner Core. Page 2 must contain a table documenting the Layer Name, Thickness, and State of Matter for each of these four layers. Save the completed flipchart to /home/ga/Documents/Flipcharts/earths_layers.flipchart.",
+  "difficulty": "medium",
+  "tags": [
+    "education",
+    "science",
+    "diagram",
+    "shapes",
+    "multi-page",
+    "table"
+  ],
+  "init": {
+    "timeout_sec": 480,
+    "max_steps": 60,
+    "reward_type": "sparse"
+  },
+  "hooks": {
+    "pre_task": "/workspace/tasks/earths_layers_diagram/setup_task.sh",
+    "post_task": "/workspace/tasks/earths_layers_diagram/export_result.sh"
+  },
+  "metadata": {
+    "expected_filename": "earths_layers.flipchart",
+    "expected_full_path": "/home/ga/Documents/Flipcharts/earths_layers.flipchart",
+    "expected_page_count": 2,
+    "layer_terms": [
+      "Crust",
+      "Mantle",
+      "Outer Core",
+      "Inner Core"
+    ],
+    "table_terms": [
+      "Thickness",
+      "State",
+      "Solid",
+      "Liquid",
+      "Plastic"
+    ],
+    "min_concentric_shapes": 4
+  },
+  "success": {
+    "mode": "program",
+    "spec": {
+      "program": "verifier.py::verify_earths_layers_diagram"
+    }
+  }
+}

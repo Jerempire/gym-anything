@@ -1,0 +1,49 @@
+{
+  "id": "economics_supply_demand_graph@1",
+  "version": "1.0",
+  "env_id": "active_inspire_env@0.1",
+  "name": "Economics: Supply and Demand Graph",
+  "description": "Create a 2-page economics lesson flipchart in ActivInspire demonstrating Market Equilibrium and a Shift in Demand. The first page, titled 'Market Equilibrium', must contain a standard X/Y graph with axes labeled 'Price' and 'Quantity', intersecting 'Supply' and 'Demand' curves, and the intersection labeled 'Equilibrium'. The second page, titled 'Increase in Demand', must contain a similar graph with Price/Quantity axes and a Supply curve, but featuring two Demand curves showing a rightward shift, an arrow indicating the shift direction, and a text label mentioning 'Shift' or 'Increase'. Save the completed flipchart to /home/ga/Documents/Flipcharts/supply_demand_lesson.flipchart.",
+  "difficulty": "medium",
+  "tags": [
+    "education",
+    "economics",
+    "graphing",
+    "diagram",
+    "multi-page"
+  ],
+  "init": {
+    "timeout_sec": 480,
+    "max_steps": 60,
+    "reward_type": "sparse"
+  },
+  "hooks": {
+    "pre_task": "/workspace/tasks/economics_supply_demand_graph/setup_task.sh",
+    "post_task": "/workspace/tasks/economics_supply_demand_graph/export_result.sh"
+  },
+  "metadata": {
+    "expected_filename": "supply_demand_lesson.flipchart",
+    "expected_directory": "/home/ga/Documents/Flipcharts",
+    "expected_full_path": "/home/ga/Documents/Flipcharts/supply_demand_lesson.flipchart",
+    "expected_page_count": 2,
+    "required_text_p1": [
+      "Price",
+      "Quantity",
+      "Supply",
+      "Demand",
+      "Equilibrium"
+    ],
+    "required_text_p2": [
+      "Shift",
+      "Increase"
+    ],
+    "min_lines_p1": 4,
+    "min_lines_p2": 5
+  },
+  "success": {
+    "mode": "program",
+    "spec": {
+      "program": "verifier.py::verify_supply_demand_graph"
+    }
+  }
+}

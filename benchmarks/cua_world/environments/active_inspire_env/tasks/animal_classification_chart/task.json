@@ -1,0 +1,73 @@
+{
+  "id": "animal_classification_chart@1",
+  "version": "1.0",
+  "env_id": "active_inspire_env@0.1",
+  "name": "Create Animal Classification Chart",
+  "description": "Create a 3-page interactive flipchart for a 6th-grade science lesson on Animal Classification. The first page must feature the title \"Animal Classification\" and introductory text for \"Vertebrates\" and \"Invertebrates\". The second page must contain a visual classification tree starting with \"Animals\" branching into \"Vertebrates\" (listing at least 4 classes) and \"Invertebrates\" (listing at least 2 classes), using at least 8 rectangle shapes to categorize the groups. The third page must include a \"Sort the Animals\" activity with at least 6 animals selected from: Eagle, Salmon, Frog, Spider, Snail, Cobra, Butterfly, Dolphin, Beetle, and Turtle. Save the flipchart to /home/ga/Documents/Flipcharts/animal_classification.flipchart.",
+  "difficulty": "medium",
+  "tags": [
+    "education",
+    "science",
+    "diagram",
+    "shapes",
+    "text",
+    "multi-page",
+    "hierarchy"
+  ],
+  "init": {
+    "timeout_sec": 600,
+    "max_steps": 80,
+    "reward_type": "sparse"
+  },
+  "hooks": {
+    "pre_task": "/workspace/tasks/animal_classification_chart/setup_task.sh",
+    "post_task": "/workspace/tasks/animal_classification_chart/export_result.sh"
+  },
+  "metadata": {
+    "expected_filename": "animal_classification.flipchart",
+    "expected_directory": "/home/ga/Documents/Flipcharts",
+    "expected_full_path": "/home/ga/Documents/Flipcharts/animal_classification.flipchart",
+    "required_page_count": 3,
+    "required_terms": {
+      "title": [
+        "Animal Classification"
+      ],
+      "groups": [
+        "Vertebrates",
+        "Invertebrates"
+      ],
+      "vertebrate_classes": [
+        "Fish",
+        "Amphibians",
+        "Reptiles",
+        "Birds",
+        "Mammals"
+      ],
+      "invertebrate_classes": [
+        "Insects",
+        "Arachnids",
+        "Mollusks"
+      ],
+      "animals": [
+        "Eagle",
+        "Salmon",
+        "Frog",
+        "Spider",
+        "Snail",
+        "Cobra",
+        "Butterfly",
+        "Dolphin",
+        "Beetle",
+        "Turtle"
+      ]
+    },
+    "min_shapes_count": 8,
+    "min_animals_count": 6
+  },
+  "success": {
+    "mode": "program",
+    "spec": {
+      "program": "verifier.py::verify_animal_classification_chart"
+    }
+  }
+}

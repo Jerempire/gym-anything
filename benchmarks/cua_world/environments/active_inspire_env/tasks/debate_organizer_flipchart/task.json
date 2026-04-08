@@ -1,0 +1,43 @@
+{
+  "id": "debate_organizer_flipchart@1",
+  "version": "1.0",
+  "env_id": "active_inspire_env@0.1",
+  "name": "Create Debate Organizer Flipchart",
+  "description": "Create a 3-page debate preparation flipchart for a class Socratic seminar on 'Should cell phones be allowed in schools?'. The first page must include the title 'Socratic Seminar', the central question, and at least 3 discussion rules. The second page should feature a T-Chart graphic organizer with columns labeled 'Pro' and 'Con', including at least 2 example arguments for each side. The third page must be titled 'Sentence Starters' or 'Academic Language' and contain at least 4 sentence starters for students. Save the completed file to /home/ga/Documents/Flipcharts/cell_phone_debate.flipchart.",
+  "difficulty": "medium",
+  "tags": [
+    "education",
+    "ela",
+    "debate",
+    "graphic-organizer",
+    "multi-page"
+  ],
+  "init": {
+    "timeout_sec": 480,
+    "max_steps": 60,
+    "reward_type": "sparse"
+  },
+  "hooks": {
+    "pre_task": "/workspace/tasks/debate_organizer_flipchart/setup_task.sh",
+    "post_task": "/workspace/tasks/debate_organizer_flipchart/export_result.sh"
+  },
+  "metadata": {
+    "expected_filename": "cell_phone_debate.flipchart",
+    "expected_path": "/home/ga/Documents/Flipcharts/cell_phone_debate.flipchart",
+    "required_page_count": 3,
+    "required_terms": [
+      "Socratic Seminar",
+      "cell phones",
+      "Pro",
+      "Con",
+      "Sentence Starters"
+    ],
+    "min_lines_or_shapes": 2
+  },
+  "success": {
+    "mode": "program",
+    "spec": {
+      "program": "verifier.py::verify_debate_organizer"
+    }
+  }
+}

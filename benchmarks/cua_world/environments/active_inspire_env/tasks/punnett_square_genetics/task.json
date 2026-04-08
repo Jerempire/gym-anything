@@ -1,0 +1,48 @@
+{
+  "id": "punnett_square_genetics@1",
+  "version": "1.0",
+  "env_id": "active_inspire_env@0.1",
+  "name": "Punnett Square Genetics Activity",
+  "description": "Create a 4-page interactive flipchart for a high school genetics lesson on Punnett Squares. The flipchart should include an introductory page titled 'Punnett Squares' explaining 'dominant' and 'recessive' alleles for a 'Bb x Bb' (Brown vs White fur) cross. A subsequent page must feature a 2x2 grid illustrating the parent labels and resulting offspring genotypes for the Bb x Bb cross. Include a results page titled 'Results' or 'Ratios' showing the correct genotypic and phenotypic ratios for the cross. Conclude with a 'Practice' page presenting a 'BB' x 'bb' cross with empty boxes for student practice. Save the file to /home/ga/Documents/Flipcharts/punnett_square_genetics.flipchart.",
+  "difficulty": "hard",
+  "tags": [
+    "education",
+    "science",
+    "biology",
+    "multi-page",
+    "diagram",
+    "shapes"
+  ],
+  "init": {
+    "timeout_sec": 600,
+    "max_steps": 80,
+    "reward_type": "sparse"
+  },
+  "hooks": {
+    "pre_task": "/workspace/tasks/punnett_square_genetics/setup_task.sh",
+    "post_task": "/workspace/tasks/punnett_square_genetics/export_result.sh"
+  },
+  "metadata": {
+    "expected_filename": "punnett_square_genetics.flipchart",
+    "expected_directory": "/home/ga/Documents/Flipcharts",
+    "expected_full_path": "/home/ga/Documents/Flipcharts/punnett_square_genetics.flipchart",
+    "expected_page_count": 4,
+    "required_terms": [
+      "Punnett",
+      "dominant",
+      "recessive",
+      "Bb",
+      "1:2:1",
+      "3:1",
+      "BB",
+      "bb"
+    ],
+    "min_rectangles": 6
+  },
+  "success": {
+    "mode": "program",
+    "spec": {
+      "program": "verifier.py::verify_punnett_square"
+    }
+  }
+}

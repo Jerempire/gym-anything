@@ -1,0 +1,58 @@
+{
+  "id": "lewis_dot_structure_lesson@1",
+  "version": "1.0",
+  "env_id": "active_inspire_env@0.1",
+  "name": "Create Lewis Dot Structure Lesson",
+  "description": "Create a 4-page chemistry lesson flipchart about Lewis Dot Structures. The flipchart must include a title page ('Lewis Dot Structures') with the text 'Covalent Bonding' and a definition of the Octet Rule; a reference page ('Valence Electrons') showing the element symbols for H, C, N, O, and Cl with their valence electrons; a worked example page ('Water (H2O)') showing the Lewis structure for water; and a practice page ('Practice') listing the molecules CO2, NH3, and CH4. Save the final file to /home/ga/Documents/Flipcharts/lewis_dot_structures.flipchart.",
+  "difficulty": "hard",
+  "tags": [
+    "education",
+    "chemistry",
+    "multi-page",
+    "shapes",
+    "diagram",
+    "science"
+  ],
+  "init": {
+    "timeout_sec": 600,
+    "max_steps": 80,
+    "reward_type": "sparse"
+  },
+  "hooks": {
+    "pre_task": "/workspace/tasks/lewis_dot_structure_lesson/setup_task.sh",
+    "post_task": "/workspace/tasks/lewis_dot_structure_lesson/export_result.sh"
+  },
+  "metadata": {
+    "expected_filename": "lewis_dot_structures.flipchart",
+    "expected_directory": "/home/ga/Documents/Flipcharts",
+    "expected_full_path": "/home/ga/Documents/Flipcharts/lewis_dot_structures.flipchart",
+    "expected_page_count": 4,
+    "required_text": [
+      "Lewis",
+      "Dot",
+      "Octet",
+      "Covalent",
+      "Valence",
+      "Electron",
+      "H2O",
+      "Water",
+      "Practice",
+      "CO2",
+      "NH3",
+      "CH4"
+    ],
+    "required_elements": [
+      "H",
+      "C",
+      "N",
+      "O"
+    ],
+    "min_shape_count": 10
+  },
+  "success": {
+    "mode": "program",
+    "spec": {
+      "program": "verifier.py::verify_lewis_dot_structure_lesson"
+    }
+  }
+}

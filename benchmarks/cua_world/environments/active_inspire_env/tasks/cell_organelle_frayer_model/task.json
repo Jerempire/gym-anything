@@ -1,0 +1,57 @@
+{
+  "id": "cell_organelle_frayer_model@1",
+  "version": "1.0",
+  "env_id": "active_inspire_env@0.1",
+  "name": "Create Cell Organelle Frayer Models",
+  "description": "Create a 2-page vocabulary flipchart in ActivInspire using the Frayer Model format for a biology lesson. Page 1 must focus on 'Mitochondria' and Page 2 on 'Cell Membrane'. Each page requires a central box for the term and four surrounding quadrants labeled 'Definition', 'Characteristics', 'Examples', and 'Non-Examples' with appropriate content for each section. Save the flipchart to /home/ga/Documents/Flipcharts/cell_organelle_frayer.flipchart.",
+  "difficulty": "hard",
+  "tags": [
+    "education",
+    "science",
+    "vocabulary",
+    "graphic-organizer",
+    "shapes",
+    "layout"
+  ],
+  "init": {
+    "timeout_sec": 600,
+    "max_steps": 80,
+    "reward_type": "sparse"
+  },
+  "hooks": {
+    "pre_task": "/workspace/tasks/cell_organelle_frayer_model/setup_task.sh",
+    "post_task": "/workspace/tasks/cell_organelle_frayer_model/export_result.sh"
+  },
+  "metadata": {
+    "expected_filename": "cell_organelle_frayer.flipchart",
+    "expected_directory": "/home/ga/Documents/Flipcharts",
+    "expected_full_path": "/home/ga/Documents/Flipcharts/cell_organelle_frayer.flipchart",
+    "required_terms": [
+      "Mitochondria",
+      "Cell Membrane",
+      "Definition",
+      "Characteristics",
+      "Examples",
+      "Non-Examples"
+    ],
+    "content_keywords_mitochondria": [
+      "energy",
+      "ATP",
+      "powerhouse",
+      "respiration"
+    ],
+    "content_keywords_membrane": [
+      "barrier",
+      "permeable",
+      "phospholipid",
+      "boundary"
+    ],
+    "min_rectangles": 8
+  },
+  "success": {
+    "mode": "program",
+    "spec": {
+      "program": "verifier.py::verify_cell_organelle_frayer_model"
+    }
+  }
+}

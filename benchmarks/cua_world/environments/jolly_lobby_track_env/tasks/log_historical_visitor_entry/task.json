@@ -1,0 +1,30 @@
+{
+  "id": "log_historical_visitor_entry@1",
+  "version": "1.0",
+  "env_id": "jolly_lobby_track_env@0.1",
+  "description": "Digitize a historical visitor record for 'Dr. Emmett Brown' from 'Future Industries' for yesterday (the date immediately preceding the current system date). The record must reflect a maintenance visit with a check-in time of 09:00 AM and a check-out time of 10:30 AM. Export the visitor log containing this record to /home/ga/Documents/verification_export.csv.",
+  "difficulty": "medium",
+  "init": {
+    "timeout_sec": 300,
+    "max_steps": 50,
+    "reward_type": "sparse"
+  },
+  "hooks": {
+    "pre_task": "/workspace/tasks/log_historical_visitor_entry/setup_task.sh",
+    "post_task": "/workspace/tasks/log_historical_visitor_entry/export_result.sh"
+  },
+  "metadata": {
+    "visitor_first": "Emmett",
+    "visitor_last": "Brown",
+    "company": "Future Industries",
+    "time_in_hour": 9,
+    "time_out_hour": 10,
+    "export_path": "/home/ga/Documents/verification_export.csv"
+  },
+  "success": {
+    "mode": "program",
+    "spec": {
+      "program": "verifier.py::verify_historical_entry"
+    }
+  }
+}

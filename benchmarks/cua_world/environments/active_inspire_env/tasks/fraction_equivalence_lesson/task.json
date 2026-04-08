@@ -1,0 +1,47 @@
+{
+  "id": "fraction_equivalence_lesson@1",
+  "version": "1.0",
+  "env_id": "active_inspire_env@0.1",
+  "name": "Create Fraction Equivalence Flipchart",
+  "description": "Create a 2-page math lesson flipchart about equivalent fractions in ActivInspire. On the first page, include the title 'Fraction Vocabulary' and definitions for 'Numerator' and 'Denominator'. On the second page, create a fraction wall diagram using a visual stack of rectangles to show equivalence (1 Whole = 2 Halves = 4 Quarters = 8 Eighths). The diagram should consist of four rows: Row 1 (one rectangle labeled '1 Whole'), Row 2 (two rectangles labeled '1/2'), Row 3 (four rectangles labeled '1/4'), and Row 4 (eight rectangles labeled '1/8'), with each row using a distinct color. Save the final file to /home/ga/Documents/Flipcharts/fraction_lesson.flipchart.",
+  "difficulty": "medium",
+  "tags": [
+    "education",
+    "math",
+    "fractions",
+    "shapes",
+    "layout",
+    "intermediate"
+  ],
+  "init": {
+    "timeout_sec": 420,
+    "max_steps": 60,
+    "reward_type": "sparse"
+  },
+  "hooks": {
+    "pre_task": "/workspace/tasks/fraction_equivalence_lesson/setup_task.sh",
+    "post_task": "/workspace/tasks/fraction_equivalence_lesson/export_result.sh"
+  },
+  "metadata": {
+    "expected_filename": "fraction_lesson.flipchart",
+    "expected_directory": "/home/ga/Documents/Flipcharts",
+    "expected_full_path": "/home/ga/Documents/Flipcharts/fraction_lesson.flipchart",
+    "expected_page_count": 2,
+    "required_vocab": [
+      "Numerator",
+      "Denominator"
+    ],
+    "required_labels": {
+      "1/2": 2,
+      "1/4": 4,
+      "1/8": 8
+    },
+    "min_rectangles": 15
+  },
+  "success": {
+    "mode": "program",
+    "spec": {
+      "program": "verifier.py::verify_fraction_lesson"
+    }
+  }
+}

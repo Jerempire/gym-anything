@@ -1,0 +1,53 @@
+{
+  "id": "coordinate_plane_activity@1",
+  "version": "1.0",
+  "env_id": "active_inspire_env@0.1",
+  "name": "Create Coordinate Plane Activity",
+  "description": "An 8th grade math teacher needs a flipchart for a lesson on plotting ordered pairs. Create a 2-page ActivInspire flipchart saved to /home/ga/Documents/Flipcharts/coordinate_plane.flipchart. The first page must include the title 'Plotting Ordered Pairs' and instruction text containing the phrase 'coordinate plane'. The second page must feature a coordinate plane with labeled x and y axes, the four quadrants labeled with Roman numerals (I, II, III, IV), and five plotted and labeled points: (3, 4), (-2, 5), (-4, -3), (5, -2), and (0, 0). Ensure all text labels are visible in the final file.",
+  "difficulty": "medium",
+  "tags": [
+    "math",
+    "geometry",
+    "diagram",
+    "multi-page",
+    "precision"
+  ],
+  "init": {
+    "timeout_sec": 480,
+    "max_steps": 60,
+    "reward_type": "sparse"
+  },
+  "hooks": {
+    "pre_task": "/workspace/tasks/coordinate_plane_activity/setup_task.sh",
+    "post_task": "/workspace/tasks/coordinate_plane_activity/export_result.sh"
+  },
+  "metadata": {
+    "expected_filename": "coordinate_plane.flipchart",
+    "expected_path": "/home/ga/Documents/Flipcharts/coordinate_plane.flipchart",
+    "page_count": 2,
+    "required_text": [
+      "Plotting Ordered Pairs",
+      "coordinate plane",
+      "x",
+      "y",
+      "I",
+      "II",
+      "III",
+      "IV"
+    ],
+    "required_points": [
+      "(3, 4)",
+      "(-2, 5)",
+      "(-4, -3)",
+      "(5, -2)",
+      "(0, 0)"
+    ],
+    "min_shape_count": 7
+  },
+  "success": {
+    "mode": "program",
+    "spec": {
+      "program": "verifier.py::verify_coordinate_plane_activity"
+    }
+  }
+}
