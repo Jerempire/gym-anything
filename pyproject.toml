@@ -132,3 +132,6 @@ benchmarks = [
     "forecasting_world/**/*.py",
     "forecasting_world/**/*.html",
   ]
+
+[tool.pytest.ini_options]
+cache_dir = ".cache/pytest"
