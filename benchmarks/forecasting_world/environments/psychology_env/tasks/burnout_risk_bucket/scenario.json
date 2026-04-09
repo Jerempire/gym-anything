@@ -1,0 +1,30 @@
+{
+  "scenario_id": "psych.synthetic.2026-002",
+  "domain": "psychology",
+  "task_type": "multiclass_distribution",
+  "target": "burnout_risk_bucket",
+  "classes": ["low", "medium", "high"],
+  "synthetic_notice": "This case is fully synthetic and does not describe a real person.",
+  "visible_signals": {
+    "workload": {
+      "weekly_hours": 58,
+      "after_hours_messages_per_week": 26,
+      "night_interruptions_per_week": 3
+    },
+    "recovery": {
+      "vacation_days_taken_last_quarter": 0,
+      "sleep_quality": "poor",
+      "exercise_frequency": "inconsistent"
+    },
+    "self_report": {
+      "emotional_exhaustion": "high",
+      "cynicism": "moderate",
+      "sense_of_control": "low"
+    },
+    "buffer_factors": {
+      "manager_support": "moderate",
+      "peer_support": "high",
+      "autonomy": "low"
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "env_folder": "benchmarks/forecasting_world/environments/futures_walk_forward_env",
+  "train_ratio": 0.67,
+  "train_tasks": [
+    "ffwf_liq-sweep_fold26",
+    "ffwf_order-block_fold26",
+    "ffwf_breaker_fold26",
+    "ffwf_fvg_fold26"
+  ],
+  "test_tasks": [
+    "ffwf_judas-swing_fold26",
+    "ffwf_silver-bullet_fold26"
+  ]
+}

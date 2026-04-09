@@ -1,0 +1,11 @@
+{
+  "scenario_id": "futures_flow.walk_forward.order-block.fold26",
+  "source_project": "futures-flow",
+  "strategy": "order_block",
+  "fold_number": 26,
+  "outcome": 1,
+  "oos_sharpe": 4.58,
+  "oos_trades": 18,
+  "oos_wr": 0.667,
+  "oos_pnl": 2181.5
+}

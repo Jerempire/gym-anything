@@ -1,0 +1,14 @@
+{
+  "scenario_id": "research.event.2026-001",
+  "domain": "browser_research",
+  "task_type": "binary_probability",
+  "target": "policy_adopted_by_deadline",
+  "prompt": "Estimate the probability that the policy package is formally adopted by the deadline.",
+  "visible_signals": {
+    "deadline_days": 11,
+    "sponsor_votes_committed": 46,
+    "required_votes": 51,
+    "executive_support": "publicly supportive",
+    "swing_members": 6
+  }
+}

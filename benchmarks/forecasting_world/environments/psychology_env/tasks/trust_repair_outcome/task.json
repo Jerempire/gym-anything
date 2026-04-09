@@ -1,0 +1,30 @@
+{
+  "id": "trust_repair_outcome@1",
+  "version": "1.0",
+  "env_id": "psychology_env@0.1",
+  "description": "You are forecasting whether trust recovers after a synthetic repair attempt. Review /home/ga/Desktop/PsychologyTasks/trust_repair_outcome/scenario.json and save a forecast to /home/ga/Documents/PsychologyForecasts/trust_repair_outcome_forecast.json. The file must follow the shared forecast schema and assign a probability to the target 'trust_recovers_after_followup'.",
+  "difficulty": "medium",
+  "init": {
+    "timeout_sec": 300,
+    "max_steps": 35,
+    "reward_type": "sparse"
+  },
+  "hooks": {
+    "pre_task": "/workspace/tasks/trust_repair_outcome/setup_task.sh",
+    "post_task": "/workspace/tasks/trust_repair_outcome/export_result.sh"
+  },
+  "metadata": {
+    "scenario_id": "psych.synthetic.2026-003",
+    "forecast_path": "/home/ga/Documents/PsychologyForecasts/trust_repair_outcome_forecast.json",
+    "expected_task_type": "binary_probability",
+    "expected_target": "trust_recovers_after_followup",
+    "outcome_ref": "psychology/trust_repair_outcome.hidden.json",
+    "pass_threshold": 65
+  },
+  "success": {
+    "mode": "program",
+    "spec": {
+      "program": "verifier.py::verify_trust_repair_outcome"
+    }
+  }
+}

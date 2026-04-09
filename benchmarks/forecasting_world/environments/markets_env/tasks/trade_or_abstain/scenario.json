@@ -1,0 +1,31 @@
+{
+  "scenario_id": "markets.trade.2026-003",
+  "domain": "markets",
+  "task_type": "binary_probability",
+  "target": "target_hit_before_stop",
+  "instrument": "CL",
+  "trade_setup": {
+    "direction": "long",
+    "entry": 78.40,
+    "target": 79.05,
+    "stop": 77.95
+  },
+  "market_implied_probability": 0.58,
+  "visible_signals": {
+    "order_flow": {
+      "opening_drive": "up",
+      "pullback_quality": "shallow",
+      "delta_divergence": "negative on last push"
+    },
+    "context": {
+      "inventory_bias": "bullish from prior release",
+      "usd": "slightly stronger",
+      "energy_equities": "underperforming crude"
+    },
+    "technical_context": {
+      "setup_location": "near prior day value high",
+      "higher_timeframe_trend": "up",
+      "immediate_resistance": "78.95 to 79.10"
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "env_folder": "benchmarks/forecasting_world/environments/forecast_hub_env",
+  "train_ratio": 0.67,
+  "train_tasks": [
+    "fh_q23_will-donald-trump-and-xi-jinping-meet-in-person",
+    "fh_q51_will-iowa-win-the-2026-ncaa-tournament",
+    "fh_q42_will-duke-win-the-2026-ncaa-tournament",
+    "fh_q40_will-anthropic-have-the-third-best-ai-model-at-t"
+  ],
+  "test_tasks": [
+    "fh_q39_will-russia-capture-kostyantynivka-by-april-30",
+    "fh_q50_will-elon-musk-post-1400-tweets-in-march-2026"
+  ]
+}

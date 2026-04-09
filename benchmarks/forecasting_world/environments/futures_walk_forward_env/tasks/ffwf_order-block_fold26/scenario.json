@@ -1,0 +1,77 @@
+{
+  "source_project": "futures-flow",
+  "scenario_id": "futures_flow.walk_forward.order-block.fold26",
+  "strategy": "order_block",
+  "filter_name": "delta",
+  "fold_number": 26,
+  "total_folds": 27,
+  "train_range": "2023-03-03 to 2023-09-03",
+  "test_range": "2023-09-03 to 2023-12-03",
+  "in_sample_sharpe": 1.54,
+  "best_params": {
+    "filter": "delta",
+    "ofi_threshold": 0.15,
+    "cvd_lookback": 15
+  },
+  "prior_positive_rate": 0.9230769230769231,
+  "prior_avg_oos_sharpe": 3.0096153846153846,
+  "prior_avg_oos_wr": 0.6755384615384615,
+  "prior_avg_oos_pnl": 1559.673076923077,
+  "prior_avg_oos_trades": 20.5,
+  "prior_folds": [
+    {
+      "fold": 20,
+      "train": "2022-09-03 to 2023-03-03",
+      "test": "2023-03-03 to 2023-06-03",
+      "oos_sharpe": 2.2,
+      "oos_trades": 13,
+      "oos_wr": 0.692,
+      "oos_pnl": 1079.0
+    },
+    {
+      "fold": 21,
+      "train": "2022-10-03 to 2023-04-03",
+      "test": "2023-04-03 to 2023-07-03",
+      "oos_sharpe": -0.81,
+      "oos_trades": 14,
+      "oos_wr": 0.429,
+      "oos_pnl": -356.75
+    },
+    {
+      "fold": 22,
+      "train": "2022-11-03 to 2023-05-03",
+      "test": "2023-05-03 to 2023-08-03",
+      "oos_sharpe": -1.54,
+      "oos_trades": 14,
+      "oos_wr": 0.429,
+      "oos_pnl": -525.5
+    },
+    {
+      "fold": 23,
+      "train": "2022-12-03 to 2023-06-03",
+      "test": "2023-06-03 to 2023-09-03",
+      "oos_sharpe": 1.95,
+      "oos_trades": 14,
+      "oos_wr": 0.5,
+      "oos_pnl": 755.75
+    },
+    {
+      "fold": 24,
+      "train": "2023-01-03 to 2023-07-03",
+      "test": "2023-07-03 to 2023-10-03",
+      "oos_sharpe": 5.41,
+      "oos_trades": 10,
+      "oos_wr": 0.8,
+      "oos_pnl": 1861.25
+    },
+    {
+      "fold": 25,
+      "train": "2023-02-03 to 2023-08-03",
+      "test": "2023-08-03 to 2023-11-03",
+      "oos_sharpe": 6.09,
+      "oos_trades": 18,
+      "oos_wr": 0.778,
+      "oos_pnl": 3062.75
+    }
+  ]
+}

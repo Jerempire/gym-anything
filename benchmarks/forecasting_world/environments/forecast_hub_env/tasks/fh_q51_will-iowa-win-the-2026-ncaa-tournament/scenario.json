@@ -1,0 +1,63 @@
+{
+  "source_project": "forecast-hub",
+  "source_question_id": 51,
+  "scenario_id": "forecast_hub.question.51",
+  "question": "Will Iowa win the 2026 NCAA Tournament?",
+  "category": "other",
+  "resolution_date": "2026-04-04",
+  "resolution_criteria": "",
+  "polymarket_slug": null,
+  "latest_market_probability": 0.12,
+  "signals": [
+    {
+      "source": "polymarket",
+      "probability": 0.12,
+      "confidence": 0.9,
+      "timestamp": "2026-04-04T21:33:08.670102+00:00",
+      "evidence": [
+        "https://polymarket.com/event/will-the-carolina-hurricanes-win-the-2026-nhl-stanley-cup"
+      ]
+    },
+    {
+      "source": "metaculus",
+      "probability": 0.15,
+      "confidence": 0.9,
+      "timestamp": "2026-04-04T21:31:11.911227+00:00",
+      "evidence": [
+        "https://www.metaculus.com/questions/41090"
+      ]
+    },
+    {
+      "source": "kalshi",
+      "probability": 0.5,
+      "confidence": 0.1,
+      "timestamp": "2026-04-04T21:33:08.670389+00:00",
+      "evidence": [
+        "https://kalshi.com/markets/KXMVECROSSCATEGORY-S20264C4C222E094-749369280EB"
+      ]
+    }
+  ],
+  "predictions": [
+    {
+      "source": "consensus",
+      "probability": 0.0357,
+      "confidence": 0.35,
+      "timestamp": "2026-04-04T21:05:44.092496+00:00",
+      "reasoning": "Decomposition anchors at ~3% for winning 3 consecutive games as an underdog. However, Polymarket (12%) and Metaculus (15%) both price Iowa significantly higher with good volume/forecaster counts, reflecting Iowa's demonstrated tournament form and momentum. Adjusting upward from yesterday's 2% toward market consensus, but discounting slightly since the structural math of winning 3 games as underdog is hard to overcome. My track record of underestimating YES probabilities also supports moving up from the decomposition anchor."
+    },
+    {
+      "source": "gemini",
+      "probability": 0.037,
+      "confidence": 0.9,
+      "timestamp": "2026-03-31T14:30:09.312127+00:00",
+      "reasoning": "As a No. 9 seed in the Elite Eight, Iowa faces very long odds against higher-seeded remaining opponents."
+    },
+    {
+      "source": "grok",
+      "probability": 0.0441,
+      "confidence": 0.8,
+      "timestamp": "2026-03-31T14:30:18.035219+00:00",
+      "reasoning": "Iowa men's basketball has never won an NCAA Tournament and is not among the elite programs, making their victory in 2026 highly unlikely based on historical base rates and current competitive landscape."
+    }
+  ]
+}

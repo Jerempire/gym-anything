@@ -1,0 +1,20 @@
+{
+  "source_project": "futures-flow",
+  "source_signal_id": 330,
+  "scenario_id": "futures_flow.signal.330",
+  "signal_date": "2026-04-07",
+  "signal_time": "2026-04-07 13:05:00-04:00",
+  "direction": "LONG",
+  "strategy": "liq_sweep",
+  "entry_price": 6629.25,
+  "confidence": 0.732,
+  "ofi_value": 0.0,
+  "cvd_value": 0.0,
+  "atr_value": 29.88,
+  "hold_bars": 12,
+  "target_price": 6644.19,
+  "resolved_at": "2026-04-07T21:30:03.319446+00:00",
+  "params_source": "axplorer",
+  "macro_regime": "bearish",
+  "daily_report_available": true
+}

@@ -1,0 +1,8 @@
+{
+  "scenario_id": "futures_flow.signal.321",
+  "source_project": "futures-flow",
+  "source_signal_id": 321,
+  "outcome": 1,
+  "outcome_price": 6630.5,
+  "outcome_return": 0.1397
+}

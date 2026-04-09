@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>US recession in 2025?</title>
+    <style>
+      body { font-family: Arial, sans-serif; margin: 2rem auto; max-width: 980px; color: #1f2937; line-height: 1.5; }
+      .card { border: 1px solid #d1d5db; border-radius: 10px; padding: 1rem 1.25rem; background: #f9fafb; margin-bottom: 1rem; }
+      ul { padding-left: 1.2rem; }
+      code { background: #eef2ff; padding: 0.1rem 0.3rem; border-radius: 4px; }
+    </style>
+  </head>
+  <body>
+    <h1>US recession in 2025?</h1>
+    <div class="card">
+      <p>Replay a resolved Polymarket market. Your job is to assign your own probability that the market resolves YES using the archived prompt below.</p>
+      <ul>
+        <li><strong>Category:</strong> other</li><li><strong>End date:</strong> 2026-02-28T12:00:00Z</li><li><strong>Market type:</strong> unknown</li><li><strong>Volume:</strong> 11,734,512</li><li><strong>Liquidity:</strong> 0</li><li><strong>Slug:</strong> us-recession-in-2025</li><li><strong>Last trade price:</strong> 1.000</li><li><strong>Best ask:</strong> 0.001</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h2>Resolution Criteria</h2>
+      <p>This market will resolve to “Yes”, if either of the following conditions are met:
+
+1.  The National Bureau of Economic Research (NBER) publicly announces that a recession has occurred in the United States, at any point in 2025, with the announcement made by December 31, 2025, 11:59 PM ET.
+
+2.  The seasonally adjusted annualized percent change in quarterly U.S. real GDP from the previous quarter is less than 0.0 for two consecutive quarters between Q4 2024 and Q4 2025 (inclusive), as reported by the Bureau of Economic Analysis (BEA). 
+
+Otherwise, this market will resolve to &quot;No&quot;. 
+
+Note that advance estimates will be considered. For example, if upon release, the advance estimate for Q2 2025 was negative, and the Q1 2025&#x27;s most recent, up-to-date estimate was also negative, this market would resolve to &quot;Yes&quot;. If on December 31, 2025 the latest estimate for quarterly GDP in Q3 2025 was negative, this market will stay open until the Advance estimate of Q4 2025 is published, at which point it will resolve to &quot;Yes&quot; if Q4 2025 was negative or if the NBER declares a recession by then.
+
+The resolution source will be the official announcements from the NBER and the BEA’s estimate of seasonally adjusted annualized percent change in quarterly US real GDP from previous quarters as released by the Bureau of Economic Analysis (BEA), https://www.bea.gov/data/gdp/gross-domestic-product</p>
+    </div>
+    <div class="card">
+      <h2>Forecast Task</h2>
+      <p>Submit a <code>binary_probability</code> forecast for target <code>market_resolves_yes</code>.</p>
+      <p>The hidden outcome is based on the resolved market result from <code>polymarket-edge</code>.</p>
+    </div>
+  </body>
+</html>

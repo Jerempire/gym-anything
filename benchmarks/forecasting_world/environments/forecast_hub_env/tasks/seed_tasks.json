@@ -1,0 +1,44 @@
+[
+  {
+    "task_id": "fh_q23_will-donald-trump-and-xi-jinping-meet-in-person",
+    "source_question_id": 23,
+    "text": "Will Donald Trump and Xi Jinping meet in person before April 3, 2026?",
+    "category": "geopolitics",
+    "resolved_at": "2026-04-05T13:10:08.415211+00:00"
+  },
+  {
+    "task_id": "fh_q51_will-iowa-win-the-2026-ncaa-tournament",
+    "source_question_id": 51,
+    "text": "Will Iowa win the 2026 NCAA Tournament?",
+    "category": "other",
+    "resolved_at": "2026-04-05T04:01:32.140903+00:00"
+  },
+  {
+    "task_id": "fh_q42_will-duke-win-the-2026-ncaa-tournament",
+    "source_question_id": 42,
+    "text": "Will Duke win the 2026 NCAA Tournament?",
+    "category": "other",
+    "resolved_at": "2026-04-05T03:26:46.016722+00:00"
+  },
+  {
+    "task_id": "fh_q40_will-anthropic-have-the-third-best-ai-model-at-t",
+    "source_question_id": 40,
+    "text": "Will Anthropic have the third-best AI model at the end of March 2026?",
+    "category": "tech",
+    "resolved_at": "2026-04-05T03:26:37.198626+00:00"
+  },
+  {
+    "task_id": "fh_q39_will-russia-capture-kostyantynivka-by-april-30",
+    "source_question_id": 39,
+    "text": "Will Russia capture Kostyantynivka by April 30?",
+    "category": "geopolitics",
+    "resolved_at": "2026-04-05T03:26:32.190541+00:00"
+  },
+  {
+    "task_id": "fh_q50_will-elon-musk-post-1400-tweets-in-march-2026",
+    "source_question_id": 50,
+    "text": "Will Elon Musk post 1400+ tweets in March 2026?",
+    "category": "other",
+    "resolved_at": "2026-04-02T21:17:22.177522+00:00"
+  }
+]

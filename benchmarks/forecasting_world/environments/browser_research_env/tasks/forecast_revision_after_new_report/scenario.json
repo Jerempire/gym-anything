@@ -1,0 +1,12 @@
+{
+  "scenario_id": "research.revision.2026-003",
+  "domain": "browser_research",
+  "task_type": "binary_probability",
+  "target": "event_occurs",
+  "prompt": "Incorporate the new report and estimate the final probability that the event occurs.",
+  "visible_signals": {
+    "prior_market_probability": 0.54,
+    "prior_model_estimate": 0.57,
+    "new_report_weight": "high"
+  }
+}

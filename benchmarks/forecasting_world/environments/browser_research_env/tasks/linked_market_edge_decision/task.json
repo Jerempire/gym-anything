@@ -1,0 +1,30 @@
+{
+  "id": "linked_market_edge_decision@1",
+  "version": "1.0",
+  "env_id": "browser_research_env@0.1",
+  "description": "You are evaluating a frozen linked-market dossier. Review the task workspace at http://127.0.0.1:8123/linked_market_edge_decision/ or the mirrored files under /home/ga/Desktop/ResearchTasks/linked_market_edge_decision/, then save a forecast to /home/ga/Documents/ResearchForecasts/linked_market_edge_decision_forecast.json. The file must assign a probability to the target 'event_occurs' and include a decision field set to one of ['long', 'short', 'abstain'].",
+  "difficulty": "hard",
+  "init": {
+    "timeout_sec": 300,
+    "max_steps": 45,
+    "reward_type": "sparse"
+  },
+  "hooks": {
+    "pre_task": "/workspace/tasks/linked_market_edge_decision/setup_task.sh",
+    "post_task": "/workspace/tasks/linked_market_edge_decision/export_result.sh"
+  },
+  "metadata": {
+    "scenario_id": "research.market.2026-002",
+    "forecast_path": "/home/ga/Documents/ResearchForecasts/linked_market_edge_decision_forecast.json",
+    "expected_task_type": "binary_probability",
+    "expected_target": "event_occurs",
+    "outcome_ref": "browser_research/linked_market_edge_decision.hidden.json",
+    "pass_threshold": 65
+  },
+  "success": {
+    "mode": "program",
+    "spec": {
+      "program": "verifier.py::verify_linked_market_edge_decision"
+    }
+  }
+}

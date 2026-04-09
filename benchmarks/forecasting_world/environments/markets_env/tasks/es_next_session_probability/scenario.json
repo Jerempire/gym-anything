@@ -1,0 +1,36 @@
+{
+  "scenario_id": "markets.es.2026-001",
+  "domain": "markets",
+  "task_type": "binary_probability",
+  "target": "next_session_up",
+  "instrument": "ES",
+  "prompt": "Estimate the probability that the next regular trading session closes above the current session close.",
+  "visible_signals": {
+    "price_context": {
+      "last_close": 5342.25,
+      "five_day_return_pct": 1.8,
+      "twenty_day_return_pct": 4.6
+    },
+    "flow_context": {
+      "cash_session_delta": "moderately positive",
+      "overnight_inventory": "net long",
+      "breadth": "mixed"
+    },
+    "macro_context": {
+      "calendar_event": "major inflation release before open",
+      "rates_reaction": "2y yield higher by 6bp",
+      "usd": "firm"
+    },
+    "technical_context": {
+      "above_vwap": true,
+      "distance_from_vwap_points": 18.5,
+      "resistance_zone": [5348.0, 5356.0],
+      "support_zone": [5318.0, 5326.0]
+    }
+  },
+  "submission_notes": [
+    "Use the target exactly as provided.",
+    "Return a probability between 0 and 1.",
+    "Confidence is optional but recommended."
+  ]
+}

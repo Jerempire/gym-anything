@@ -1,0 +1,30 @@
+{
+  "id": "message_compliance_likelihood@1",
+  "version": "1.0",
+  "env_id": "psychology_env@0.1",
+  "description": "You are forecasting behavior from a synthetic case packet. Review /home/ga/Desktop/PsychologyTasks/message_compliance_likelihood/scenario.json and save a forecast to /home/ga/Documents/PsychologyForecasts/message_compliance_likelihood_forecast.json. The file must follow the shared forecast schema and assign a probability to the target 'complies_with_request'.",
+  "difficulty": "medium",
+  "init": {
+    "timeout_sec": 300,
+    "max_steps": 35,
+    "reward_type": "sparse"
+  },
+  "hooks": {
+    "pre_task": "/workspace/tasks/message_compliance_likelihood/setup_task.sh",
+    "post_task": "/workspace/tasks/message_compliance_likelihood/export_result.sh"
+  },
+  "metadata": {
+    "scenario_id": "psych.synthetic.2026-001",
+    "forecast_path": "/home/ga/Documents/PsychologyForecasts/message_compliance_likelihood_forecast.json",
+    "expected_task_type": "binary_probability",
+    "expected_target": "complies_with_request",
+    "outcome_ref": "psychology/message_compliance_likelihood.hidden.json",
+    "pass_threshold": 65
+  },
+  "success": {
+    "mode": "program",
+    "spec": {
+      "program": "verifier.py::verify_message_compliance_likelihood"
+    }
+  }
+}

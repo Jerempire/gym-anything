@@ -1,0 +1,82 @@
+[
+  {
+    "task_id": "ff_sig367_20260408_liq-sweep_short",
+    "source_signal_id": 367,
+    "signal_date": "2026-04-08",
+    "signal_time": "2026-04-08 11:00:00-04:00",
+    "direction": "SHORT",
+    "strategy": "liq_sweep"
+  },
+  {
+    "task_id": "ff_sig396_20260408_liq-sweep_long",
+    "source_signal_id": 396,
+    "signal_date": "2026-04-08",
+    "signal_time": "2026-04-08 13:05:00-04:00",
+    "direction": "LONG",
+    "strategy": "liq_sweep"
+  },
+  {
+    "task_id": "ff_sig403_20260408_timesfm_long",
+    "source_signal_id": 403,
+    "signal_date": "2026-04-08",
+    "signal_time": "2026-04-08 13:25:00-04:00",
+    "direction": "LONG",
+    "strategy": "timesfm"
+  },
+  {
+    "task_id": "ff_sig378_20260408_timesfm_short",
+    "source_signal_id": 378,
+    "signal_date": "2026-04-08",
+    "signal_time": "2026-04-08 11:40:00-04:00",
+    "direction": "SHORT",
+    "strategy": "timesfm"
+  },
+  {
+    "task_id": "ff_sig286_20260407_cvd-divergence_short",
+    "source_signal_id": 286,
+    "signal_date": "2026-04-07",
+    "signal_time": "2026-04-07 10:05:00-04:00",
+    "direction": "SHORT",
+    "strategy": "cvd_divergence"
+  },
+  {
+    "task_id": "ff_sig301_20260407_liq-sweep_short",
+    "source_signal_id": 301,
+    "signal_date": "2026-04-07",
+    "signal_time": "2026-04-07 11:10:00-04:00",
+    "direction": "SHORT",
+    "strategy": "liq_sweep"
+  },
+  {
+    "task_id": "ff_sig330_20260407_liq-sweep_long",
+    "source_signal_id": 330,
+    "signal_date": "2026-04-07",
+    "signal_time": "2026-04-07 13:05:00-04:00",
+    "direction": "LONG",
+    "strategy": "liq_sweep"
+  },
+  {
+    "task_id": "ff_sig317_20260407_cvd-divergence_long",
+    "source_signal_id": 317,
+    "signal_date": "2026-04-07",
+    "signal_time": "2026-04-07 12:00:00-04:00",
+    "direction": "LONG",
+    "strategy": "cvd_divergence"
+  },
+  {
+    "task_id": "ff_sig321_20260407_timesfm_long",
+    "source_signal_id": 321,
+    "signal_date": "2026-04-07",
+    "signal_time": "2026-04-07 12:30:00-04:00",
+    "direction": "LONG",
+    "strategy": "timesfm"
+  },
+  {
+    "task_id": "ff_sig353_20260407_timesfm_short",
+    "source_signal_id": 353,
+    "signal_date": "2026-04-07",
+    "signal_time": "2026-04-07 15:00:00-04:00",
+    "direction": "SHORT",
+    "strategy": "timesfm"
+  }
+]

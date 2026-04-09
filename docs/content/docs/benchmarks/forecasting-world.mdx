@@ -1,0 +1,182 @@
+---
+title: Forecasting World
+description: Forecasting benchmarks for markets, sports, psychology, browser research, event markets, futures signal replays, and futures walk-forward workflows.
+---
+
+`forecasting_world` is a second benchmark family alongside `cua_world`.
+
+It is built for tasks that look like:
+
+- scenario
+- forecast or action
+- hidden outcome
+- verifier-backed score
+
+The environments currently live under:
+
+```text
+benchmarks/forecasting_world/environments/
+```
+
+That family currently includes:
+
+- `markets_env`
+- `sports_env`
+- `psychology_env`
+- `browser_research_env`
+- `forecast_hub_env`
+- `polymarket_edge_env`
+- `futures_flow_env`
+- `futures_walk_forward_env`
+
+Each environment now also has explicit `train` and `test` split files under:
+
+```text
+benchmarks/forecasting_world/splits/
+```
+
+That means batch benchmark commands can use the default `--split test` behavior without any forecasting-specific override.
+
+## Imported Replay Tasks
+
+`forecast_hub_env` is generated from resolved questions in a local read-only `forecast-hub` project.
+
+`polymarket_edge_env` is generated from resolved markets in a local read-only `polymarket-edge` project.
+
+`futures_flow_env` is generated from resolved directional signals in a local read-only `futures-flow` project.
+
+`futures_walk_forward_env` is generated from walk-forward fold results in the same local read-only `futures-flow` project.
+
+The importer lives at:
+
+```text
+benchmarks/forecasting_world/importers/import_forecast_hub.py
+```
+
+It reads question, signal, and prediction history from the source SQLite DB and writes replay tasks into `gym-anything` only. It does not write back to `forecast-hub`.
+
+Example:
+
+```bash
+python benchmarks/forecasting_world/importers/import_forecast_hub.py --limit 6
+python benchmarks/forecasting_world/importers/import_polymarket_edge.py --limit 6
+python benchmarks/forecasting_world/importers/import_futures_flow.py --limit 6
+python benchmarks/forecasting_world/importers/import_futures_walk_forward.py --limit 6
+```
+
+## Shared Contract
+
+Every forecasting task uses the shared schema and scoring helpers under:
+
+```text
+benchmarks/forecasting_world/shared/
+```
+
+That layer handles:
+
+- submission schema validation
+- binary and multiclass forecast scoring
+- simple decision scoring for edge-style tasks
+- hidden outcome loading
+- verifier utilities
+
+## Browser Research Surface
+
+`browser_research_env` now exposes a frozen local HTTP workspace instead of only raw files.
+
+After a task reset, the task page is available at:
+
+```text
+http://127.0.0.1:8123/<task_id>/
+```
+
+There is also a desktop launcher inside the environment:
+
+```text
+Research Workspace.desktop
+```
+
+The browser content is still mirrored onto the desktop file system under:
+
+```text
+/home/ga/Desktop/ResearchTasks/
+```
+
+Forecast outputs are written under:
+
+```text
+/home/ga/Documents/ResearchForecasts/
+```
+
+## Running A Task
+
+Examples:
+
+```bash
+gym-anything list --verbose
+gym-anything run markets_env --task es_next_session_probability -i
+gym-anything run browser_research_env --task event_probability_from_dossier -i
+gym-anything run polymarket_edge_env --task pm_m516710_us-recession-in-2025 -i
+gym-anything run futures_flow_env --task ff_sig317_20260407_cvd-divergence_long -i
+gym-anything run futures_walk_forward_env --task ffwf_judas-swing_fold26 -i
+gym-anything verify task browser_research_env --task event_probability_from_dossier
+```
+
+You can still use short environment names:
+
+```bash
+gym-anything run browser_research --task linked_market_edge_decision -i
+```
+
+## Batch Reporting
+
+Use `forecast-report` to score a directory of forecast submissions.
+
+Example layouts accepted by the reporter:
+
+```text
+submissions/
+  markets_env/
+    es_next_session_probability.json
+  browser_research_env/
+    linked_market_edge_decision/
+      submission.json
+```
+
+Or flat:
+
+```text
+submissions/
+  es_next_session_probability.json
+  linked_market_edge_decision.json
+```
+
+Example commands:
+
+```bash
+gym-anything forecast-report ./submissions
+gym-anything forecast-report ./submissions --env markets_env
+gym-anything forecast-report ./submissions --env browser_research_env --json
+gym-anything forecast-report ./submissions --env polymarket_edge_env
+gym-anything forecast-report ./submissions --env futures_flow_env --json
+gym-anything forecast-report ./submissions --env futures_walk_forward_env
+```
+
+The report includes:
+
+- overall average score
+- per-environment summaries
+- task-level pass/fail results
+- binary calibration bins using predicted probability vs realized outcome
+- source-prior comparisons for imported finance tasks, including average model edge vs market or system priors
+
+## Current Build Shape
+
+This family is intended for repeatable, frozen, verifier-first forecasting work.
+
+Use it when you want:
+
+- simulation and forecasting tasks without live web fragility
+- hidden labels and objective scoring
+- calibration measurement across many tasks
+- decision-quality evaluation for edge-seeking workflows

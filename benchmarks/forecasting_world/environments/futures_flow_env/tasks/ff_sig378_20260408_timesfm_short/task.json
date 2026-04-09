@@ -1,0 +1,30 @@
+{
+  "id": "ff_sig378_20260408_timesfm_short@1",
+  "version": "1.0",
+  "env_id": "futures_flow_env@0.1",
+  "description": "You are replaying a resolved futures-flow signal. Review the task workspace at http://127.0.0.1:8126/ff_sig378_20260408_timesfm_short/ or the mirrored files under /home/ga/Desktop/FuturesFlowTasks/ff_sig378_20260408_timesfm_short/, then save a forecast to /home/ga/Documents/FuturesFlowForecasts/ff_sig378_20260408_timesfm_short_forecast.json. Assign a probability to the binary target 'signal_correct'.",
+  "difficulty": "medium",
+  "init": {
+    "timeout_sec": 300,
+    "max_steps": 45,
+    "reward_type": "sparse"
+  },
+  "hooks": {
+    "pre_task": "/workspace/tasks/ff_sig378_20260408_timesfm_short/setup_task.sh",
+    "post_task": "/workspace/tasks/ff_sig378_20260408_timesfm_short/export_result.sh"
+  },
+  "metadata": {
+    "scenario_id": "futures_flow.signal.378",
+    "forecast_path": "/home/ga/Documents/FuturesFlowForecasts/ff_sig378_20260408_timesfm_short_forecast.json",
+    "expected_task_type": "binary_probability",
+    "expected_target": "signal_correct",
+    "outcome_ref": "futures_flow/ff_sig378_20260408_timesfm_short.hidden.json",
+    "pass_threshold": 65
+  },
+  "success": {
+    "mode": "program",
+    "spec": {
+      "program": "verifier.py::verify_imported_futures_flow_task"
+    }
+  }
+}

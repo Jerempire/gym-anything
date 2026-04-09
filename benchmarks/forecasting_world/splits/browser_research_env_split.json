@@ -1,0 +1,11 @@
+{
+  "env_folder": "benchmarks/forecasting_world/environments/browser_research_env",
+  "train_ratio": 0.67,
+  "train_tasks": [
+    "event_probability_from_dossier",
+    "linked_market_edge_decision"
+  ],
+  "test_tasks": [
+    "forecast_revision_after_new_report"
+  ]
+}

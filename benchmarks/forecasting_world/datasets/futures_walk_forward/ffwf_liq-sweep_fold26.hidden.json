@@ -1,0 +1,11 @@
+{
+  "scenario_id": "futures_flow.walk_forward.liq-sweep.fold26",
+  "source_project": "futures-flow",
+  "strategy": "liq_sweep",
+  "fold_number": 26,
+  "outcome": 1,
+  "oos_sharpe": 8.48,
+  "oos_trades": 24,
+  "oos_wr": 0.917,
+  "oos_pnl": 5810.75
+}

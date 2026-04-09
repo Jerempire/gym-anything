@@ -1,0 +1,6 @@
+{
+  "scenario_id": "markets.trade.2026-003",
+  "outcome": 0,
+  "market_implied_probability": 0.58,
+  "decision_threshold": 0.05
+}

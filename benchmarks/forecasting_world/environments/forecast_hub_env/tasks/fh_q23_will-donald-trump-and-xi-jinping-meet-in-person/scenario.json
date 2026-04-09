@@ -1,0 +1,63 @@
+{
+  "source_project": "forecast-hub",
+  "source_question_id": 23,
+  "scenario_id": "forecast_hub.question.23",
+  "question": "Will Donald Trump and Xi Jinping meet in person before April 3, 2026?",
+  "category": "geopolitics",
+  "resolution_date": "2026-04-03",
+  "resolution_criteria": "Trump and Xi hold a confirmed in-person meeting",
+  "polymarket_slug": null,
+  "latest_market_probability": 0.525,
+  "signals": [
+    {
+      "source": "polymarket",
+      "probability": 0.525,
+      "confidence": 0.9,
+      "timestamp": "2026-04-04T21:32:56.707169+00:00",
+      "evidence": [
+        "https://polymarket.com/event/trump-out-as-president-before-gta-vi-846"
+      ]
+    },
+    {
+      "source": "metaculus",
+      "probability": 0.1,
+      "confidence": 0.9,
+      "timestamp": "2026-04-04T21:33:02.645693+00:00",
+      "evidence": [
+        "https://www.metaculus.com/questions/40963"
+      ]
+    },
+    {
+      "source": "kalshi",
+      "probability": 0.5,
+      "confidence": 0.1,
+      "timestamp": "2026-03-27T13:18:48.242323+00:00",
+      "evidence": [
+        "https://kalshi.com/markets/KXMVESPORTSMULTIGAMEEXTENDED-S2026BEBFE0226A6-7E42B631365"
+      ]
+    }
+  ],
+  "predictions": [
+    {
+      "source": "consensus",
+      "probability": 0.03,
+      "confidence": 0.97,
+      "timestamp": "2026-04-04T21:01:21.539962+00:00",
+      "reasoning": "The resolution date (April 3, 2026) has already passed. Multiple confirmed sources show the meeting was rescheduled from March to May 14-15, 2026, well after the deadline. No evidence of any in-person meeting before April 3. The Polymarket 52% likely reflects a differently-worded question or longer timeframe. Metaculus at 10% is closer but still too high. Near-certain NO, leaving 3% for unknown/unreported meetings."
+    },
+    {
+      "source": "gemini",
+      "probability": 0.037,
+      "confidence": 0.9,
+      "timestamp": "2026-03-31T14:17:44.413840+00:00",
+      "reasoning": "The meeting originally scheduled for late March/early April was officially postponed and rescheduled for May 2026."
+    },
+    {
+      "source": "grok",
+      "probability": 0.4522,
+      "confidence": 0.7,
+      "timestamp": "2026-03-31T14:18:01.553192+00:00",
+      "reasoning": "The likelihood of a meeting depends heavily on Trump winning the 2024 US presidential election; if he wins, diplomatic norms suggest a high chance of an in-person meeting with Xi Jinping, but if he loses, such a meeting becomes much less probable due to reduced influence and formal channels."
+    }
+  ]
+}

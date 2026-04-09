@@ -1,0 +1,31 @@
+{
+  "id": "burnout_risk_bucket@1",
+  "version": "1.0",
+  "env_id": "psychology_env@0.1",
+  "description": "You are estimating a synthetic burnout-risk bucket from a case packet. Review /home/ga/Desktop/PsychologyTasks/burnout_risk_bucket/scenario.json and save a multiclass forecast to /home/ga/Documents/PsychologyForecasts/burnout_risk_bucket_forecast.json using the target 'burnout_risk_bucket' and the classes ['low', 'medium', 'high'].",
+  "difficulty": "medium",
+  "init": {
+    "timeout_sec": 300,
+    "max_steps": 35,
+    "reward_type": "sparse"
+  },
+  "hooks": {
+    "pre_task": "/workspace/tasks/burnout_risk_bucket/setup_task.sh",
+    "post_task": "/workspace/tasks/burnout_risk_bucket/export_result.sh"
+  },
+  "metadata": {
+    "scenario_id": "psych.synthetic.2026-002",
+    "forecast_path": "/home/ga/Documents/PsychologyForecasts/burnout_risk_bucket_forecast.json",
+    "expected_task_type": "multiclass_distribution",
+    "expected_target": "burnout_risk_bucket",
+    "expected_classes": ["low", "medium", "high"],
+    "outcome_ref": "psychology/burnout_risk_bucket.hidden.json",
+    "pass_threshold": 60
+  },
+  "success": {
+    "mode": "program",
+    "spec": {
+      "program": "verifier.py::verify_burnout_risk_bucket"
+    }
+  }
+}

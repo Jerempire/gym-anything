@@ -1,0 +1,16 @@
+{
+  "source_project": "polymarket-edge",
+  "source_market_id": "525882",
+  "scenario_id": "polymarket_edge.market.525882",
+  "question": "Will the Edmonton Oilers win the Western Conference?",
+  "description": "This market will resolve according to the team that wins the 2025 NHL Western Conference (i.e., the team that advances to the 2025 Stanley Cup Final as the Western Conference representative).\n\nIf at any point it becomes impossible for a team to win the Western Conference based on the rules of the NHL (e.g., they are eliminated from the playoffs), this market will immediately resolve to “No” for that team.\n\nIf the 2025 NHL season is permanently canceled or has not been completed by February 28, 2026, 11:59 PM ET, this market will resolve to “Other”.\n\nOfficial resolution will be based on the NHL’s official playoff results, as published on nhl.com.",
+  "slug": "will-the-edmonton-oilers-win-the-western-conference",
+  "category": "other",
+  "end_date": "2026-02-28T12:00:00Z",
+  "market_type": null,
+  "volume": 510434.813887,
+  "liquidity": 0.0,
+  "last_trade_price": 1.0,
+  "best_bid": 0.999,
+  "best_ask": 1.0
+}

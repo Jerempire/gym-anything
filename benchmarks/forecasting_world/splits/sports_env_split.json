@@ -1,0 +1,11 @@
+{
+  "env_folder": "benchmarks/forecasting_world/environments/sports_env",
+  "train_ratio": 0.67,
+  "train_tasks": [
+    "nba_moneyline_probability",
+    "nfl_total_direction"
+  ],
+  "test_tasks": [
+    "soccer_match_outcome_distribution"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "id": "event_probability_from_dossier@1",
+  "version": "1.0",
+  "env_id": "browser_research_env@0.1",
+  "description": "You are evaluating a frozen event dossier. Review the task workspace at http://127.0.0.1:8123/event_probability_from_dossier/ or the mirrored files under /home/ga/Desktop/ResearchTasks/event_probability_from_dossier/, then save a forecast to /home/ga/Documents/ResearchForecasts/event_probability_from_dossier_forecast.json. The file must follow the shared forecast schema and assign a probability to the target 'policy_adopted_by_deadline'.",
+  "difficulty": "medium",
+  "init": {
+    "timeout_sec": 300,
+    "max_steps": 40,
+    "reward_type": "sparse"
+  },
+  "hooks": {
+    "pre_task": "/workspace/tasks/event_probability_from_dossier/setup_task.sh",
+    "post_task": "/workspace/tasks/event_probability_from_dossier/export_result.sh"
+  },
+  "metadata": {
+    "scenario_id": "research.event.2026-001",
+    "forecast_path": "/home/ga/Documents/ResearchForecasts/event_probability_from_dossier_forecast.json",
+    "expected_task_type": "binary_probability",
+    "expected_target": "policy_adopted_by_deadline",
+    "outcome_ref": "browser_research/event_probability_from_dossier.hidden.json",
+    "pass_threshold": 65
+  },
+  "success": {
+    "mode": "program",
+    "spec": {
+      "program": "verifier.py::verify_event_probability_from_dossier"
+    }
+  }
+}

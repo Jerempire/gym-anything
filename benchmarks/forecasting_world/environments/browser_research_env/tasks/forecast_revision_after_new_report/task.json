@@ -1,0 +1,30 @@
+{
+  "id": "forecast_revision_after_new_report@1",
+  "version": "1.0",
+  "env_id": "browser_research_env@0.1",
+  "description": "You are revising an event forecast after new evidence. Review the task workspace at http://127.0.0.1:8123/forecast_revision_after_new_report/ or the mirrored files under /home/ga/Desktop/ResearchTasks/forecast_revision_after_new_report/, then save a final forecast to /home/ga/Documents/ResearchForecasts/forecast_revision_after_new_report_forecast.json. The file must follow the shared forecast schema and assign a probability to the target 'event_occurs'.",
+  "difficulty": "medium",
+  "init": {
+    "timeout_sec": 300,
+    "max_steps": 45,
+    "reward_type": "sparse"
+  },
+  "hooks": {
+    "pre_task": "/workspace/tasks/forecast_revision_after_new_report/setup_task.sh",
+    "post_task": "/workspace/tasks/forecast_revision_after_new_report/export_result.sh"
+  },
+  "metadata": {
+    "scenario_id": "research.revision.2026-003",
+    "forecast_path": "/home/ga/Documents/ResearchForecasts/forecast_revision_after_new_report_forecast.json",
+    "expected_task_type": "binary_probability",
+    "expected_target": "event_occurs",
+    "outcome_ref": "browser_research/forecast_revision_after_new_report.hidden.json",
+    "pass_threshold": 65
+  },
+  "success": {
+    "mode": "program",
+    "spec": {
+      "program": "verifier.py::verify_forecast_revision_after_new_report"
+    }
+  }
+}

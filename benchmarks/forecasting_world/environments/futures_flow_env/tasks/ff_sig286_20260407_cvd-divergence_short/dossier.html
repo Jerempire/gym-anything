@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>ff_sig286_20260407_cvd-divergence_short</title>
+    <style>
+      body { font-family: Arial, sans-serif; margin: 2rem auto; max-width: 980px; color: #1f2937; line-height: 1.5; }
+      .card { border: 1px solid #d1d5db; border-radius: 10px; padding: 1rem 1.25rem; background: #f9fafb; margin-bottom: 1rem; }
+      ul { padding-left: 1.2rem; }
+      code { background: #eef2ff; padding: 0.1rem 0.3rem; border-radius: 4px; }
+    </style>
+  </head>
+  <body>
+    <h1>cvd_divergence signal replay</h1>
+    <div class="card">
+      <p>This task replays a resolved intraday futures signal imported from <code>futures-flow</code>. Assign your own probability that the directional signal proves correct over the archived holding window.</p>
+      <ul>
+        <li><strong>Signal date:</strong> 2026-04-07</li><li><strong>Signal time:</strong> 2026-04-07 10:05:00-04:00</li><li><strong>Direction:</strong> SHORT</li><li><strong>Strategy:</strong> cvd_divergence</li><li><strong>Entry price:</strong> 6585.75</li><li><strong>Hold bars:</strong> 24</li><li><strong>Confidence:</strong> 0.900</li><li><strong>Parameter source:</strong> axplorer</li><li><strong>Macro regime:</strong> bearish</li><li><strong>Target price:</strong> 6572.09</li><li><strong>ATR:</strong> 10.93</li><li><strong>OFI:</strong> -1.8574</li><li><strong>CVD:</strong> -0.5497</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h2>Forecast Target</h2>
+      <p>Submit a <code>binary_probability</code> forecast for target <code>signal_correct</code>, where YES means the imported signal direction was correct over the configured holding horizon.</p>
+      <p>A same-day ES signal report is available as <code>report.html</code> in this task workspace.</p>
+    </div>
+  </body>
+</html>

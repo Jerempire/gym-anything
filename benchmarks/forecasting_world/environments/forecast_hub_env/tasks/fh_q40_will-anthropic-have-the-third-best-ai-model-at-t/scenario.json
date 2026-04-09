@@ -1,0 +1,56 @@
+{
+  "source_project": "forecast-hub",
+  "source_question_id": 40,
+  "scenario_id": "forecast_hub.question.40",
+  "question": "Will Anthropic have the third-best AI model at the end of March 2026?",
+  "category": "tech",
+  "resolution_date": "2026-03-31",
+  "resolution_criteria": "",
+  "polymarket_slug": null,
+  "latest_market_probability": 0.0145,
+  "signals": [
+    {
+      "source": "polymarket",
+      "probability": 0.0145,
+      "confidence": 0.9,
+      "timestamp": "2026-04-04T21:33:06.064939+00:00",
+      "evidence": [
+        "https://polymarket.com/event/gta-vi-released-before-june-2026"
+      ]
+    },
+    {
+      "source": "metaculus",
+      "probability": 0.76,
+      "confidence": 0.9,
+      "timestamp": "2026-04-04T21:00:16.104816+00:00",
+      "evidence": [
+        "https://www.metaculus.com/questions/41140"
+      ]
+    },
+    {
+      "source": "kalshi",
+      "probability": 0.5,
+      "confidence": 0.1,
+      "timestamp": "2026-04-04T21:33:06.064587+00:00",
+      "evidence": [
+        "https://kalshi.com/markets/KXMVECROSSCATEGORY-S2026C32C806EF40-3C5911EE1F8"
+      ]
+    }
+  ],
+  "predictions": [
+    {
+      "source": "consensus",
+      "probability": 0.45,
+      "confidence": 0.25,
+      "timestamp": "2026-04-04T21:03:08.724880+00:00",
+      "reasoning": "Anchoring on decomposition's 7% but adjusting sharply upward: web research confirms Claude Opus 4.6 is consistently ranked among the top 3 models alongside Gemini 3.1 Pro and GPT-5.4, making a third-place finish plausible. However, markets are wildly divergent — Polymarket at 1% ($13.2M volume) vs Metaculus at 76% (816 forecasters) — suggesting fundamental disagreement on what 'third-best' means under standard resolution. The task-dependent nature of rankings (Claude leads coding, Gemini leads general benchmarks) makes a clean 'third-best' designation ambiguous. Moving down modestly from yesterday's 55% given the strong Polymarket NO signal, but not collapsing to single digits given Metaculus disagreement and my documented bias toward underestimating YES outcomes. Very low confidence due to irreconcilable market signals and resolution ambiguity."
+    },
+    {
+      "source": "grok",
+      "probability": 0.4526,
+      "confidence": 0.65,
+      "timestamp": "2026-03-31T14:24:42.869918+00:00",
+      "reasoning": "Anthropic's Claude series shows strong performance and backing from major investors like Amazon, positioning it well for a top-three spot, but intense competition from OpenAI, Google, and emerging players could prevent this by March 2026."
+    }
+  ]
+}

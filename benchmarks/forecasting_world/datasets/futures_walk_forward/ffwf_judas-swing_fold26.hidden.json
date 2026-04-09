@@ -1,0 +1,11 @@
+{
+  "scenario_id": "futures_flow.walk_forward.judas-swing.fold26",
+  "source_project": "futures-flow",
+  "strategy": "judas_swing",
+  "fold_number": 26,
+  "outcome": 0,
+  "oos_sharpe": -2.82,
+  "oos_trades": 22,
+  "oos_wr": 0.364,
+  "oos_pnl": -7699.0
+}

@@ -1,0 +1,34 @@
+{
+  "scenario_id": "sports.nba.2026-001",
+  "domain": "sports",
+  "task_type": "binary_probability",
+  "target": "home_team_win",
+  "sport": "NBA",
+  "matchup": {
+    "home_team": "Denver Peaks",
+    "away_team": "Seattle Sound"
+  },
+  "visible_signals": {
+    "form": {
+      "home_last_10": "7-3",
+      "away_last_10": "5-5",
+      "home_net_rating": 6.2,
+      "away_net_rating": 1.9
+    },
+    "availability": {
+      "home_star_guard": "probable",
+      "away_rim_protector": "out",
+      "away_back_to_back": true
+    },
+    "matchup_notes": {
+      "rebounding_edge": "home",
+      "transition_edge": "away",
+      "pace_projection": "moderate"
+    },
+    "market_context": {
+      "opening_spread": -4.5,
+      "current_spread": -5.5,
+      "total": 229.5
+    }
+  }
+}

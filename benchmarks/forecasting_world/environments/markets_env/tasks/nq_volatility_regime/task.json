@@ -1,0 +1,31 @@
+{
+  "id": "nq_volatility_regime@1",
+  "version": "1.0",
+  "env_id": "markets_env@0.1",
+  "description": "You are classifying the next NQ session's volatility regime from a frozen scenario packet. Review /home/ga/Desktop/MarketTasks/nq_volatility_regime/scenario.json and save a multiclass forecast to /home/ga/Documents/MarketForecasts/nq_volatility_regime_forecast.json using the target 'next_session_volatility_regime' and the classes ['low', 'medium', 'high'].",
+  "difficulty": "medium",
+  "init": {
+    "timeout_sec": 300,
+    "max_steps": 40,
+    "reward_type": "sparse"
+  },
+  "hooks": {
+    "pre_task": "/workspace/tasks/nq_volatility_regime/setup_task.sh",
+    "post_task": "/workspace/tasks/nq_volatility_regime/export_result.sh"
+  },
+  "metadata": {
+    "scenario_id": "markets.nq.2026-002",
+    "forecast_path": "/home/ga/Documents/MarketForecasts/nq_volatility_regime_forecast.json",
+    "expected_task_type": "multiclass_distribution",
+    "expected_target": "next_session_volatility_regime",
+    "expected_classes": ["low", "medium", "high"],
+    "outcome_ref": "markets/nq_volatility_regime.hidden.json",
+    "pass_threshold": 60
+  },
+  "success": {
+    "mode": "program",
+    "spec": {
+      "program": "verifier.py::verify_nq_volatility_regime"
+    }
+  }
+}

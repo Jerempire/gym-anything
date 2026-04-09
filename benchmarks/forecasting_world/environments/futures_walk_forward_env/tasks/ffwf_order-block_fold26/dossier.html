@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>ffwf_order-block_fold26</title>
+    <style>
+      body { font-family: Arial, sans-serif; margin: 2rem auto; max-width: 1080px; color: #1f2937; line-height: 1.5; }
+      .card { border: 1px solid #d1d5db; border-radius: 10px; padding: 1rem 1.25rem; background: #f9fafb; margin-bottom: 1rem; }
+      table { width: 100%; border-collapse: collapse; margin-top: 0.75rem; }
+      th, td { border: 1px solid #d1d5db; padding: 0.45rem 0.6rem; text-align: left; }
+      th { background: #eef2ff; }
+      pre { background: #111827; color: #f9fafb; padding: 0.9rem; border-radius: 8px; overflow-x: auto; }
+      code { background: #eef2ff; padding: 0.1rem 0.3rem; border-radius: 4px; }
+    </style>
+  </head>
+  <body>
+    <h1>order_block walk-forward replay</h1>
+    <div class="card">
+      <p>Forecast whether this strategy's selected out-of-sample fold will finish with positive OOS Sharpe. The hidden label is based on the imported fold result from <code>futures-flow</code>.</p>
+      <p><strong>Selected fold:</strong> 26 of 27</p>
+      <p><strong>Train window:</strong> 2023-03-03 to 2023-09-03</p>
+      <p><strong>Test window:</strong> 2023-09-03 to 2023-12-03</p>
+      <p><strong>Filter family:</strong> delta</p>
+      <p><strong>In-sample Sharpe:</strong> 1.54</p>
+      <p><strong>Prior positive-fold rate:</strong> 0.923</p>
+      <p><strong>Prior avg OOS Sharpe:</strong> 3.01</p>
+      <p><strong>Prior avg OOS WR:</strong> 0.676</p>
+      <p><strong>Prior avg OOS P&L:</strong> +1559.67</p>
+      <p><strong>Prior avg OOS trades:</strong> 20.5</p>
+    </div>
+    <div class="card">
+      <h2>Best In-Sample Params For Selected Fold</h2>
+      <pre>{
+  &quot;filter&quot;: &quot;delta&quot;,
+  &quot;ofi_threshold&quot;: 0.15,
+  &quot;cvd_lookback&quot;: 15
+}</pre>
+    </div>
+    <div class="card">
+      <h2>Recent Prior Fold History</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Fold</th>
+            <th>Test window</th>
+            <th>Trades</th>
+            <th>WR</th>
+            <th>OOS Sharpe</th>
+            <th>OOS P&amp;L</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>20</td><td>2023-03-03 to 2023-06-03</td><td>13</td><td>0.692</td><td>2.20</td><td>+1079.00</td></tr><tr><td>21</td><td>2023-04-03 to 2023-07-03</td><td>14</td><td>0.429</td><td>-0.81</td><td>-356.75</td></tr><tr><td>22</td><td>2023-05-03 to 2023-08-03</td><td>14</td><td>0.429</td><td>-1.54</td><td>-525.50</td></tr><tr><td>23</td><td>2023-06-03 to 2023-09-03</td><td>14</td><td>0.500</td><td>1.95</td><td>+755.75</td></tr><tr><td>24</td><td>2023-07-03 to 2023-10-03</td><td>10</td><td>0.800</td><td>5.41</td><td>+1861.25</td></tr><tr><td>25</td><td>2023-08-03 to 2023-11-03</td><td>18</td><td>0.778</td><td>6.09</td><td>+3062.75</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card">
+      <p>Submit a <code>binary_probability</code> forecast for target <code>positive_oos_sharpe</code>.</p>
+    </div>
+  </body>
+</html>

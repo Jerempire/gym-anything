@@ -1,0 +1,16 @@
+{
+  "source_project": "polymarket-edge",
+  "source_market_id": "539205",
+  "scenario_id": "polymarket_edge.market.539205",
+  "question": "Will Progress Singapore Party (PSP) win the 2025 Singapore parliamentary election?",
+  "description": "The 2025 Singaporean general election will be held on Saturday, May 3, 2025, to elect all 97 members of the Parliament of Singapore.\n\nThis market will resolve to the political party that controls the most seats in the Parliament of Singapore as a result of the upcoming election.\n\nIf voting in the next Singapore general election does not occur by March 31, 2026, this market will resolve to \"Other\".\n\nIn the case of a tie between this party and any other for the most seats held, this market will resolve in favor of the party whose listed abbreviation comes first in alphabetical order.\n\nThis market's resolution will be based solely on the number of seats held by the named party or coalition.\n\nThis market will resolve based on the result of the election as indicated by a consensus of credible reporting. If there is ambiguity, this market will resolve based solely on the official results as reported by Singapore's government (e.g. via https://www.eld.gov.sg/).",
+  "slug": "will-progress-singapore-party-psp-win-the-2025-singapore-parliamentary-election",
+  "category": "other",
+  "end_date": "2026-03-31T12:00:00Z",
+  "market_type": null,
+  "volume": 341164.400658,
+  "liquidity": 0.0,
+  "last_trade_price": 0.001,
+  "best_bid": null,
+  "best_ask": 0.001
+}

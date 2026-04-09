@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ES 5-min Signals — 2026-04-07</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+               margin: 0; padding: 20px; background: #f8f9fa; color: #1a1a1a; }
+        .container { max-width: 900px; margin: 0 auto; }
+        .card { background: white; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+                 padding: 20px; margin-bottom: 16px; }
+        .header { background: #1a1a2e; color: white; padding: 20px 24px; border-radius: 8px;
+                   margin-bottom: 16px; }
+        .stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+        .stat { text-align: center; padding: 12px; background: #f8f9fa; border-radius: 6px; }
+        .stat-value { font-size: 24px; font-weight: 700; }
+        .stat-label { font-size: 11px; color: #6c757d; margin-top: 4px; }
+        table { width: 100%; border-collapse: collapse; }
+        th { text-align: left; padding: 8px 10px; background: #f8f9fa; font-size: 12px;
+             color: #6c757d; border-bottom: 2px solid #dee2e6; }
+        canvas { width: 100%; height: 200px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 style="margin:0;font-size:22px">ES 5-min Order Flow Signals</h1>
+            <div style="color:#adb5bd;font-size:13px;margin-top:4px">
+                2026-04-07 | Params: axplorer | Hold: 24 bars (1 hour)
+            </div>
+        </div>
+
+        
+        <div class="card" style="border-left:4px solid #dc3545">
+            <h3 style="margin:0 0 8px;font-size:14px;color:#6c757d">Macro Context</h3>
+            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;font-size:13px">
+                <div><strong>GLI Regime:</strong> <span style="color:#dc3545;font-weight:700">BEARISH</span></div>
+                <div><strong>Trend:</strong> Flat</div>
+                <div><strong>Confidence Mult:</strong> 0.70x</div>
+            </div>
+        </div>
+
+        
+        <div class="card" style="border-left:4px solid #28a745">
+            <h3 style="margin:0 0 8px;font-size:14px;color:#28a745">
+                &#9650; TimesFM Price Forecast (Google, 200M params)
+            </h3>
+            <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:8px;font-size:13px">
+                <div><strong>Direction:</strong> <span style="color:#28a745;font-weight:700">LONG</span></div>
+                <div><strong>Target:</strong> $6,700.69 (+0.558%)</div>
+                <div><strong>Confidence:</strong> 95%</div>
+                <div><strong>Horizon:</strong> 24 bars (120 min)</div>
+            </div>
+            <div style="margin-top:6px;font-size:12px;color:#6c757d">
+                Band: $0.00 — $0.00 (10th-90th percentile)
+            </div>
+        </div>
+
+        <div class="stat-grid">
+            <div class="stat">
+                <div class="stat-value" style="color:#28a745">55.6%</div>
+                <div class="stat-label">Win Rate (356 signals)</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value" style="color:#dc3545">-0.009%</div>
+                <div class="stat-label">Avg Return/Signal</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">198</div>
+                <div class="stat-label">Correct / 356 Resolved</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">71</div>
+                <div class="stat-label">Today's Signals</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3 style="margin:0 0 12px;font-size:16px">Today's Signals</h3>
+            <table>
+                <tr>
+                    <th>Time</th><th>Direction</th><th>Entry</th><th>Target</th>
+                    <th>Confidence</th><th>Flow</th><th>Status</th>
+                </tr>
+                
+        <tr>
+            <td style="padding:6px 10px;font-size:12px">00-04:00</td>
+            <td style="padding:6px 10px;color:#dc3545;font-weight:700">&#9660; SHORT</td>
+            <td style="padding:6px 10px;text-align:right">$6,608.25</td>
+            <td style="padding:6px 10px;text-align:right">$6,598.71</td>
+            <td style="padding:6px 10px"><div style="background:#e9ecef;border-radius:3px;height:8px;width:60px;display:inline-block"><div style="background:#dc3545;height:100%;width:60%;border-radius:3px"></div></div> 60%</td>
+            <td style="padding:6px 10px">OFI:+0.000</td>
+            <td style="padding:6px 10px"><span style="color:#dc3545">Loss (-0.764%)</span></td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;font-size:12px">00-04:00</td>
+            <td style="padding:6px 10px;color:#dc3545;font-weight:700">&#9660; SHORT</td>
+            <td style="padding:6px 10px;text-align:right">$6,600.50</td>
+            <td style="padding:6px 10px;text-align:right">$6,590.37</td>
+            <td style="padding:6px 10px"><div style="background:#e9ecef;border-radius:3px;height:8px;width:60px;display:inline-block"><div style="background:#dc3545;height:100%;width:64%;border-radius:3px"></div></div> 64%</td>
+            <td style="padding:6px 10px">OFI:+0.000</td>
+            <td style="padding:6px 10px"><span style="color:#dc3545">Loss (-0.943%)</span></td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;font-size:12px">00-04:00</td>
+            <td style="padding:6px 10px;color:#dc3545;font-weight:700">&#9660; SHORT</td>
+            <td style="padding:6px 10px;text-align:right">$6,602.50</td>
+            <td style="padding:6px 10px;text-align:right">$6,593.71</td>
+            <td style="padding:6px 10px"><div style="background:#e9ecef;border-radius:3px;height:8px;width:60px;display:inline-block"><div style="background:#dc3545;height:100%;width:55%;border-radius:3px"></div></div> 55%</td>
+            <td style="padding:6px 10px">OFI:+0.000</td>
+            <td style="padding:6px 10px"><span style="color:#dc3545">Loss (-0.890%)</span></td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;font-size:12px">00-04:00</td>
+            <td style="padding:6px 10px;color:#dc3545;font-weight:700">&#9660; SHORT</td>
+            <td style="padding:6px 10px;text-align:right">$6,602.00</td>
+            <td style="padding:6px 10px;text-align:right">$6,594.45</td>
+            <td style="padding:6px 10px"><div style="background:#e9ecef;border-radius:3px;height:8px;width:60px;display:inline-block"><div style="background:#dc3545;height:100%;width:46%;border-radius:3px"></div></div> 46%</td>
+            <td style="padding:6px 10px">OFI:+0.000</td>
+            <td style="padding:6px 10px"><span style="color:#dc3545">Loss (-0.867%)</span></td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;font-size:12px">00-04:00</td>
+            <td style="padding:6px 10px;color:#dc3545;font-weight:700">&#9660; SHORT</td>
+            <td style="padding:6px 10px;text-align:right">$6,605.00</td>
+            <td style="padding:6px 10px;text-align:right">$6,599.26</td>
+            <td style="padding:6px 10px"><div style="background:#e9ecef;border-radius:3px;height:8px;width:60px;display:inline-block"><div style="background:#dc3545;height:100%;width:33%;border-radius:3px"></div></div> 33%</td>
+            <td style="padding:6px 10px">OFI:+0.000</td>
+            <td style="padding:6px 10px"><span style="color:#dc3545">Loss (-0.765%)</span></td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;font-size:12px">00-04:00</td>
+            <td style="padding:6px 10px;color:#dc3545;font-weight:700">&#9660; SHORT</td>
+            <td style="padding:6px 10px;text-align:right">$6,604.75</td>
+            <td style="padding:6px 10px;text-align:right">$6,597.25</td>
+            <td style="padding:6px 10px"><div style="background:#e9ecef;border-radius:3px;height:8px;width:60px;display:inline-block"><div style="background:#dc3545;height:100%;width:82%;border-radius:3px"></div></div> 82%</td>
+            <td style="padding:6px 10px">OFI:-1.077</td>
+            <td style="padding:6px 10px"><span style="color:#dc3545">Loss (-0.905%)</span></td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;font-size:12px">00-04:00</td>
+            <td style="padding:6px 10px;color:#28a745;font-weight:700">&#9650; LONG</td>
+            <td style="padding:6px 10px;text-align:right">$6,626.25</td>
+            <td style="padding:6px 10px;text-align:right">$6,631.91</td>
+            <td style="padding:6px 10px"><div style="background:#e9ecef;border-radius:3px;height:8px;width:60px;display:inline-block"><div style="background:#28a745;height:100%;width:33%;border-radius:3px"></div></div> 33%</td>
+            <td style="padding:6px 10px">OFI:+0.000</td>
+            <td style="padding:6px 10px"><span style="color:#dc3545">Loss (-0.283%)</span></td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;font-size:12px">00-04:00</td>
+            <td style="padding:6px 10px;color:#28a745;font-weight:700">&#9650; LONG</td>
+            <td style="padding:6px 10px;text-align:right">$6,626.25</td>
+            <td style="padding:6px 10px;text-align:right">$6,631.91</td>
+            <td style="padding:6px 10px"><div style="background:#e9ecef;border-radius:3px;height:8px;width:60px;display:inline-block"><div style="background:#28a745;height:100%;width:33%;border-radius:3px"></div></div> 33%</td>
+            <td style="padding:6px 10px">OFI:+0.000</td>
+            <td style="padding:6px 10px"><span style="color:#dc3545">Loss (-0.283%)</span></td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;font-size:12px">00-04:00</td>
+            <td style="padding:6px 10px;color:#28a745;font-weight:700">&#9650; LONG</td>
+            <td style="padding:6px 10px;text-align:right">$6,629.00</td>
+            <td style="padding:6px 10px;text-align:right">$6,636.28</td>
+            <td style="padding:6px 10px"><div style="background:#e9ecef;border-radius:3px;height:8px;width:60px;display:inline-block"><div style="background:#28a745;height:100%;width:40%;border-radius:3px"></div></div> 40%</td>
+            <td style="padding:6px 10px">OFI:+0.000</td>
+            <td style="padding:6px 10px"><span style="color:#dc3545">Loss (-0.426%)</span></td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;font-size:12px">00-04:00</td>
+            <td style="padding:6px 10px;color:#28a745;font-weight:700">&#9650; LONG</td>
+            <td style="padding:6px 10px;text-align:right">$6,629.00</td>
+            <td style="padding:6px 10px;text-align:right">$6,636.28</td>
+            <td style="padding:6px 10px"><div style="background:#e9ecef;border-radius:3px;height:8px;width:60px;display:inline-block"><div style="background:#28a745;height:100%;width:40%;border-radius:3px"></div></div> 40%</td>
+            <td style="padding:6px 10px">OFI:+0.000</td>
+            <td style="padding:6px 10px"><span style="color:#dc3545">Loss (-0.426%)</span></td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;font-size:12px">00-04:00</td>
+            <td style="padding:6px 10px;color:#28a745;font-weight:700">&#9650; LONG</td>
+            <td style="padding:6px 10px;text-align:right">$6,630.25</td>
+            <td style="padding:6px 10px;text-align:right">$6,638.64</td>
+            <td style="padding:6px 10px"><div style="background:#e9ecef;border-radius:3px;height:8px;width:60px;display:inline-block"><div style="background:#28a745;height:100%;width:46%;border-radius:3px"></div></div> 46%</td>
+            <td style="padding:6px 10px">OFI:+0.000</td>
+            <td style="padding:6px 10px"><span style="color:#dc3545">Loss (-0.404%)</span></td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;font-size:12px">00-04:00</td>
+            <td style="padding:6px 10px;color:#28a745;font-weight:700">&#9650; LONG</td>
+            <td style="padding:6px 10px;text-align:right">$6,633.00</td>
+            <td style="padding:6px 10px;text-align:right">$6,642.49</td>
+            <td style="padding:6px 10px"><div style="background:#e9ecef;border-radius:3px;height:8px;width:60px;display:inline-block"><div style="background:#28a745;height:100%;width:48%;border-radius:3px"></div></div> 48%</td>
+            <td style="padding:6px 10px">OFI:+0.000</td>
+            <td style="padding:6px 10px"><span style="color:#dc3545">Loss (-0.464%)</span></td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;font-size:12px">00-04:00</td>
+            <td style="padding:6px 10px;color:#28a745;font-weight:700">&#9650; LONG</td>
+            <td style="padding:6px 10px;text-align:right">$6,632.00</td>
+            <td style="padding:6px 10px;text-align:right">$6,641.88</td>
+            <td style="padding:6px 10px"><div style="background:#e9ecef;border-radius:3px;height:8px;width:60px;display:inline-block"><div style="background:#28a745;height:100%;width:48%;border-radius:3px"></div></div> 48%</td>
+            <td style="padding:6px 10px">OFI:+0.000</td>
+            <td style="padding:6px 10px"><span style="color:#dc3545">Loss (-0.411%)</span></td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;font-size:12px">00-04:00</td>
+            <td style="padding:6px 10px;color:#28a745;font-weight:700">&#9650; LONG</td>
+            <td style="padding:6px 10px;text-align:right">$6,632.00</td>
+            <td style="padding:6px 10px;text-align:right">$6,641.88</td>
+            <td style="padding:6px 10px"><div style="background:#e9ecef;border-radius:3px;height:8px;width:60px;display:inline-block"><div style="background:#28a745;height:100%;width:48%;border-radius:3px"></div></div> 48%</td>
+            <td style="padding:6px 10px">OFI:+0.000</td>
+            <td style="padding:6px 10px"><span style="color:#dc3545">Loss (-0.411%)</span></td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;font-size:12px">00-04:00</td>
+            <td style="padding:6px 10px;color:#28a745;font-weight:700">&#9650; LONG</td>
+            <td style="padding:6px 10px;text-align:right">$6,630.50</td>
+            <td style="padding:6px 10px;text-align:right">$6,640.97</td>
+            <td style="padding:6px 10px"><div style="background:#e9ecef;border-radius:3px;height:8px;width:60px;display:inline-block"><div style="background:#28a745;height:100%;width:51%;border-radius:3px"></div></div> 51%</td>
+            <td style="padding:6px 10px">OFI:+0.000</td>
+            <td style="padding:6px 10px"><span style="color:#dc3545">Loss (-0.264%)</span></td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;font-size:12px">00-04:00</td>
+            <td style="padding:6px 10px;color:#28a745;font-weight:700">&#9650; LONG</td>
+            <td style="padding:6px 10px;text-align:right">$6,630.50</td>
+            <td style="padding:6px 10px;text-align:right">$6,640.97</td>
+            <td style="padding:6px 10px"><div style="background:#e9ecef;border-radius:3px;height:8px;width:60px;display:inline-block"><div style="background:#28a745;height:100%;width:51%;border-radius:3px"></div></div> 51%</td>
+            <td style="padding:6px 10px">OFI:+0.000</td>
+            <td style="padding:6px 10px"><span style="color:#dc3545">Loss (-0.264%)</span></td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;font-size:12px">00-04:00</td>
+            <td style="padding:6px 10px;color:#28a745;font-weight:700">&#9650; LONG</td>
+            <td style="padding:6px 10px;text-align:right">$6,637.00</td>
+            <td style="padding:6px 10px;text-align:right">$6,648.70</td>
+            <td style="padding:6px 10px"><div style="background:#e9ecef;border-radius:3px;height:8px;width:60px;display:inline-block"><div style="background:#28a745;height:100%;width:57%;border-radius:3px"></div></div> 57%</td>
+            <td style="padding:6px 10px">OFI:+0.000</td>
+            <td style="padding:6px 10px"><span style="color:#dc3545">Loss (-0.298%)</span></td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;font-size:12px">00-04:00</td>
+            <td style="padding:6px 10px;color:#28a745;font-weight:700">&#9650; LONG</td>
+            <td style="padding:6px 10px;text-align:right">$6,630.75</td>
+            <td style="padding:6px 10px;text-align:right">$6,641.90</td>
+            <td style="padding:6px 10px"><div style="background:#e9ecef;border-radius:3px;height:8px;width:60px;display:inline-block"><div style="background:#28a745;height:100%;width:55%;border-radius:3px"></div></div> 55%</td>
+            <td style="padding:6px 10px">OFI:+0.000</td>
+            <td style="padding:6px 10px"><span style="color:#dc3545">Loss (-0.124%)</span></td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;font-size:12px">00-04:00</td>
+            <td style="padding:6px 10px;color:#dc3545;font-weight:700">&#9660; SHORT</td>
+            <td style="padding:6px 10px;text-align:right">$6,620.75</td>
+            <td style="padding:6px 10px;text-align:right">$6,610.49</td>
+            <td style="padding:6px 10px"><div style="background:#e9ecef;border-radius:3px;height:8px;width:60px;display:inline-block"><div style="background:#dc3545;height:100%;width:60%;border-radius:3px"></div></div> 60%</td>
+            <td style="padding:6px 10px">OFI:+0.000</td>
+            <td style="padding:6px 10px"><span style="color:#dc3545">Loss (-0.064%)</span></td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;font-size:12px">00-04:00</td>
+            <td style="padding:6px 10px;color:#28a745;font-weight:700">&#9650; LONG</td>
+            <td style="padding:6px 10px;text-align:right">$6,620.75</td>
+            <td style="padding:6px 10px;text-align:right">$6,631.56</td>
+            <td style="padding:6px 10px"><div style="background:#e9ecef;border-radius:3px;height:8px;width:60px;display:inline-block"><div style="background:#28a745;height:100%;width:54%;border-radius:3px"></div></div> 54%</td>
+            <td style="padding:6px 10px">OFI:+0.000</td>
+            <td style="padding:6px 10px"><span style="color:#28a745">Win (+0.064%)</span></td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;font-size:12px">00-04:00</td>
+            <td style="padding:6px 10px;color:#dc3545;font-weight:700">&#9660; SHORT</td>
+            <td style="padding:6px 10px;text-align:right">$6,620.75</td>
+            <td style="padding:6px 10px;text-align:right">$6,610.49</td>
+            <td style="padding:6px 10px"><div style="background:#e9ecef;border-radius:3px;height:8px;width:60px;display:inline-block"><div style="background:#dc3545;height:100%;width:60%;border-radius:3px"></div></div> 60%</td>
+            <td style="padding:6px 10px">OFI:+0.000</td>
+            <td style="padding:6px 10px"><span style="color:#dc3545">Loss (-0.064%)</span></td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;font-size:12px">00-04:00</td>
+            <td style="padding:6px 10px;color:#dc3545;font-weight:700">&#9660; SHORT</td>
+            <td style="padding:6px 10px;text-align:right">$6,620.25</td>
+            <td style="padding:6px 10px;text-align:right">$6,608.73</td>
+            <td style="padding:6px 10px"><div style="background:#e9ecef;border-radius:3px;height:8px;width:60px;display:inline-block"><div style="background:#dc3545;height:100%;width:60%;border-radius:3px"></div></div> 60%</td>
+            <td style="padding:6px 10px">OFI:+0.000</td>
+            <td style="padding:6px 10px"><span style="color:#dc3545">Loss (-0.064%)</span></td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;font-size:12px">00-04:00</td>
+            <td style="padding:6px 10px;color:#28a745;font-weight:700">&#9650; LONG</td>
+            <td style="padding:6px 10px;text-align:right">$6,620.25</td>
+            <td style="padding:6px 10px;text-align:right">$6,632.40</td>
+            <td style="padding:6px 10px"><div style="background:#e9ecef;border-radius:3px;height:8px;width:60px;display:inline-block"><div style="background:#28a745;height:100%;width:60%;border-radius:3px"></div></div> 60%</td>
+            <td style="padding:6px 10px">OFI:+0.000</td>
+            <td style="padding:6px 10px"><span style="color:#28a745">Win (+0.064%)</span></td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;font-size:12px">00-04:00</td>
+            <td style="padding:6px 10px;color:#28a745;font-weight:700">&#9650; LONG</td>
+            <td style="padding:6px 10px;text-align:right">$6,623.50</td>
+            <td style="padding:6px 10px;text-align:right">$6,637.14</td>
+            <td style="padding:6px 10px"><div style="background:#e9ecef;border-radius:3px;height:8px;width:60px;display:inline-block"><div style="background:#28a745;height:100%;width:67%;border-radius:3px"></div></div> 67%</td>
+            <td style="padding:6px 10px">OFI:+0.000</td>
+            <td style="padding:6px 10px"><span style="color:#28a745">Win (+0.023%)</span></td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;font-size:12px">00-04:00</td>
+            <td style="padding:6px 10px;color:#28a745;font-weight:700">&#9650; LONG</td>
+            <td style="padding:6px 10px;text-align:right">$6,625.00</td>
+            <td style="padding:6px 10px;text-align:right">$6,639.35</td>
+            <td style="padding:6px 10px"><div style="background:#e9ecef;border-radius:3px;height:8px;width:60px;display:inline-block"><div style="background:#28a745;height:100%;width:70%;border-radius:3px"></div></div> 70%</td>
+            <td style="padding:6px 10px">OFI:+0.000</td>
+            <td style="padding:6px 10px"><span style="color:#28a745">Win (+0.094%)</span></td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;font-size:12px">00-04:00</td>
+            <td style="padding:6px 10px;color:#28a745;font-weight:700">&#9650; LONG</td>
+            <td style="padding:6px 10px;text-align:right">$6,626.25</td>
+            <td style="padding:6px 10px;text-align:right">$6,640.99</td>
+            <td style="padding:6px 10px"><div style="background:#e9ecef;border-radius:3px;height:8px;width:60px;display:inline-block"><div style="background:#28a745;height:100%;width:72%;border-radius:3px"></div></div> 72%</td>
+            <td style="padding:6px 10px">OFI:+0.000</td>
+            <td style="padding:6px 10px"><span style="color:#28a745">Win (+0.019%)</span></td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;font-size:12px">00-04:00</td>
+            <td style="padding:6px 10px;color:#28a745;font-weight:700">&#9650; LONG</td>
+            <td style="padding:6px 10px;text-align:right">$6,629.25</td>
+            <td style="padding:6px 10px;text-align:right">$6,644.19</td>
+            <td style="padding:6px 10px"><div style="background:#e9ecef;border-radius:3px;height:8px;width:60px;display:inline-block"><div style="background:#28a745;height:100%;width:73%;border-radius:3px"></div></div> 73%</td>
+            <td style="padding:6px 10px">OFI:+0.000</td>
+            <td style="padding:6px 10px"><span style="color:#dc3545">Loss (-0.045%)</span></td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;font-size:12px">00-04:00</td>
+            <td style="padding:6px 10px;color:#28a745;font-weight:700">&#9650; LONG</td>
+            <td style="padding:6px 10px;text-align:right">$6,622.75</td>
+            <td style="padding:6px 10px;text-align:right">$6,636.48</td>
+            <td style="padding:6px 10px"><div style="background:#e9ecef;border-radius:3px;height:8px;width:60px;display:inline-block"><div style="background:#28a745;height:100%;width:68%;border-radius:3px"></div></div> 68%</td>
+            <td style="padding:6px 10px">OFI:+0.000</td>
+            <td style="padding:6px 10px"><span style="color:#28a745">Win (+0.098%)</span></td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;font-size:12px">00-04:00</td>
+            <td style="padding:6px 10px;color:#28a745;font-weight:700">&#9650; LONG</td>
+            <td style="padding:6px 10px;text-align:right">$6,622.75</td>
+            <td style="padding:6px 10px;text-align:right">$6,636.48</td>
+            <td style="padding:6px 10px"><div style="background:#e9ecef;border-radius:3px;height:8px;width:60px;display:inline-block"><div style="background:#28a745;height:100%;width:68%;border-radius:3px"></div></div> 68%</td>
+            <td style="padding:6px 10px">OFI:+0.000</td>
+            <td style="padding:6px 10px"><span style="color:#28a745">Win (+0.098%)</span></td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;font-size:12px">00-04:00</td>
+            <td style="padding:6px 10px;color:#28a745;font-weight:700">&#9650; LONG</td>
+            <td style="padding:6px 10px;text-align:right">$6,627.50</td>
+            <td style="padding:6px 10px;text-align:right">$6,641.45</td>
+            <td style="padding:6px 10px"><div style="background:#e9ecef;border-radius:3px;height:8px;width:60px;display:inline-block"><div style="background:#28a745;height:100%;width:70%;border-radius:3px"></div></div> 70%</td>
+            <td style="padding:6px 10px">OFI:+0.000</td>
+            <td style="padding:6px 10px"><span style="color:#28a745">Win (+0.038%)</span></td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;font-size:12px">00-04:00</td>
+            <td style="padding:6px 10px;color:#28a745;font-weight:700">&#9650; LONG</td>
+            <td style="padding:6px 10px;text-align:right">$6,627.50</td>
+            <td style="padding:6px 10px;text-align:right">$6,641.45</td>
+            <td style="padding:6px 10px"><div style="background:#e9ecef;border-radius:3px;height:8px;width:60px;display:inline-block"><div style="background:#28a745;height:100%;width:70%;border-radius:3px"></div></div> 70%</td>
+            <td style="padding:6px 10px">OFI:+0.000</td>
+            <td style="padding:6px 10px"><span style="color:#28a745">Win (+0.038%)</span></td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;font-size:12px">00-04:00</td>
+            <td style="padding:6px 10px;color:#28a745;font-weight:700">&#9650; LONG</td>
+            <td style="padding:6px 10px;text-align:right">$6,626.75</td>
+            <td style="padding:6px 10px;text-align:right">$6,639.79</td>
+            <td style="padding:6px 10px"><div style="background:#e9ecef;border-radius:3px;height:8px;width:60px;display:inline-block"><div style="background:#28a745;height:100%;width:64%;border-radius:3px"></div></div> 64%</td>
+            <td style="padding:6px 10px">OFI:+0.000</td>
+            <td style="padding:6px 10px"><span style="color:#28a745">Win (+0.090%)</span></td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;font-size:12px">00-04:00</td>
+            <td style="padding:6px 10px;color:#28a745;font-weight:700">&#9650; LONG</td>
+            <td style="padding:6px 10px;text-align:right">$6,623.25</td>
+            <td style="padding:6px 10px;text-align:right">$6,634.89</td>
+            <td style="padding:6px 10px"><div style="background:#e9ecef;border-radius:3px;height:8px;width:60px;display:inline-block"><div style="background:#28a745;height:100%;width:57%;border-radius:3px"></div></div> 57%</td>
+            <td style="padding:6px 10px">OFI:+0.000</td>
+            <td style="padding:6px 10px"><span style="color:#28a745">Win (+0.125%)</span></td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;font-size:12px">00-04:00</td>
+            <td style="padding:6px 10px;color:#28a745;font-weight:700">&#9650; LONG</td>
+            <td style="padding:6px 10px;text-align:right">$6,619.00</td>
+            <td style="padding:6px 10px;text-align:right">$6,629.62</td>
+            <td style="padding:6px 10px"><div style="background:#e9ecef;border-radius:3px;height:8px;width:60px;display:inline-block"><div style="background:#28a745;height:100%;width:53%;border-radius:3px"></div></div> 53%</td>
+            <td style="padding:6px 10px">OFI:+0.000</td>
+            <td style="padding:6px 10px"><span style="color:#28a745">Win (+0.174%)</span></td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;font-size:12px">00-04:00</td>
+            <td style="padding:6px 10px;color:#28a745;font-weight:700">&#9650; LONG</td>
+            <td style="padding:6px 10px;text-align:right">$6,624.75</td>
+            <td style="padding:6px 10px;text-align:right">$6,635.78</td>
+            <td style="padding:6px 10px"><div style="background:#e9ecef;border-radius:3px;height:8px;width:60px;display:inline-block"><div style="background:#28a745;height:100%;width:56%;border-radius:3px"></div></div> 56%</td>
+            <td style="padding:6px 10px">OFI:+0.000</td>
+            <td style="padding:6px 10px"><span style="color:#28a745">Win (+0.185%)</span></td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;font-size:12px">00-04:00</td>
+            <td style="padding:6px 10px;color:#28a745;font-weight:700">&#9650; LONG</td>
+            <td style="padding:6px 10px;text-align:right">$6,621.25</td>
+            <td style="padding:6px 10px;text-align:right">$6,631.00</td>
+            <td style="padding:6px 10px"><div style="background:#e9ecef;border-radius:3px;height:8px;width:60px;display:inline-block"><div style="background:#28a745;height:100%;width:49%;border-radius:3px"></div></div> 49%</td>
+            <td style="padding:6px 10px">OFI:+0.000</td>
+            <td style="padding:6px 10px"><span style="color:#28a745">Win (+0.140%)</span></td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;font-size:12px">00-04:00</td>
+            <td style="padding:6px 10px;color:#28a745;font-weight:700">&#9650; LONG</td>
+            <td style="padding:6px 10px;text-align:right">$6,621.25</td>
+            <td style="padding:6px 10px;text-align:right">$6,631.00</td>
+            <td style="padding:6px 10px"><div style="background:#e9ecef;border-radius:3px;height:8px;width:60px;display:inline-block"><div style="background:#28a745;height:100%;width:49%;border-radius:3px"></div></div> 49%</td>
+            <td style="padding:6px 10px">OFI:+0.000</td>
+            <td style="padding:6px 10px"><span style="color:#28a745">Win (+0.140%)</span></td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;font-size:12px">00-04:00</td>
+            <td style="padding:6px 10px;color:#28a745;font-weight:700">&#9650; LONG</td>
+            <td style="padding:6px 10px;text-align:right">$6,621.00</td>
+            <td style="padding:6px 10px;text-align:right">$6,629.48</td>
+            <td style="padding:6px 10px"><div style="background:#e9ecef;border-radius:3px;height:8px;width:60px;display:inline-block"><div style="background:#28a745;height:100%;width:42%;border-radius:3px"></div></div> 42%</td>
+            <td style="padding:6px 10px">OFI:+0.000</td>
+            <td style="padding:6px 10px"><span style="color:#dc3545">Loss (-0.004%)</span></td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;font-size:12px">00-04:00</td>
+            <td style="padding:6px 10px;color:#28a745;font-weight:700">&#9650; LONG</td>
+            <td style="padding:6px 10px;text-align:right">$6,613.25</td>
+            <td style="padding:6px 10px;text-align:right">$6,619.36</td>
+            <td style="padding:6px 10px"><div style="background:#e9ecef;border-radius:3px;height:8px;width:60px;display:inline-block"><div style="background:#28a745;height:100%;width:22%;border-radius:3px"></div></div> 22%</td>
+            <td style="padding:6px 10px">OFI:+0.000</td>
+            <td style="padding:6px 10px"><span style="color:#28a745">Win (+0.117%)</span></td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;font-size:12px">00-04:00</td>
+            <td style="padding:6px 10px;color:#28a745;font-weight:700">&#9650; LONG</td>
+            <td style="padding:6px 10px;text-align:right">$6,616.75</td>
+            <td style="padding:6px 10px;text-align:right">$6,631.26</td>
+            <td style="padding:6px 10px"><div style="background:#e9ecef;border-radius:3px;height:8px;width:60px;display:inline-block"><div style="background:#28a745;height:100%;width:58%;border-radius:3px"></div></div> 58%</td>
+            <td style="padding:6px 10px">OFI:+1.081</td>
+            <td style="padding:6px 10px"><span style="color:#28a745">Win (+0.189%)</span></td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;font-size:12px">00-04:00</td>
+            <td style="padding:6px 10px;color:#28a745;font-weight:700">&#9650; LONG</td>
+            <td style="padding:6px 10px;text-align:right">$6,616.75</td>
+            <td style="padding:6px 10px;text-align:right">$6,631.26</td>
+            <td style="padding:6px 10px"><div style="background:#e9ecef;border-radius:3px;height:8px;width:60px;display:inline-block"><div style="background:#28a745;height:100%;width:58%;border-radius:3px"></div></div> 58%</td>
+            <td style="padding:6px 10px">OFI:+1.081</td>
+            <td style="padding:6px 10px"><span style="color:#28a745">Win (+0.189%)</span></td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;font-size:12px">00-04:00</td>
+            <td style="padding:6px 10px;color:#dc3545;font-weight:700">&#9660; SHORT</td>
+            <td style="padding:6px 10px;text-align:right">$6,592.50</td>
+            <td style="padding:6px 10px;text-align:right">$6,585.95</td>
+            <td style="padding:6px 10px"><div style="background:#e9ecef;border-radius:3px;height:8px;width:60px;display:inline-block"><div style="background:#dc3545;height:100%;width:36%;border-radius:3px"></div></div> 36%</td>
+            <td style="padding:6px 10px">OFI:+0.000</td>
+            <td style="padding:6px 10px"><span style="color:#dc3545">Loss (-0.542%)</span></td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;font-size:12px">00-04:00</td>
+            <td style="padding:6px 10px;color:#dc3545;font-weight:700">&#9660; SHORT</td>
+            <td style="padding:6px 10px;text-align:right">$6,592.50</td>
+            <td style="padding:6px 10px;text-align:right">$6,585.95</td>
+            <td style="padding:6px 10px"><div style="background:#e9ecef;border-radius:3px;height:8px;width:60px;display:inline-block"><div style="background:#dc3545;height:100%;width:36%;border-radius:3px"></div></div> 36%</td>
+            <td style="padding:6px 10px">OFI:+0.000</td>
+            <td style="padding:6px 10px"><span style="color:#dc3545">Loss (-0.542%)</span></td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;font-size:12px">00-04:00</td>
+            <td style="padding:6px 10px;color:#dc3545;font-weight:700">&#9660; SHORT</td>
+            <td style="padding:6px 10px;text-align:right">$6,589.50</td>
+            <td style="padding:6px 10px;text-align:right">$6,581.55</td>
+            <td style="padding:6px 10px"><div style="background:#e9ecef;border-radius:3px;height:8px;width:60px;display:inline-block"><div style="background:#dc3545;height:100%;width:44%;border-radius:3px"></div></div> 44%</td>
+            <td style="padding:6px 10px">OFI:+0.000</td>
+            <td style="padding:6px 10px"><span style="color:#dc3545">Loss (-0.577%)</span></td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;font-size:12px">00-04:00</td>
+            <td style="padding:6px 10px;color:#dc3545;font-weight:700">&#9660; SHORT</td>
+            <td style="padding:6px 10px;text-align:right">$6,589.50</td>
+            <td style="padding:6px 10px;text-align:right">$6,581.55</td>
+            <td style="padding:6px 10px"><div style="background:#e9ecef;border-radius:3px;height:8px;width:60px;display:inline-block"><div style="background:#dc3545;height:100%;width:44%;border-radius:3px"></div></div> 44%</td>
+            <td style="padding:6px 10px">OFI:+0.000</td>
+            <td style="padding:6px 10px"><span style="color:#dc3545">Loss (-0.577%)</span></td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;font-size:12px">00-04:00</td>
+            <td style="padding:6px 10px;color:#dc3545;font-weight:700">&#9660; SHORT</td>
+            <td style="padding:6px 10px;text-align:right">$6,592.75</td>
+            <td style="padding:6px 10px;text-align:right">$6,584.47</td>
+            <td style="padding:6px 10px"><div style="background:#e9ecef;border-radius:3px;height:8px;width:60px;display:inline-block"><div style="background:#dc3545;height:100%;width:46%;border-radius:3px"></div></div> 46%</td>
+            <td style="padding:6px 10px">OFI:+0.000</td>
+            <td style="padding:6px 10px"><span style="color:#dc3545">Loss (-0.466%)</span></td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;font-size:12px">00-04:00</td>
+            <td style="padding:6px 10px;color:#dc3545;font-weight:700">&#9660; SHORT</td>
+            <td style="padding:6px 10px;text-align:right">$6,592.75</td>
+            <td style="padding:6px 10px;text-align:right">$6,584.47</td>
+            <td style="padding:6px 10px"><div style="background:#e9ecef;border-radius:3px;height:8px;width:60px;display:inline-block"><div style="background:#dc3545;height:100%;width:46%;border-radius:3px"></div></div> 46%</td>
+            <td style="padding:6px 10px">OFI:+0.000</td>
+            <td style="padding:6px 10px"><span style="color:#dc3545">Loss (-0.466%)</span></td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;font-size:12px">00-04:00</td>
+            <td style="padding:6px 10px;color:#dc3545;font-weight:700">&#9660; SHORT</td>
+            <td style="padding:6px 10px;text-align:right">$6,595.25</td>
+            <td style="padding:6px 10px;text-align:right">$6,586.23</td>
+            <td style="padding:6px 10px"><div style="background:#e9ecef;border-radius:3px;height:8px;width:60px;display:inline-block"><div style="background:#dc3545;height:100%;width:50%;border-radius:3px"></div></div> 50%</td>
+            <td style="padding:6px 10px">OFI:+0.000</td>
+            <td style="padding:6px 10px"><span style="color:#dc3545">Loss (-0.352%)</span></td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;font-size:12px">00-04:00</td>
+            <td style="padding:6px 10px;color:#dc3545;font-weight:700">&#9660; SHORT</td>
+            <td style="padding:6px 10px;text-align:right">$6,596.25</td>
+            <td style="padding:6px 10px;text-align:right">$6,586.10</td>
+            <td style="padding:6px 10px"><div style="background:#e9ecef;border-radius:3px;height:8px;width:60px;display:inline-block"><div style="background:#dc3545;height:100%;width:55%;border-radius:3px"></div></div> 55%</td>
+            <td style="padding:6px 10px">OFI:+0.000</td>
+            <td style="padding:6px 10px"><span style="color:#dc3545">Loss (-0.440%)</span></td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;font-size:12px">00-04:00</td>
+            <td style="padding:6px 10px;color:#dc3545;font-weight:700">&#9660; SHORT</td>
+            <td style="padding:6px 10px;text-align:right">$6,596.25</td>
+            <td style="padding:6px 10px;text-align:right">$6,586.10</td>
+            <td style="padding:6px 10px"><div style="background:#e9ecef;border-radius:3px;height:8px;width:60px;display:inline-block"><div style="background:#dc3545;height:100%;width:55%;border-radius:3px"></div></div> 55%</td>
+            <td style="padding:6px 10px">OFI:+0.000</td>
+            <td style="padding:6px 10px"><span style="color:#dc3545">Loss (-0.440%)</span></td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;font-size:12px">00-04:00</td>
+            <td style="padding:6px 10px;color:#dc3545;font-weight:700">&#9660; SHORT</td>
+            <td style="padding:6px 10px;text-align:right">$6,586.50</td>
+            <td style="padding:6px 10px;text-align:right">$6,574.14</td>
+            <td style="padding:6px 10px"><div style="background:#e9ecef;border-radius:3px;height:8px;width:60px;display:inline-block"><div style="background:#dc3545;height:100%;width:69%;border-radius:3px"></div></div> 69%</td>
+            <td style="padding:6px 10px">OFI:+0.000</td>
+            <td style="padding:6px 10px"><span style="color:#dc3545">Loss (-0.539%)</span></td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;font-size:12px">00-04:00</td>
+            <td style="padding:6px 10px;color:#dc3545;font-weight:700">&#9660; SHORT</td>
+            <td style="padding:6px 10px;text-align:right">$6,586.50</td>
+            <td style="padding:6px 10px;text-align:right">$6,574.14</td>
+            <td style="padding:6px 10px"><div style="background:#e9ecef;border-radius:3px;height:8px;width:60px;display:inline-block"><div style="background:#dc3545;height:100%;width:69%;border-radius:3px"></div></div> 69%</td>
+            <td style="padding:6px 10px">OFI:+0.000</td>
+            <td style="padding:6px 10px"><span style="color:#dc3545">Loss (-0.539%)</span></td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;font-size:12px">00-04:00</td>
+            <td style="padding:6px 10px;color:#dc3545;font-weight:700">&#9660; SHORT</td>
+            <td style="padding:6px 10px;text-align:right">$6,592.75</td>
+            <td style="padding:6px 10px;text-align:right">$6,580.73</td>
+            <td style="padding:6px 10px"><div style="background:#e9ecef;border-radius:3px;height:8px;width:60px;display:inline-block"><div style="background:#dc3545;height:100%;width:68%;border-radius:3px"></div></div> 68%</td>
+            <td style="padding:6px 10px">OFI:+0.000</td>
+            <td style="padding:6px 10px"><span style="color:#dc3545">Loss (-0.425%)</span></td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;font-size:12px">00-04:00</td>
+            <td style="padding:6px 10px;color:#dc3545;font-weight:700">&#9660; SHORT</td>
+            <td style="padding:6px 10px;text-align:right">$6,583.50</td>
+            <td style="padding:6px 10px;text-align:right">$6,569.76</td>
+            <td style="padding:6px 10px"><div style="background:#e9ecef;border-radius:3px;height:8px;width:60px;display:inline-block"><div style="background:#dc3545;height:100%;width:79%;border-radius:3px"></div></div> 79%</td>
+            <td style="padding:6px 10px">OFI:+0.000</td>
+            <td style="padding:6px 10px"><span style="color:#dc3545">Loss (-0.467%)</span></td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;font-size:12px">00-04:00</td>
+            <td style="padding:6px 10px;color:#dc3545;font-weight:700">&#9660; SHORT</td>
+            <td style="padding:6px 10px;text-align:right">$6,583.50</td>
+            <td style="padding:6px 10px;text-align:right">$6,569.76</td>
+            <td style="padding:6px 10px"><div style="background:#e9ecef;border-radius:3px;height:8px;width:60px;display:inline-block"><div style="background:#dc3545;height:100%;width:79%;border-radius:3px"></div></div> 79%</td>
+            <td style="padding:6px 10px">OFI:+0.000</td>
+            <td style="padding:6px 10px"><span style="color:#dc3545">Loss (-0.467%)</span></td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;font-size:12px">00-04:00</td>
+            <td style="padding:6px 10px;color:#dc3545;font-weight:700">&#9660; SHORT</td>
+            <td style="padding:6px 10px;text-align:right">$6,579.00</td>
+            <td style="padding:6px 10px;text-align:right">$6,565.29</td>
+            <td style="padding:6px 10px"><div style="background:#e9ecef;border-radius:3px;height:8px;width:60px;display:inline-block"><div style="background:#dc3545;height:100%;width:79%;border-radius:3px"></div></div> 79%</td>
+            <td style="padding:6px 10px">OFI:+0.000</td>
+            <td style="padding:6px 10px"><span style="color:#dc3545">Loss (-0.540%)</span></td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;font-size:12px">00-04:00</td>
+            <td style="padding:6px 10px;color:#dc3545;font-weight:700">&#9660; SHORT</td>
+            <td style="padding:6px 10px;text-align:right">$6,578.50</td>
+            <td style="padding:6px 10px;text-align:right">$6,565.99</td>
+            <td style="padding:6px 10px"><div style="background:#e9ecef;border-radius:3px;height:8px;width:60px;display:inline-block"><div style="background:#dc3545;height:100%;width:72%;border-radius:3px"></div></div> 72%</td>
+            <td style="padding:6px 10px">OFI:+0.000</td>
+            <td style="padding:6px 10px"><span style="color:#dc3545">Loss (-0.479%)</span></td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;font-size:12px">00-04:00</td>
+            <td style="padding:6px 10px;color:#dc3545;font-weight:700">&#9660; SHORT</td>
+            <td style="padding:6px 10px;text-align:right">$6,588.50</td>
+            <td style="padding:6px 10px;text-align:right">$6,571.68</td>
+            <td style="padding:6px 10px"><div style="background:#e9ecef;border-radius:3px;height:8px;width:60px;display:inline-block"><div style="background:#dc3545;height:100%;width:60%;border-radius:3px"></div></div> 60%</td>
+            <td style="padding:6px 10px">OFI:+0.000</td>
+            <td style="padding:6px 10px"><span style="color:#dc3545">Loss (-0.429%)</span></td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;font-size:12px">00-04:00</td>
+            <td style="padding:6px 10px;color:#dc3545;font-weight:700">&#9660; SHORT</td>
+            <td style="padding:6px 10px;text-align:right">$6,599.00</td>
+            <td style="padding:6px 10px;text-align:right">$6,590.46</td>
+            <td style="padding:6px 10px"><div style="background:#e9ecef;border-radius:3px;height:8px;width:60px;display:inline-block"><div style="background:#dc3545;height:100%;width:52%;border-radius:3px"></div></div> 52%</td>
+            <td style="padding:6px 10px">OFI:+0.000</td>
+            <td style="padding:6px 10px"><span style="color:#dc3545">Loss (-0.026%)</span></td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;font-size:12px">00-04:00</td>
+            <td style="padding:6px 10px;color:#dc3545;font-weight:700">&#9660; SHORT</td>
+            <td style="padding:6px 10px;text-align:right">$6,602.50</td>
+            <td style="padding:6px 10px;text-align:right">$6,593.97</td>
+            <td style="padding:6px 10px"><div style="background:#e9ecef;border-radius:3px;height:8px;width:60px;display:inline-block"><div style="background:#dc3545;height:100%;width:51%;border-radius:3px"></div></div> 51%</td>
+            <td style="padding:6px 10px">OFI:+0.000</td>
+            <td style="padding:6px 10px"><span style="color:#28a745">Win (+0.110%)</span></td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;font-size:12px">00-04:00</td>
+            <td style="padding:6px 10px;color:#dc3545;font-weight:700">&#9660; SHORT</td>
+            <td style="padding:6px 10px;text-align:right">$6,603.00</td>
+            <td style="padding:6px 10px;text-align:right">$6,594.21</td>
+            <td style="padding:6px 10px"><div style="background:#e9ecef;border-radius:3px;height:8px;width:60px;display:inline-block"><div style="background:#dc3545;height:100%;width:50%;border-radius:3px"></div></div> 50%</td>
+            <td style="padding:6px 10px">OFI:+0.000</td>
+            <td style="padding:6px 10px"><span style="color:#28a745">Win (+0.163%)</span></td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;font-size:12px">00-04:00</td>
+            <td style="padding:6px 10px;color:#dc3545;font-weight:700">&#9660; SHORT</td>
+            <td style="padding:6px 10px;text-align:right">$6,606.00</td>
+            <td style="padding:6px 10px;text-align:right">$6,588.99</td>
+            <td style="padding:6px 10px"><div style="background:#e9ecef;border-radius:3px;height:8px;width:60px;display:inline-block"><div style="background:#dc3545;height:100%;width:60%;border-radius:3px"></div></div> 60%</td>
+            <td style="padding:6px 10px">OFI:+0.000</td>
+            <td style="padding:6px 10px"><span style="color:#28a745">Win (+0.254%)</span></td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;font-size:12px">00-04:00</td>
+            <td style="padding:6px 10px;color:#dc3545;font-weight:700">&#9660; SHORT</td>
+            <td style="padding:6px 10px;text-align:right">$6,609.75</td>
+            <td style="padding:6px 10px;text-align:right">$6,591.21</td>
+            <td style="padding:6px 10px"><div style="background:#e9ecef;border-radius:3px;height:8px;width:60px;display:inline-block"><div style="background:#dc3545;height:100%;width:60%;border-radius:3px"></div></div> 60%</td>
+            <td style="padding:6px 10px">OFI:+0.000</td>
+            <td style="padding:6px 10px"><span style="color:#28a745">Win (+0.265%)</span></td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;font-size:12px">00-04:00</td>
+            <td style="padding:6px 10px;color:#dc3545;font-weight:700">&#9660; SHORT</td>
+            <td style="padding:6px 10px;text-align:right">$6,609.75</td>
+            <td style="padding:6px 10px;text-align:right">$6,591.21</td>
+            <td style="padding:6px 10px"><div style="background:#e9ecef;border-radius:3px;height:8px;width:60px;display:inline-block"><div style="background:#dc3545;height:100%;width:60%;border-radius:3px"></div></div> 60%</td>
+            <td style="padding:6px 10px">OFI:+0.000</td>
+            <td style="padding:6px 10px"><span style="color:#28a745">Win (+0.265%)</span></td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;font-size:12px">00-04:00</td>
+            <td style="padding:6px 10px;color:#dc3545;font-weight:700">&#9660; SHORT</td>
+            <td style="padding:6px 10px;text-align:right">$6,606.50</td>
+            <td style="padding:6px 10px;text-align:right">$6,589.09</td>
+            <td style="padding:6px 10px"><div style="background:#e9ecef;border-radius:3px;height:8px;width:60px;display:inline-block"><div style="background:#dc3545;height:100%;width:60%;border-radius:3px"></div></div> 60%</td>
+            <td style="padding:6px 10px">OFI:+0.000</td>
+            <td style="padding:6px 10px"><span style="color:#28a745">Win (+0.178%)</span></td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;font-size:12px">00-04:00</td>
+            <td style="padding:6px 10px;color:#dc3545;font-weight:700">&#9660; SHORT</td>
+            <td style="padding:6px 10px;text-align:right">$6,606.50</td>
+            <td style="padding:6px 10px;text-align:right">$6,589.09</td>
+            <td style="padding:6px 10px"><div style="background:#e9ecef;border-radius:3px;height:8px;width:60px;display:inline-block"><div style="background:#dc3545;height:100%;width:60%;border-radius:3px"></div></div> 60%</td>
+            <td style="padding:6px 10px">OFI:+0.000</td>
+            <td style="padding:6px 10px"><span style="color:#28a745">Win (+0.178%)</span></td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;font-size:12px">00-04:00</td>
+            <td style="padding:6px 10px;color:#dc3545;font-weight:700">&#9660; SHORT</td>
+            <td style="padding:6px 10px;text-align:right">$6,607.25</td>
+            <td style="padding:6px 10px;text-align:right">$6,590.11</td>
+            <td style="padding:6px 10px"><div style="background:#e9ecef;border-radius:3px;height:8px;width:60px;display:inline-block"><div style="background:#dc3545;height:100%;width:60%;border-radius:3px"></div></div> 60%</td>
+            <td style="padding:6px 10px">OFI:+0.000</td>
+            <td style="padding:6px 10px"><span style="color:#28a745">Win (+0.189%)</span></td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;font-size:12px">00-04:00</td>
+            <td style="padding:6px 10px;color:#dc3545;font-weight:700">&#9660; SHORT</td>
+            <td style="padding:6px 10px;text-align:right">$6,596.25</td>
+            <td style="padding:6px 10px;text-align:right">$6,584.91</td>
+            <td style="padding:6px 10px"><div style="background:#e9ecef;border-radius:3px;height:8px;width:60px;display:inline-block"><div style="background:#dc3545;height:100%;width:65%;border-radius:3px"></div></div> 65%</td>
+            <td style="padding:6px 10px">OFI:+0.000</td>
+            <td style="padding:6px 10px"><span style="color:#28a745">Win (+0.152%)</span></td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;font-size:12px">00-04:00</td>
+            <td style="padding:6px 10px;color:#dc3545;font-weight:700">&#9660; SHORT</td>
+            <td style="padding:6px 10px;text-align:right">$6,590.75</td>
+            <td style="padding:6px 10px;text-align:right">$6,579.63</td>
+            <td style="padding:6px 10px"><div style="background:#e9ecef;border-radius:3px;height:8px;width:60px;display:inline-block"><div style="background:#dc3545;height:100%;width:65%;border-radius:3px"></div></div> 65%</td>
+            <td style="padding:6px 10px">OFI:+0.000</td>
+            <td style="padding:6px 10px"><span style="color:#dc3545">Loss (-0.027%)</span></td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;font-size:12px">00-04:00</td>
+            <td style="padding:6px 10px;color:#dc3545;font-weight:700">&#9660; SHORT</td>
+            <td style="padding:6px 10px;text-align:right">$6,585.75</td>
+            <td style="padding:6px 10px;text-align:right">$6,572.09</td>
+            <td style="padding:6px 10px"><div style="background:#e9ecef;border-radius:3px;height:8px;width:60px;display:inline-block"><div style="background:#dc3545;height:100%;width:90%;border-radius:3px"></div></div> 90%</td>
+            <td style="padding:6px 10px">OFI:-1.857</td>
+            <td style="padding:6px 10px"><span style="color:#dc3545">Loss (-0.368%)</span></td>
+        </tr>
+        <tr>
+            <td style="padding:6px 10px;font-size:12px">00-04:00</td>
+            <td style="padding:6px 10px;color:#dc3545;font-weight:700">&#9660; SHORT</td>
+            <td style="padding:6px 10px;text-align:right">$6,614.75</td>
+            <td style="padding:6px 10px;text-align:right">$6,597.50</td>
+            <td style="padding:6px 10px"><div style="background:#e9ecef;border-radius:3px;height:8px;width:60px;display:inline-block"><div style="background:#dc3545;height:100%;width:60%;border-radius:3px"></div></div> 60%</td>
+            <td style="padding:6px 10px">OFI:+0.000</td>
+            <td style="padding:6px 10px"><span style="color:#28a745">Win (+0.174%)</span></td>
+        </tr>
+            </table>
+        </div>
+
+        <div class="card">
+            <h3 style="margin:0 0 12px;font-size:16px">Cumulative Return</h3>
+            <canvas id="eqChart"></canvas>
+        </div>
+
+        <div class="card">
+            <h3 style="margin:0 0 12px;font-size:16px">Recent Signals (Last 30)</h3>
+            <table>
+                <tr><th>Date</th><th>Time</th><th>Dir</th><th>Entry</th><th>Conf</th><th>Return</th></tr>
+                
+        <tr style="border-bottom:1px solid #eee">
+            <td style="padding:4px 8px;font-size:12px">2026-04-07</td>
+            <td style="padding:4px 8px;font-size:12px">00-04:00</td>
+            <td style="padding:4px 8px;color:#dc3545;font-weight:600">&#9660; SHORT</td>
+            <td style="padding:4px 8px;text-align:right">$6,608.25</td>
+            <td style="padding:4px 8px;text-align:right">60%</td>
+            <td style="padding:4px 8px;text-align:right"><span style="color:#dc3545">-0.764%</span></td>
+        </tr>
+        <tr style="border-bottom:1px solid #eee">
+            <td style="padding:4px 8px;font-size:12px">2026-04-07</td>
+            <td style="padding:4px 8px;font-size:12px">00-04:00</td>
+            <td style="padding:4px 8px;color:#dc3545;font-weight:600">&#9660; SHORT</td>
+            <td style="padding:4px 8px;text-align:right">$6,600.50</td>
+            <td style="padding:4px 8px;text-align:right">64%</td>
+            <td style="padding:4px 8px;text-align:right"><span style="color:#dc3545">-0.943%</span></td>
+        </tr>
+        <tr style="border-bottom:1px solid #eee">
+            <td style="padding:4px 8px;font-size:12px">2026-04-07</td>
+            <td style="padding:4px 8px;font-size:12px">00-04:00</td>
+            <td style="padding:4px 8px;color:#dc3545;font-weight:600">&#9660; SHORT</td>
+            <td style="padding:4px 8px;text-align:right">$6,602.50</td>
+            <td style="padding:4px 8px;text-align:right">55%</td>
+            <td style="padding:4px 8px;text-align:right"><span style="color:#dc3545">-0.890%</span></td>
+        </tr>
+        <tr style="border-bottom:1px solid #eee">
+            <td style="padding:4px 8px;font-size:12px">2026-04-07</td>
+            <td style="padding:4px 8px;font-size:12px">00-04:00</td>
+            <td style="padding:4px 8px;color:#dc3545;font-weight:600">&#9660; SHORT</td>
+            <td style="padding:4px 8px;text-align:right">$6,602.00</td>
+            <td style="padding:4px 8px;text-align:right">46%</td>
+            <td style="padding:4px 8px;text-align:right"><span style="color:#dc3545">-0.867%</span></td>
+        </tr>
+        <tr style="border-bottom:1px solid #eee">
+            <td style="padding:4px 8px;font-size:12px">2026-04-07</td>
+            <td style="padding:4px 8px;font-size:12px">00-04:00</td>
+            <td style="padding:4px 8px;color:#dc3545;font-weight:600">&#9660; SHORT</td>
+            <td style="padding:4px 8px;text-align:right">$6,605.00</td>
+            <td style="padding:4px 8px;text-align:right">33%</td>
+            <td style="padding:4px 8px;text-align:right"><span style="color:#dc3545">-0.765%</span></td>
+        </tr>
+        <tr style="border-bottom:1px solid #eee">
+            <td style="padding:4px 8px;font-size:12px">2026-04-07</td>
+            <td style="padding:4px 8px;font-size:12px">00-04:00</td>
+            <td style="padding:4px 8px;color:#dc3545;font-weight:600">&#9660; SHORT</td>
+            <td style="padding:4px 8px;text-align:right">$6,604.75</td>
+            <td style="padding:4px 8px;text-align:right">82%</td>
+            <td style="padding:4px 8px;text-align:right"><span style="color:#dc3545">-0.905%</span></td>
+        </tr>
+        <tr style="border-bottom:1px solid #eee">
+            <td style="padding:4px 8px;font-size:12px">2026-04-07</td>
+            <td style="padding:4px 8px;font-size:12px">00-04:00</td>
+            <td style="padding:4px 8px;color:#28a745;font-weight:600">&#9650; LONG</td>
+            <td style="padding:4px 8px;text-align:right">$6,626.25</td>
+            <td style="padding:4px 8px;text-align:right">33%</td>
+            <td style="padding:4px 8px;text-align:right"><span style="color:#dc3545">-0.283%</span></td>
+        </tr>
+        <tr style="border-bottom:1px solid #eee">
+            <td style="padding:4px 8px;font-size:12px">2026-04-07</td>
+            <td style="padding:4px 8px;font-size:12px">00-04:00</td>
+            <td style="padding:4px 8px;color:#28a745;font-weight:600">&#9650; LONG</td>
+            <td style="padding:4px 8px;text-align:right">$6,626.25</td>
+            <td style="padding:4px 8px;text-align:right">33%</td>
+            <td style="padding:4px 8px;text-align:right"><span style="color:#dc3545">-0.283%</span></td>
+        </tr>
+        <tr style="border-bottom:1px solid #eee">
+            <td style="padding:4px 8px;font-size:12px">2026-04-07</td>
+            <td style="padding:4px 8px;font-size:12px">00-04:00</td>
+            <td style="padding:4px 8px;color:#28a745;font-weight:600">&#9650; LONG</td>
+            <td style="padding:4px 8px;text-align:right">$6,629.00</td>
+            <td style="padding:4px 8px;text-align:right">40%</td>
+            <td style="padding:4px 8px;text-align:right"><span style="color:#dc3545">-0.426%</span></td>
+        </tr>
+        <tr style="border-bottom:1px solid #eee">
+            <td style="padding:4px 8px;font-size:12px">2026-04-07</td>
+            <td style="padding:4px 8px;font-size:12px">00-04:00</td>
+            <td style="padding:4px 8px;color:#28a745;font-weight:600">&#9650; LONG</td>
+            <td style="padding:4px 8px;text-align:right">$6,629.00</td>
+            <td style="padding:4px 8px;text-align:right">40%</td>
+            <td style="padding:4px 8px;text-align:right"><span style="color:#dc3545">-0.426%</span></td>
+        </tr>
+        <tr style="border-bottom:1px solid #eee">
+            <td style="padding:4px 8px;font-size:12px">2026-04-07</td>
+            <td style="padding:4px 8px;font-size:12px">00-04:00</td>
+            <td style="padding:4px 8px;color:#28a745;font-weight:600">&#9650; LONG</td>
+            <td style="padding:4px 8px;text-align:right">$6,630.25</td>
+            <td style="padding:4px 8px;text-align:right">46%</td>
+            <td style="padding:4px 8px;text-align:right"><span style="color:#dc3545">-0.404%</span></td>
+        </tr>
+        <tr style="border-bottom:1px solid #eee">
+            <td style="padding:4px 8px;font-size:12px">2026-04-07</td>
+            <td style="padding:4px 8px;font-size:12px">00-04:00</td>
+            <td style="padding:4px 8px;color:#28a745;font-weight:600">&#9650; LONG</td>
+            <td style="padding:4px 8px;text-align:right">$6,633.00</td>
+            <td style="padding:4px 8px;text-align:right">48%</td>
+            <td style="padding:4px 8px;text-align:right"><span style="color:#dc3545">-0.464%</span></td>
+        </tr>
+        <tr style="border-bottom:1px solid #eee">
+            <td style="padding:4px 8px;font-size:12px">2026-04-07</td>
+            <td style="padding:4px 8px;font-size:12px">00-04:00</td>
+            <td style="padding:4px 8px;color:#28a745;font-weight:600">&#9650; LONG</td>
+            <td style="padding:4px 8px;text-align:right">$6,632.00</td>
+            <td style="padding:4px 8px;text-align:right">48%</td>
+            <td style="padding:4px 8px;text-align:right"><span style="color:#dc3545">-0.411%</span></td>
+        </tr>
+        <tr style="border-bottom:1px solid #eee">
+            <td style="padding:4px 8px;font-size:12px">2026-04-07</td>
+            <td style="padding:4px 8px;font-size:12px">00-04:00</td>
+            <td style="padding:4px 8px;color:#28a745;font-weight:600">&#9650; LONG</td>
+            <td style="padding:4px 8px;text-align:right">$6,632.00</td>
+            <td style="padding:4px 8px;text-align:right">48%</td>
+            <td style="padding:4px 8px;text-align:right"><span style="color:#dc3545">-0.411%</span></td>
+        </tr>
+        <tr style="border-bottom:1px solid #eee">
+            <td style="padding:4px 8px;font-size:12px">2026-04-07</td>
+            <td style="padding:4px 8px;font-size:12px">00-04:00</td>
+            <td style="padding:4px 8px;color:#28a745;font-weight:600">&#9650; LONG</td>
+            <td style="padding:4px 8px;text-align:right">$6,630.50</td>
+            <td style="padding:4px 8px;text-align:right">51%</td>
+            <td style="padding:4px 8px;text-align:right"><span style="color:#dc3545">-0.264%</span></td>
+        </tr>
+        <tr style="border-bottom:1px solid #eee">
+            <td style="padding:4px 8px;font-size:12px">2026-04-07</td>
+            <td style="padding:4px 8px;font-size:12px">00-04:00</td>
+            <td style="padding:4px 8px;color:#28a745;font-weight:600">&#9650; LONG</td>
+            <td style="padding:4px 8px;text-align:right">$6,630.50</td>
+            <td style="padding:4px 8px;text-align:right">51%</td>
+            <td style="padding:4px 8px;text-align:right"><span style="color:#dc3545">-0.264%</span></td>
+        </tr>
+        <tr style="border-bottom:1px solid #eee">
+            <td style="padding:4px 8px;font-size:12px">2026-04-07</td>
+            <td style="padding:4px 8px;font-size:12px">00-04:00</td>
+            <td style="padding:4px 8px;color:#28a745;font-weight:600">&#9650; LONG</td>
+            <td style="padding:4px 8px;text-align:right">$6,637.00</td>
+            <td style="padding:4px 8px;text-align:right">57%</td>
+            <td style="padding:4px 8px;text-align:right"><span style="color:#dc3545">-0.298%</span></td>
+        </tr>
+        <tr style="border-bottom:1px solid #eee">
+            <td style="padding:4px 8px;font-size:12px">2026-04-07</td>
+            <td style="padding:4px 8px;font-size:12px">00-04:00</td>
+            <td style="padding:4px 8px;color:#28a745;font-weight:600">&#9650; LONG</td>
+            <td style="padding:4px 8px;text-align:right">$6,630.75</td>
+            <td style="padding:4px 8px;text-align:right">55%</td>
+            <td style="padding:4px 8px;text-align:right"><span style="color:#dc3545">-0.124%</span></td>
+        </tr>
+        <tr style="border-bottom:1px solid #eee">
+            <td style="padding:4px 8px;font-size:12px">2026-04-07</td>
+            <td style="padding:4px 8px;font-size:12px">00-04:00</td>
+            <td style="padding:4px 8px;color:#dc3545;font-weight:600">&#9660; SHORT</td>
+            <td style="padding:4px 8px;text-align:right">$6,620.75</td>
+            <td style="padding:4px 8px;text-align:right">60%</td>
+            <td style="padding:4px 8px;text-align:right"><span style="color:#dc3545">-0.064%</span></td>
+        </tr>
+        <tr style="border-bottom:1px solid #eee">
+            <td style="padding:4px 8px;font-size:12px">2026-04-07</td>
+            <td style="padding:4px 8px;font-size:12px">00-04:00</td>
+            <td style="padding:4px 8px;color:#28a745;font-weight:600">&#9650; LONG</td>
+            <td style="padding:4px 8px;text-align:right">$6,620.75</td>
+            <td style="padding:4px 8px;text-align:right">54%</td>
+            <td style="padding:4px 8px;text-align:right"><span style="color:#28a745">+0.064%</span></td>
+        </tr>
+        <tr style="border-bottom:1px solid #eee">
+            <td style="padding:4px 8px;font-size:12px">2026-04-07</td>
+            <td style="padding:4px 8px;font-size:12px">00-04:00</td>
+            <td style="padding:4px 8px;color:#dc3545;font-weight:600">&#9660; SHORT</td>
+            <td style="padding:4px 8px;text-align:right">$6,620.75</td>
+            <td style="padding:4px 8px;text-align:right">60%</td>
+            <td style="padding:4px 8px;text-align:right"><span style="color:#dc3545">-0.064%</span></td>
+        </tr>
+        <tr style="border-bottom:1px solid #eee">
+            <td style="padding:4px 8px;font-size:12px">2026-04-07</td>
+            <td style="padding:4px 8px;font-size:12px">00-04:00</td>
+            <td style="padding:4px 8px;color:#dc3545;font-weight:600">&#9660; SHORT</td>
+            <td style="padding:4px 8px;text-align:right">$6,620.25</td>
+            <td style="padding:4px 8px;text-align:right">60%</td>
+            <td style="padding:4px 8px;text-align:right"><span style="color:#dc3545">-0.064%</span></td>
+        </tr>
+        <tr style="border-bottom:1px solid #eee">
+            <td style="padding:4px 8px;font-size:12px">2026-04-07</td>
+            <td style="padding:4px 8px;font-size:12px">00-04:00</td>
+            <td style="padding:4px 8px;color:#28a745;font-weight:600">&#9650; LONG</td>
+            <td style="padding:4px 8px;text-align:right">$6,620.25</td>
+            <td style="padding:4px 8px;text-align:right">60%</td>
+            <td style="padding:4px 8px;text-align:right"><span style="color:#28a745">+0.064%</span></td>
+        </tr>
+        <tr style="border-bottom:1px solid #eee">
+            <td style="padding:4px 8px;font-size:12px">2026-04-07</td>
+            <td style="padding:4px 8px;font-size:12px">00-04:00</td>
+            <td style="padding:4px 8px;color:#28a745;font-weight:600">&#9650; LONG</td>
+            <td style="padding:4px 8px;text-align:right">$6,623.50</td>
+            <td style="padding:4px 8px;text-align:right">67%</td>
+            <td style="padding:4px 8px;text-align:right"><span style="color:#28a745">+0.023%</span></td>
+        </tr>
+        <tr style="border-bottom:1px solid #eee">
+            <td style="padding:4px 8px;font-size:12px">2026-04-07</td>
+            <td style="padding:4px 8px;font-size:12px">00-04:00</td>
+            <td style="padding:4px 8px;color:#28a745;font-weight:600">&#9650; LONG</td>
+            <td style="padding:4px 8px;text-align:right">$6,625.00</td>
+            <td style="padding:4px 8px;text-align:right">70%</td>
+            <td style="padding:4px 8px;text-align:right"><span style="color:#28a745">+0.094%</span></td>
+        </tr>
+        <tr style="border-bottom:1px solid #eee">
+            <td style="padding:4px 8px;font-size:12px">2026-04-07</td>
+            <td style="padding:4px 8px;font-size:12px">00-04:00</td>
+            <td style="padding:4px 8px;color:#28a745;font-weight:600">&#9650; LONG</td>
+            <td style="padding:4px 8px;text-align:right">$6,626.25</td>
+            <td style="padding:4px 8px;text-align:right">72%</td>
+            <td style="padding:4px 8px;text-align:right"><span style="color:#28a745">+0.019%</span></td>
+        </tr>
+        <tr style="border-bottom:1px solid #eee">
+            <td style="padding:4px 8px;font-size:12px">2026-04-07</td>
+            <td style="padding:4px 8px;font-size:12px">00-04:00</td>
+            <td style="padding:4px 8px;color:#28a745;font-weight:600">&#9650; LONG</td>
+            <td style="padding:4px 8px;text-align:right">$6,629.25</td>
+            <td style="padding:4px 8px;text-align:right">73%</td>
+            <td style="padding:4px 8px;text-align:right"><span style="color:#dc3545">-0.045%</span></td>
+        </tr>
+        <tr style="border-bottom:1px solid #eee">
+            <td style="padding:4px 8px;font-size:12px">2026-04-07</td>
+            <td style="padding:4px 8px;font-size:12px">00-04:00</td>
+            <td style="padding:4px 8px;color:#28a745;font-weight:600">&#9650; LONG</td>
+            <td style="padding:4px 8px;text-align:right">$6,622.75</td>
+            <td style="padding:4px 8px;text-align:right">68%</td>
+            <td style="padding:4px 8px;text-align:right"><span style="color:#28a745">+0.098%</span></td>
+        </tr>
+        <tr style="border-bottom:1px solid #eee">
+            <td style="padding:4px 8px;font-size:12px">2026-04-07</td>
+            <td style="padding:4px 8px;font-size:12px">00-04:00</td>
+            <td style="padding:4px 8px;color:#28a745;font-weight:600">&#9650; LONG</td>
+            <td style="padding:4px 8px;text-align:right">$6,622.75</td>
+            <td style="padding:4px 8px;text-align:right">68%</td>
+            <td style="padding:4px 8px;text-align:right"><span style="color:#28a745">+0.098%</span></td>
+        </tr>
+        <tr style="border-bottom:1px solid #eee">
+            <td style="padding:4px 8px;font-size:12px">2026-04-07</td>
+            <td style="padding:4px 8px;font-size:12px">00-04:00</td>
+            <td style="padding:4px 8px;color:#28a745;font-weight:600">&#9650; LONG</td>
+            <td style="padding:4px 8px;text-align:right">$6,627.50</td>
+            <td style="padding:4px 8px;text-align:right">70%</td>
+            <td style="padding:4px 8px;text-align:right"><span style="color:#28a745">+0.038%</span></td>
+        </tr>
+            </table>
+        </div>
+
+        <div style="text-align:center;color:#6c757d;font-size:11px;margin-top:16px;padding:12px">
+            ES Order Flow Signal Generator | Futures Flow | Axplorer-optimized
+        </div>
+    </div>
+
+    <script>
+    // Simple equity curve chart
+    const data = [{"date": "2026-04-07", "cum_return": 12.605}, {"date": "2026-04-07", "cum_return": 12.579}, {"date": "2026-04-07", "cum_return": 12.15}, {"date": "2026-04-07", "cum_return": 11.671}, {"date": "2026-04-07", "cum_return": 11.132}, {"date": "2026-04-07", "cum_return": 10.664}, {"date": "2026-04-07", "cum_return": 10.197}, {"date": "2026-04-07", "cum_return": 9.773}, {"date": "2026-04-07", "cum_return": 9.234}, {"date": "2026-04-07", "cum_return": 8.695}, {"date": "2026-04-07", "cum_return": 8.255}, {"date": "2026-04-07", "cum_return": 7.815}, {"date": "2026-04-07", "cum_return": 7.463}, {"date": "2026-04-07", "cum_return": 6.997}, {"date": "2026-04-07", "cum_return": 6.53}, {"date": "2026-04-07", "cum_return": 5.953}, {"date": "2026-04-07", "cum_return": 5.377}, {"date": "2026-04-07", "cum_return": 4.834}, {"date": "2026-04-07", "cum_return": 4.292}, {"date": "2026-04-07", "cum_return": 4.481}, {"date": "2026-04-07", "cum_return": 4.67}, {"date": "2026-04-07", "cum_return": 4.787}, {"date": "2026-04-07", "cum_return": 4.783}, {"date": "2026-04-07", "cum_return": 4.923}, {"date": "2026-04-07", "cum_return": 5.063}, {"date": "2026-04-07", "cum_return": 5.248}, {"date": "2026-04-07", "cum_return": 5.421}, {"date": "2026-04-07", "cum_return": 5.546}, {"date": "2026-04-07", "cum_return": 5.636}, {"date": "2026-04-07", "cum_return": 5.674}, {"date": "2026-04-07", "cum_return": 5.712}, {"date": "2026-04-07", "cum_return": 5.81}, {"date": "2026-04-07", "cum_return": 5.908}, {"date": "2026-04-07", "cum_return": 5.863}, {"date": "2026-04-07", "cum_return": 5.882}, {"date": "2026-04-07", "cum_return": 5.976}, {"date": "2026-04-07", "cum_return": 5.999}, {"date": "2026-04-07", "cum_return": 6.063}, {"date": "2026-04-07", "cum_return": 5.999}, {"date": "2026-04-07", "cum_return": 5.934}, {"date": "2026-04-07", "cum_return": 5.999}, {"date": "2026-04-07", "cum_return": 5.934}, {"date": "2026-04-07", "cum_return": 5.81}, {"date": "2026-04-07", "cum_return": 5.512}, {"date": "2026-04-07", "cum_return": 5.248}, {"date": "2026-04-07", "cum_return": 4.985}, {"date": "2026-04-07", "cum_return": 4.574}, {"date": "2026-04-07", "cum_return": 4.163}, {"date": "2026-04-07", "cum_return": 3.699}, {"date": "2026-04-07", "cum_return": 3.296}, {"date": "2026-04-07", "cum_return": 2.869}, {"date": "2026-04-07", "cum_return": 2.443}, {"date": "2026-04-07", "cum_return": 2.16}, {"date": "2026-04-07", "cum_return": 1.877}, {"date": "2026-04-07", "cum_return": 0.973}, {"date": "2026-04-07", "cum_return": 0.208}, {"date": "2026-04-07", "cum_return": -0.659}, {"date": "2026-04-07", "cum_return": -1.549}, {"date": "2026-04-07", "cum_return": -2.492}, {"date": "2026-04-07", "cum_return": -3.256}];
+    const canvas = document.getElementById('eqChart');
+    if (canvas && data.length > 1) {
+        const ctx = canvas.getContext('2d');
+        const W = canvas.width = canvas.offsetWidth;
+        const H = canvas.height = 200;
+        const values = data.map(d => d.cum_return);
+        const minV = Math.min(0, ...values);
+        const maxV = Math.max(0.01, ...values);
+        const range = maxV - minV || 1;
+
+        ctx.strokeStyle = values[values.length-1] >= 0 ? '#28a745' : '#dc3545';
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        values.forEach((v, i) => {
+            const x = (i / (values.length - 1)) * W;
+            const y = H - ((v - minV) / range) * (H - 20) - 10;
+            i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+        });
+        ctx.stroke();
+
+        // Zero line
+        const zeroY = H - ((0 - minV) / range) * (H - 20) - 10;
+        ctx.strokeStyle = '#dee2e6';
+        ctx.lineWidth = 1;
+        ctx.setLineDash([4, 4]);
+        ctx.beginPath();
+        ctx.moveTo(0, zeroY);
+        ctx.lineTo(W, zeroY);
+        ctx.stroke();
+    }
+    </script>
+</body>
+</html>

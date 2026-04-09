@@ -1,0 +1,63 @@
+{
+  "source_project": "forecast-hub",
+  "source_question_id": 42,
+  "scenario_id": "forecast_hub.question.42",
+  "question": "Will Duke win the 2026 NCAA Tournament?",
+  "category": "other",
+  "resolution_date": "2026-04-04",
+  "resolution_criteria": "",
+  "polymarket_slug": null,
+  "latest_market_probability": 0.12,
+  "signals": [
+    {
+      "source": "polymarket",
+      "probability": 0.12,
+      "confidence": 0.9,
+      "timestamp": "2026-04-04T21:33:07.393869+00:00",
+      "evidence": [
+        "https://polymarket.com/event/will-the-carolina-hurricanes-win-the-2026-nhl-stanley-cup"
+      ]
+    },
+    {
+      "source": "metaculus",
+      "probability": 0.3,
+      "confidence": 0.1,
+      "timestamp": "2026-03-31T13:51:28.551426+00:00",
+      "evidence": [
+        "https://www.metaculus.com/questions/19408"
+      ]
+    },
+    {
+      "source": "kalshi",
+      "probability": 0.5,
+      "confidence": 0.1,
+      "timestamp": "2026-04-04T21:33:07.397031+00:00",
+      "evidence": [
+        "https://kalshi.com/markets/KXMVECROSSCATEGORY-S20264C4C222E094-749369280EB"
+      ]
+    }
+  ],
+  "predictions": [
+    {
+      "source": "consensus",
+      "probability": 0.12,
+      "confidence": 0.99,
+      "timestamp": "2026-04-04T21:04:43.350757+00:00",
+      "reasoning": "[Revised after overconfidence challenge] The forecast claims Duke is eliminated as resolved fact, but Polymarket at 12% with $254K volume is incompatible with confirmed elimination — active markets with real money at stake would arbitrage to ~0% within minutes if Duke were truly out. The claimed 'Final Four' lineup should be independently verified before assigning 0%, as the factual premise may be wrong. | Original: Duke has been confirmed eliminated from the 2026 NCAA Tournament. The Final Four is Arizona, Michigan, Illinois, and UConn. The Polymarket 12% likely reflects stale or pre-elimination pricing. This is a resolved factual matter, not an uncertain forecast."
+    },
+    {
+      "source": "gemini",
+      "probability": 0.1562,
+      "confidence": 0.7,
+      "timestamp": "2026-03-31T14:25:35.005922+00:00",
+      "reasoning": "Duke possesses a top-tier recruiting class and an elite coach, positioning them as a primary national title contender."
+    },
+    {
+      "source": "grok",
+      "probability": 0.0926,
+      "confidence": 0.65,
+      "timestamp": "2026-03-31T14:25:47.502288+00:00",
+      "reasoning": "Duke has a strong historical record in the NCAA Tournament, winning five times since 1991, but with a new coach and the high unpredictability of college basketball, including player turnover and potential upsets, their chances for 2026 are moderate."
+    }
+  ]
+}

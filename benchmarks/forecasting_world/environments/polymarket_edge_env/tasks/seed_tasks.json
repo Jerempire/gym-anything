@@ -1,0 +1,72 @@
+[
+  {
+    "task_id": "pm_m517428_will-israel-annex-syrian-territory-before-ju",
+    "source_market_id": "517428",
+    "question": "Will Israel annex Syrian territory before July?",
+    "category": "other",
+    "end_date": "2026-06-30T12:00:00Z"
+  },
+  {
+    "task_id": "pm_m517427_will-israel-annex-lebanese-territory-before",
+    "source_market_id": "517427",
+    "question": "Will Israel annex Lebanese territory before July?",
+    "category": "other",
+    "end_date": "2026-06-30T12:00:00Z"
+  },
+  {
+    "task_id": "pm_m539205_will-progress-singapore-party-psp-win-the-20",
+    "source_market_id": "539205",
+    "question": "Will Progress Singapore Party (PSP) win the 2025 Singapore parliamentary election?",
+    "category": "other",
+    "end_date": "2026-03-31T12:00:00Z"
+  },
+  {
+    "task_id": "pm_m539204_will-workers-party-wp-win-the-2025-singapore",
+    "source_market_id": "539204",
+    "question": "Will Workers' Party (WP) win the 2025 Singapore parliamentary election?",
+    "category": "other",
+    "end_date": "2026-03-31T12:00:00Z"
+  },
+  {
+    "task_id": "pm_m539203_will-peoples-action-party-pap-win-the-2025-s",
+    "source_market_id": "539203",
+    "question": "Will People's Action Party (PAP) win the 2025 Singapore parliamentary election?",
+    "category": "other",
+    "end_date": "2026-03-31T12:00:00Z"
+  },
+  {
+    "task_id": "pm_m516710_us-recession-in-2025",
+    "source_market_id": "516710",
+    "question": "US recession in 2025?",
+    "category": "other",
+    "end_date": "2026-02-28T12:00:00Z"
+  },
+  {
+    "task_id": "pm_m535353_will-iphone-17-cost-1000-or-more",
+    "source_market_id": "535353",
+    "question": "Will iPhone 17 cost $1,000 or more?",
+    "category": "other",
+    "end_date": "2026-02-28T12:00:00Z"
+  },
+  {
+    "task_id": "pm_m535383_will-iphone-17-cost-1500-or-more",
+    "source_market_id": "535383",
+    "question": "Will iPhone 17 cost $1,500 or more?",
+    "category": "other",
+    "end_date": "2026-02-28T12:00:00Z"
+  },
+  {
+    "task_id": "pm_m535384_will-iphone-17-cost-2000-or-more",
+    "source_market_id": "535384",
+    "question": "Will iPhone 17 cost $2,000 or more?",
+    "category": "other",
+    "end_date": "2026-02-28T12:00:00Z"
+  },
+  {
+    "task_id": "pm_m525882_will-the-edmonton-oilers-win-the-western-con",
+    "source_market_id": "525882",
+    "question": "Will the Edmonton Oilers win the Western Conference?",
+    "category": "other",
+    "end_date": "2026-02-28T12:00:00Z"
+  }
+]

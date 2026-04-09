@@ -1,0 +1,18 @@
+{
+  "env_folder": "benchmarks/forecasting_world/environments/polymarket_edge_env",
+  "train_ratio": 0.67,
+  "train_tasks": [
+    "pm_m517428_will-israel-annex-syrian-territory-before-ju",
+    "pm_m517427_will-israel-annex-lebanese-territory-before",
+    "pm_m539205_will-progress-singapore-party-psp-win-the-20",
+    "pm_m539204_will-workers-party-wp-win-the-2025-singapore",
+    "pm_m539203_will-peoples-action-party-pap-win-the-2025-s",
+    "pm_m516710_us-recession-in-2025",
+    "pm_m535353_will-iphone-17-cost-1000-or-more"
+  ],
+  "test_tasks": [
+    "pm_m535383_will-iphone-17-cost-1500-or-more",
+    "pm_m535384_will-iphone-17-cost-2000-or-more",
+    "pm_m525882_will-the-edmonton-oilers-win-the-western-con"
+  ]
+}

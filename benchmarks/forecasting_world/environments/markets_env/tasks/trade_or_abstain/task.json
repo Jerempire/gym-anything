@@ -1,0 +1,30 @@
+{
+  "id": "trade_or_abstain@1",
+  "version": "1.0",
+  "env_id": "markets_env@0.1",
+  "description": "You are evaluating whether a frozen futures setup has enough edge to trade. Review /home/ga/Desktop/MarketTasks/trade_or_abstain/scenario.json and save a forecast to /home/ga/Documents/MarketForecasts/trade_or_abstain_forecast.json. The file must include a probability for the target 'target_hit_before_stop' and a decision field set to one of ['long', 'short', 'abstain'].",
+  "difficulty": "hard",
+  "init": {
+    "timeout_sec": 300,
+    "max_steps": 45,
+    "reward_type": "sparse"
+  },
+  "hooks": {
+    "pre_task": "/workspace/tasks/trade_or_abstain/setup_task.sh",
+    "post_task": "/workspace/tasks/trade_or_abstain/export_result.sh"
+  },
+  "metadata": {
+    "scenario_id": "markets.trade.2026-003",
+    "forecast_path": "/home/ga/Documents/MarketForecasts/trade_or_abstain_forecast.json",
+    "expected_task_type": "binary_probability",
+    "expected_target": "target_hit_before_stop",
+    "outcome_ref": "markets/trade_or_abstain.hidden.json",
+    "pass_threshold": 65
+  },
+  "success": {
+    "mode": "program",
+    "spec": {
+      "program": "verifier.py::verify_trade_or_abstain"
+    }
+  }
+}

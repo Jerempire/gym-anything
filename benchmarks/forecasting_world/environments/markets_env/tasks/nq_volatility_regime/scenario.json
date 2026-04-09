@@ -1,0 +1,25 @@
+{
+  "scenario_id": "markets.nq.2026-002",
+  "domain": "markets",
+  "task_type": "multiclass_distribution",
+  "target": "next_session_volatility_regime",
+  "classes": ["low", "medium", "high"],
+  "prompt": "Assign probabilities to the next session's volatility regime based on the scenario packet.",
+  "visible_signals": {
+    "realized_volatility": {
+      "five_day_atr_pct": 2.9,
+      "twenty_day_atr_pct": 2.1,
+      "overnight_range_pct": 1.4
+    },
+    "event_context": {
+      "earnings_cluster": "several mega-cap reports after the close",
+      "macro_calendar": "two second-tier releases, no FOMC",
+      "options_positioning": "dealers short gamma near spot"
+    },
+    "market_structure": {
+      "trend_state": "uptrend but extended",
+      "breadth_state": "narrow leadership",
+      "cross_asset_confirmation": "semis strong, yields stable"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "source_project": "futures-flow",
+  "source_signal_id": 286,
+  "scenario_id": "futures_flow.signal.286",
+  "signal_date": "2026-04-07",
+  "signal_time": "2026-04-07 10:05:00-04:00",
+  "direction": "SHORT",
+  "strategy": "cvd_divergence",
+  "entry_price": 6585.75,
+  "confidence": 0.9,
+  "ofi_value": -1.8574,
+  "cvd_value": -0.5497,
+  "atr_value": 10.93,
+  "hold_bars": 24,
+  "target_price": 6572.09,
+  "resolved_at": "2026-04-07T21:30:03.308449+00:00",
+  "params_source": "axplorer",
+  "macro_regime": "bearish",
+  "daily_report_available": true
+}

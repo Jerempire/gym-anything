@@ -1,0 +1,30 @@
+{
+  "id": "pm_m535384_will-iphone-17-cost-2000-or-more@1",
+  "version": "1.0",
+  "env_id": "polymarket_edge_env@0.1",
+  "description": "You are replaying a resolved Polymarket market. Review the task workspace at http://127.0.0.1:8125/pm_m535384_will-iphone-17-cost-2000-or-more/ or the mirrored files under /home/ga/Desktop/PolymarketEdgeTasks/pm_m535384_will-iphone-17-cost-2000-or-more/, then save a forecast to /home/ga/Documents/PolymarketEdgeForecasts/pm_m535384_will-iphone-17-cost-2000-or-more_forecast.json. Assign a probability to the binary target 'market_resolves_yes'.",
+  "difficulty": "medium",
+  "init": {
+    "timeout_sec": 300,
+    "max_steps": 45,
+    "reward_type": "sparse"
+  },
+  "hooks": {
+    "pre_task": "/workspace/tasks/pm_m535384_will-iphone-17-cost-2000-or-more/setup_task.sh",
+    "post_task": "/workspace/tasks/pm_m535384_will-iphone-17-cost-2000-or-more/export_result.sh"
+  },
+  "metadata": {
+    "scenario_id": "polymarket_edge.market.535384",
+    "forecast_path": "/home/ga/Documents/PolymarketEdgeForecasts/pm_m535384_will-iphone-17-cost-2000-or-more_forecast.json",
+    "expected_task_type": "binary_probability",
+    "expected_target": "market_resolves_yes",
+    "outcome_ref": "polymarket_edge/pm_m535384_will-iphone-17-cost-2000-or-more.hidden.json",
+    "pass_threshold": 65
+  },
+  "success": {
+    "mode": "program",
+    "spec": {
+      "program": "verifier.py::verify_imported_polymarket_edge_task"
+    }
+  }
+}

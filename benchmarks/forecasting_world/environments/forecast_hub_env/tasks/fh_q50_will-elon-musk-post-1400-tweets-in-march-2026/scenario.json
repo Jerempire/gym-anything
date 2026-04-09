@@ -1,0 +1,73 @@
+{
+  "source_project": "forecast-hub",
+  "source_question_id": 50,
+  "scenario_id": "forecast_hub.question.50",
+  "question": "Will Elon Musk post 1400+ tweets in March 2026?",
+  "category": "other",
+  "resolution_date": "2026-04-01",
+  "resolution_criteria": "",
+  "polymarket_slug": null,
+  "latest_market_probability": 0.0125,
+  "signals": [
+    {
+      "source": "polymarket",
+      "probability": 0.0125,
+      "confidence": 0.9,
+      "timestamp": "2026-04-02T21:00:24.202668+00:00",
+      "evidence": [
+        "https://polymarket.com/event/gta-vi-released-before-june-2026"
+      ]
+    },
+    {
+      "source": "metaculus",
+      "probability": 0.83,
+      "confidence": 0.9,
+      "timestamp": "2026-04-02T18:52:44.403887+00:00",
+      "evidence": [
+        "https://www.metaculus.com/questions/10614"
+      ]
+    },
+    {
+      "source": "kalshi",
+      "probability": 0.5,
+      "confidence": 0.1,
+      "timestamp": "2026-04-02T21:00:24.202407+00:00",
+      "evidence": [
+        "https://kalshi.com/markets/KXMVESPORTSMULTIGAMEEXTENDED-S2026F986D20222C-3D99C8701F1"
+      ]
+    },
+    {
+      "source": "substack_experts",
+      "probability": 0.5,
+      "confidence": 0.31,
+      "timestamp": "2026-03-31T13:56:13.224635+00:00",
+      "evidence": [
+        "polymarket: 🔮 TWEET QUANT",
+        "thezvi: Monthly Roundup #40: March 2026"
+      ]
+    }
+  ],
+  "predictions": [
+    {
+      "source": "consensus",
+      "probability": 0.01,
+      "confidence": 0.99,
+      "timestamp": "2026-04-02T21:14:07.081148+00:00",
+      "reasoning": "March 2026 has ended and confirmed data shows Musk posted 1320-1359 tweets, well below 1400. Polymarket resolved accordingly at 1% (residual liquidity). This is effectively resolved NO. Maintaining yesterday's 1% estimate."
+    },
+    {
+      "source": "gemini",
+      "probability": 0.0469,
+      "confidence": 0.9,
+      "timestamp": "2026-03-31T14:29:32.656496+00:00",
+      "reasoning": "Prediction markets show he is approximately 120 tweets short with only one day remaining in the month."
+    },
+    {
+      "source": "grok",
+      "probability": 0.112,
+      "confidence": 0.8,
+      "timestamp": "2026-03-31T14:29:47.851590+00:00",
+      "reasoning": "Based on historical data where Elon Musk's monthly tweet counts rarely exceed 1000 and often average lower, with potential decreases in activity due to age, business commitments, or platform changes by 2026, the likelihood of 1400+ tweets in March 2026 is low."
+    }
+  ]
+}

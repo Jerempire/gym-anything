@@ -1,0 +1,11 @@
+{
+  "scenario_id": "futures_flow.walk_forward.fvg.fold26",
+  "source_project": "futures-flow",
+  "strategy": "fvg",
+  "fold_number": 26,
+  "outcome": 0,
+  "oos_sharpe": 0.0,
+  "oos_trades": 4,
+  "oos_wr": 0.5,
+  "oos_pnl": 1294.5
+}

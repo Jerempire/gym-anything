@@ -1,0 +1,16 @@
+{
+  "source_project": "polymarket-edge",
+  "source_market_id": "535384",
+  "scenario_id": "polymarket_edge.market.535384",
+  "question": "Will iPhone 17 cost $2,000 or more?",
+  "description": "This market will resolve to \"Yes\" if the standard edition of the iPhone 17 launches at $2,000.00 or more. Otherwise, this market will resolve to \"No\".\n\nThis market will resolve based on the pre-tax launch price in USD of the standard edition of the iPhone 17 as listed on the official Apple Store website or Apple’s retail pricing in the United States on the first official day of its release.\n\nIf the price differs between configurations (e.g., base storage vs. higher storage), this market will resolve according to the lower price of the version that includes the full standard iPhone 17 model with no additional features, accessories, or services (e.g., base storage capacity only).\n\nIf the iPhone 17 is not released by February 28, 2026, this market will resolve to \"No\".\n\nThe primary resolution source for this market will be the official Apple Store (online or retail pricing), however a consensus of credible reporting will also be used.",
+  "slug": "will-iphone-17-cost-2000-or-more",
+  "category": "other",
+  "end_date": "2026-02-28T12:00:00Z",
+  "market_type": null,
+  "volume": 657230.04583,
+  "liquidity": 0.0,
+  "last_trade_price": 1.0,
+  "best_bid": null,
+  "best_ask": 0.001
+}

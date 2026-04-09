@@ -1,0 +1,38 @@
+[
+  {
+    "task_id": "ffwf_liq-sweep_fold26",
+    "strategy": "liq_sweep",
+    "fold_number": 26,
+    "test_range": "2023-09-03 to 2023-12-03"
+  },
+  {
+    "task_id": "ffwf_order-block_fold26",
+    "strategy": "order_block",
+    "fold_number": 26,
+    "test_range": "2023-09-03 to 2023-12-03"
+  },
+  {
+    "task_id": "ffwf_breaker_fold26",
+    "strategy": "breaker",
+    "fold_number": 26,
+    "test_range": "2023-09-03 to 2023-12-03"
+  },
+  {
+    "task_id": "ffwf_fvg_fold26",
+    "strategy": "fvg",
+    "fold_number": 26,
+    "test_range": "2023-09-03 to 2023-12-03"
+  },
+  {
+    "task_id": "ffwf_judas-swing_fold26",
+    "strategy": "judas_swing",
+    "fold_number": 26,
+    "test_range": "2023-09-03 to 2023-12-03"
+  },
+  {
+    "task_id": "ffwf_silver-bullet_fold26",
+    "strategy": "silver_bullet",
+    "fold_number": 26,
+    "test_range": "2023-09-03 to 2023-12-03"
+  }
+]

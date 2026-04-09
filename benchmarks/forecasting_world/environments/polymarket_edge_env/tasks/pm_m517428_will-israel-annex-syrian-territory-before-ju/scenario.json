@@ -1,0 +1,16 @@
+{
+  "source_project": "polymarket-edge",
+  "source_market_id": "517428",
+  "scenario_id": "polymarket_edge.market.517428",
+  "question": "Will Israel annex Syrian territory before July?",
+  "description": "This market will resolve to \"Yes\" if Israel officially annexes any Syrian territory between January 4 and June 30, 2025, 11:59 PM ET. Otherwise, this market will resolve to \"No.\"\n\nAnnexation is defined as an official declaration or legal act by the Israeli government claiming sovereignty over Syrian territory they had not previously claimed.\n\nThe primary resolution source for this market will be official information from the Israeli government; however, a consensus of credible reporting may also be used.",
+  "slug": "will-israel-annex-syrian-territory-before-july",
+  "category": "other",
+  "end_date": "2026-06-30T12:00:00Z",
+  "market_type": null,
+  "volume": 132829.214969,
+  "liquidity": 0.0,
+  "last_trade_price": 1.0,
+  "best_bid": null,
+  "best_ask": 0.001
+}

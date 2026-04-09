@@ -1,0 +1,29 @@
+{
+  "scenario_id": "psych.synthetic.2026-003",
+  "domain": "psychology",
+  "task_type": "binary_probability",
+  "target": "trust_recovers_after_followup",
+  "synthetic_notice": "This case is fully synthetic and does not describe a real person.",
+  "case_summary": {
+    "relationship": "project lead and collaborator",
+    "breach": "missed a commitment without warning",
+    "repair_attempt": "prompt apology, explanation, and concrete process change"
+  },
+  "visible_signals": {
+    "history": {
+      "prior_reliability": "high",
+      "previous_breaches": 0,
+      "relationship_tenure_months": 18
+    },
+    "repair_quality": {
+      "takes_responsibility": true,
+      "specific_future_prevention_plan": true,
+      "offers_make_good": true
+    },
+    "recipient_state": {
+      "initial_disappointment": "high",
+      "willingness_to_engage": "moderate",
+      "dependency_on_relationship": "high"
+    }
+  }
+}

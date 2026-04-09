@@ -29,7 +29,46 @@ from .verification.reports import render_task_pipeline_result_text
 
 _ENV_SEARCH_PATHS = [
     "benchmarks/cua_world/environments",
+    "benchmarks/forecasting_world/environments",
 ]
+
+
+def _load_benchmark_registries():
+    from benchmarks.cua_world import registry as cua_registry
+    from benchmarks.forecasting_world import registry as forecasting_registry
+
+    return [cua_registry, forecasting_registry]
+
+
+def _resolve_tasks_for_benchmark_env(env_ref: str, *, split: str, surface: str):
+    errors = []
+    for registry in _load_benchmark_registries():
+        resolve_key = getattr(registry, "resolve_environment_key")
+        get_tasks = getattr(registry, "get_tasks_for_environment")
+        try:
+            env_key = resolve_key(env_ref)
+            return get_tasks(env_key, split=split, surface=surface)  # cua_world signature
+        except TypeError:
+            try:
+                env_key = resolve_key(env_ref)
+                return get_tasks(env_key, split=split)  # forecasting_world signature
+            except Exception as exc:  # pragma: no cover - diagnostic path
+                errors.append(str(exc))
+        except Exception as exc:  # pragma: no cover - diagnostic path
+            errors.append(str(exc))
+    raise KeyError(f"Unknown environment key: {env_ref}. Errors: {'; '.join(errors)}")
+
+
+def _load_combined_task_registry(surface: str):
+    combined = {}
+    for registry in _load_benchmark_registries():
+        load_splits = getattr(registry, "load_environment_task_splits")
+        try:
+            registry_data = load_splits(surface=surface)
+        except TypeError:
+            registry_data = load_splits()
+        combined.update(registry_data)
+    return combined
 
 
 def _resolve_env_dir(name: str) -> str:
@@ -68,6 +107,7 @@ def _show_rich_help() -> None:
 
     commands.add_row("run", "Run an environment (interactive or headless)")
     commands.add_row("benchmark", "Run agent evaluation on benchmark tasks")
+    commands.add_row("forecast-report", "Score a batch of forecasting submissions")
     commands.add_row("list", "List available environments")
     commands.add_row("agents", "List available agent implementations")
     commands.add_row("")
@@ -143,6 +183,24 @@ def cmd_validate(args):
         return 0
     print(render_summary_text(summary), file=sys.stderr)
     return 1
+
+
+def cmd_forecast_report(args):
+    from benchmarks.forecasting_world.evaluation import (
+        build_forecast_batch_report,
+        render_forecast_batch_report_text,
+    )
+
+    report = build_forecast_batch_report(
+        args.submission_root,
+        env_filter=args.env,
+        split=args.split,
+    )
+    if args.json:
+        _print_json(report.to_dict())
+    else:
+        print(render_forecast_batch_report_text(report))
+    return 0
 
 
 def _pick_random_task(env_dir: str) -> str:
@@ -350,26 +408,18 @@ def _build_agent_args(args) -> dict:
 
 def _run_benchmark_batch(args) -> int:
     """Run benchmark in batch mode across multiple tasks."""
-    from benchmarks.cua_world.registry import (
-        get_tasks_for_environment,
-        load_environment_task_splits,
-        resolve_environment_dir,
-        resolve_environment_key,
-    )
-
     if args.env_dir == "all":
-        registry = load_environment_task_splits(surface=args.surface)
+        registry = _load_combined_task_registry(surface=args.surface)
         pairs = []
         for env_key, split_map in registry.items():
             if args.split not in split_map:
                 continue
-            env_dir = str(resolve_environment_dir(env_key))
+            env_dir = _resolve_env_dir(env_key)
             for task_id in split_map[args.split]:
                 pairs.append((task_id, env_dir))
     else:
-        env_key = resolve_environment_key(args.env_dir)
-        tasks = get_tasks_for_environment(env_key, split=args.split, surface=args.surface)
-        pairs = [(task_id, args.env_dir) for task_id in tasks]
+        tasks = _resolve_tasks_for_benchmark_env(args.env_dir, split=args.split, surface=args.surface)
+        pairs = [(task_id, _resolve_env_dir(args.env_dir)) for task_id in tasks]
 
     if not pairs:
         print(f"No tasks found for split '{args.split}'.", file=sys.stderr)
@@ -1044,6 +1094,19 @@ def main(argv=None):
     p_bench.add_argument("--agent-arg", action="append", metavar="KEY=VALUE",
                          help="Extra agent argument (repeatable, e.g. --agent-arg history_n=4)")
     p_bench.set_defaults(func=cmd_benchmark)
+
+    p_forecast_report = sub.add_parser(
+        "forecast-report",
+        help="Score forecasting submissions across one environment or the whole forecasting corpus",
+    )
+    p_forecast_report.add_argument(
+        "submission_root",
+        help="Root directory containing forecast submission JSON files",
+    )
+    p_forecast_report.add_argument("--env", help="Optional forecasting environment filter (e.g. markets_env)")
+    p_forecast_report.add_argument("--split", default="all", help="Task split to score (default: all)")
+    p_forecast_report.add_argument("--json", action="store_true")
+    p_forecast_report.set_defaults(func=cmd_forecast_report)
 
     p_agents = sub.add_parser("agents", help="List available agent implementations")
     p_agents.set_defaults(func=cmd_agents)

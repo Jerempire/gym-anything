@@ -1,0 +1,11 @@
+{
+  "env_folder": "benchmarks/forecasting_world/environments/markets_env",
+  "train_ratio": 0.67,
+  "train_tasks": [
+    "es_next_session_probability",
+    "nq_volatility_regime"
+  ],
+  "test_tasks": [
+    "trade_or_abstain"
+  ]
+}

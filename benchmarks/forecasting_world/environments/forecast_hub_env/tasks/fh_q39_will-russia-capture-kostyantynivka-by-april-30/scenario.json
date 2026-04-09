@@ -1,0 +1,54 @@
+{
+  "source_project": "forecast-hub",
+  "source_question_id": 39,
+  "scenario_id": "forecast_hub.question.39",
+  "question": "Will Russia capture Kostyantynivka by April 30?",
+  "category": "geopolitics",
+  "resolution_date": "2026-03-31",
+  "resolution_criteria": "",
+  "polymarket_slug": null,
+  "latest_market_probability": 0.535,
+  "signals": [
+    {
+      "source": "polymarket",
+      "probability": 0.535,
+      "confidence": 0.9,
+      "timestamp": "2026-04-04T21:33:05.309746+00:00",
+      "evidence": [
+        "https://polymarket.com/event/russia-ukraine-ceasefire-before-gta-vi-554"
+      ]
+    },
+    {
+      "source": "metaculus",
+      "probability": 0.05,
+      "confidence": 0.9,
+      "timestamp": "2026-04-04T21:00:16.113784+00:00",
+      "evidence": [
+        "https://www.metaculus.com/questions/18865"
+      ]
+    }
+  ],
+  "predictions": [
+    {
+      "source": "consensus",
+      "probability": 0.02,
+      "confidence": 0.97,
+      "timestamp": "2026-04-04T21:02:03.427568+00:00",
+      "reasoning": "The resolution date of March 31, 2026 has already passed, and web research from April 3 confirms ISW reports no further Russian advances in the Kostyantynivka area. Russian forces remain stalled at the southeastern outskirts with no breakthrough. The Polymarket 54% likely references a different timeframe or resolution criteria; Metaculus at 5% is far more consistent with the evidence. Since the deadline has lapsed without capture, this is near-certain NO, with only a tiny residual for delayed reporting of a last-day advance."
+    },
+    {
+      "source": "gemini",
+      "probability": 0.0895,
+      "confidence": 0.85,
+      "timestamp": "2026-03-31T14:23:54.733735+00:00",
+      "reasoning": "The Russian advance is extremely slow, and expert analysis suggests capturing Kostyantynivka could take a year, not one month."
+    },
+    {
+      "source": "grok",
+      "probability": 0.547,
+      "confidence": 0.6,
+      "timestamp": "2026-03-31T14:24:04.802292+00:00",
+      "reasoning": "Russia's gradual advances in the Donbas region suggest a moderate chance of capturing Kostyantynivka by April 2026, but strong Ukrainian resistance, Western support, and potential peace negotiations could prevent this outcome."
+    }
+  ]
+}

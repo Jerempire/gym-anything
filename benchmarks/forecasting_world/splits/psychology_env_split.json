@@ -1,0 +1,11 @@
+{
+  "env_folder": "benchmarks/forecasting_world/environments/psychology_env",
+  "train_ratio": 0.67,
+  "train_tasks": [
+    "message_compliance_likelihood",
+    "burnout_risk_bucket"
+  ],
+  "test_tasks": [
+    "trust_repair_outcome"
+  ]
+}

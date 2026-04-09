@@ -1,0 +1,30 @@
+{
+  "id": "fh_q51_will-iowa-win-the-2026-ncaa-tournament@1",
+  "version": "1.0",
+  "env_id": "forecast_hub_env@0.1",
+  "description": "You are replaying a resolved forecast-hub question. Review the task workspace at http://127.0.0.1:8124/fh_q51_will-iowa-win-the-2026-ncaa-tournament/ or the mirrored files under /home/ga/Desktop/ForecastHubTasks/fh_q51_will-iowa-win-the-2026-ncaa-tournament/, then save a forecast to /home/ga/Documents/ForecastHubForecasts/fh_q51_will-iowa-win-the-2026-ncaa-tournament_forecast.json. Assign a probability to the binary target 'question_resolves_yes' and optionally include a decision field set to one of ['long', 'short', 'abstain'].",
+  "difficulty": "medium",
+  "init": {
+    "timeout_sec": 300,
+    "max_steps": 45,
+    "reward_type": "sparse"
+  },
+  "hooks": {
+    "pre_task": "/workspace/tasks/fh_q51_will-iowa-win-the-2026-ncaa-tournament/setup_task.sh",
+    "post_task": "/workspace/tasks/fh_q51_will-iowa-win-the-2026-ncaa-tournament/export_result.sh"
+  },
+  "metadata": {
+    "scenario_id": "forecast_hub.question.51",
+    "forecast_path": "/home/ga/Documents/ForecastHubForecasts/fh_q51_will-iowa-win-the-2026-ncaa-tournament_forecast.json",
+    "expected_task_type": "binary_probability",
+    "expected_target": "question_resolves_yes",
+    "outcome_ref": "forecast_hub/fh_q51_will-iowa-win-the-2026-ncaa-tournament.hidden.json",
+    "pass_threshold": 65
+  },
+  "success": {
+    "mode": "program",
+    "spec": {
+      "program": "verifier.py::verify_imported_forecast_hub_task"
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "scenario_id": "sports.nfl.2026-002",
+  "domain": "sports",
+  "task_type": "binary_probability",
+  "target": "game_goes_over_total",
+  "sport": "NFL",
+  "matchup": {
+    "home_team": "Chicago Lake",
+    "away_team": "Dallas Metro"
+  },
+  "market_context": {
+    "current_total": 46.5,
+    "spread": -2.5
+  },
+  "visible_signals": {
+    "offense": {
+      "home_early_down_success_rank": 8,
+      "away_early_down_success_rank": 11,
+      "home_red_zone_td_rate": 0.63,
+      "away_red_zone_td_rate": 0.58
+    },
+    "defense": {
+      "home_pass_epa_rank": 19,
+      "away_pass_epa_rank": 24,
+      "home_pressure_rate_rank": 7,
+      "away_pressure_rate_rank": 16
+    },
+    "conditions": {
+      "wind_mph": 7,
+      "temperature_f": 62,
+      "surface": "indoor"
+    },
+    "availability": {
+      "home_slot_receiver": "active",
+      "away_cb1": "questionable",
+      "away_lt": "out"
+    }
+  }
+}

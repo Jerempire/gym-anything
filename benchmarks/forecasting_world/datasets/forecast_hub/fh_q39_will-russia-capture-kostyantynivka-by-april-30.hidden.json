@@ -1,0 +1,8 @@
+{
+  "scenario_id": "forecast_hub.question.39",
+  "source_project": "forecast-hub",
+  "source_question_id": 39,
+  "outcome": 1,
+  "market_implied_probability": 0.535,
+  "decision_threshold": 0.05
+}

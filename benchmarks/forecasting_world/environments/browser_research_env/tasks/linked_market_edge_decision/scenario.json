@@ -1,0 +1,13 @@
+{
+  "scenario_id": "research.market.2026-002",
+  "domain": "browser_research",
+  "task_type": "binary_probability",
+  "target": "event_occurs",
+  "market_implied_probability": 0.71,
+  "prompt": "Estimate the probability of the event and decide whether there is positive edge to go long, short, or abstain.",
+  "visible_signals": {
+    "linked_contracts": 3,
+    "most_related_market_probability": 0.62,
+    "base_rate_estimate": 0.59
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "env_folder": "benchmarks/forecasting_world/environments/futures_flow_env",
+  "train_ratio": 0.67,
+  "train_tasks": [
+    "ff_sig367_20260408_liq-sweep_short",
+    "ff_sig396_20260408_liq-sweep_long",
+    "ff_sig403_20260408_timesfm_long",
+    "ff_sig378_20260408_timesfm_short",
+    "ff_sig286_20260407_cvd-divergence_short",
+    "ff_sig301_20260407_liq-sweep_short",
+    "ff_sig330_20260407_liq-sweep_long"
+  ],
+  "test_tasks": [
+    "ff_sig317_20260407_cvd-divergence_long",
+    "ff_sig321_20260407_timesfm_long",
+    "ff_sig353_20260407_timesfm_short"
+  ]
+}

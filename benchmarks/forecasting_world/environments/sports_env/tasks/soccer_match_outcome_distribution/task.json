@@ -1,0 +1,31 @@
+{
+  "id": "soccer_match_outcome_distribution@1",
+  "version": "1.0",
+  "env_id": "sports_env@0.1",
+  "description": "You are making a frozen soccer match forecast. Review /home/ga/Desktop/SportsTasks/soccer_match_outcome_distribution/scenario.json and save a multiclass forecast to /home/ga/Documents/SportsForecasts/soccer_match_outcome_distribution_forecast.json using the target 'full_time_result' and the classes ['home_win', 'draw', 'away_win'].",
+  "difficulty": "medium",
+  "init": {
+    "timeout_sec": 300,
+    "max_steps": 40,
+    "reward_type": "sparse"
+  },
+  "hooks": {
+    "pre_task": "/workspace/tasks/soccer_match_outcome_distribution/setup_task.sh",
+    "post_task": "/workspace/tasks/soccer_match_outcome_distribution/export_result.sh"
+  },
+  "metadata": {
+    "scenario_id": "sports.soccer.2026-003",
+    "forecast_path": "/home/ga/Documents/SportsForecasts/soccer_match_outcome_distribution_forecast.json",
+    "expected_task_type": "multiclass_distribution",
+    "expected_target": "full_time_result",
+    "expected_classes": ["home_win", "draw", "away_win"],
+    "outcome_ref": "sports/soccer_match_outcome_distribution.hidden.json",
+    "pass_threshold": 60
+  },
+  "success": {
+    "mode": "program",
+    "spec": {
+      "program": "verifier.py::verify_soccer_match_outcome_distribution"
+    }
+  }
+}

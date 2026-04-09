@@ -1,0 +1,11 @@
+{
+  "scenario_id": "futures_flow.walk_forward.silver-bullet.fold26",
+  "source_project": "futures-flow",
+  "strategy": "silver_bullet",
+  "fold_number": 26,
+  "outcome": 0,
+  "oos_sharpe": 0.0,
+  "oos_trades": 3,
+  "oos_wr": 0.0,
+  "oos_pnl": -538.5
+}

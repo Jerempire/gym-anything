@@ -1,0 +1,30 @@
+{
+  "id": "es_next_session_probability@1",
+  "version": "1.0",
+  "env_id": "markets_env@0.1",
+  "description": "You are a futures forecaster working from a frozen scenario packet. Review the ES scenario at /home/ga/Desktop/MarketTasks/es_next_session_probability/scenario.json and save a forecast to /home/ga/Documents/MarketForecasts/es_next_session_probability_forecast.json. The file must follow the shared forecast schema and assign a probability to the target 'next_session_up'.",
+  "difficulty": "medium",
+  "init": {
+    "timeout_sec": 300,
+    "max_steps": 40,
+    "reward_type": "sparse"
+  },
+  "hooks": {
+    "pre_task": "/workspace/tasks/es_next_session_probability/setup_task.sh",
+    "post_task": "/workspace/tasks/es_next_session_probability/export_result.sh"
+  },
+  "metadata": {
+    "scenario_id": "markets.es.2026-001",
+    "forecast_path": "/home/ga/Documents/MarketForecasts/es_next_session_probability_forecast.json",
+    "expected_task_type": "binary_probability",
+    "expected_target": "next_session_up",
+    "outcome_ref": "markets/es_next_session_probability.hidden.json",
+    "pass_threshold": 65
+  },
+  "success": {
+    "mode": "program",
+    "spec": {
+      "program": "verifier.py::verify_es_next_session_probability"
+    }
+  }
+}

@@ -3,6 +3,7 @@
   "icon": "ChartBar",
   "pages": [
     "index",
+    "forecasting-world",
     "tasks-verifiers"
   ]
 }

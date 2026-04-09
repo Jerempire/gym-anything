@@ -1,0 +1,35 @@
+{
+  "scenario_id": "sports.soccer.2026-003",
+  "domain": "sports",
+  "task_type": "multiclass_distribution",
+  "target": "full_time_result",
+  "classes": ["home_win", "draw", "away_win"],
+  "sport": "soccer",
+  "matchup": {
+    "home_team": "Northport FC",
+    "away_team": "Atletico Harbor"
+  },
+  "visible_signals": {
+    "team_strength": {
+      "home_xg_for": 1.74,
+      "home_xg_against": 1.02,
+      "away_xg_for": 1.28,
+      "away_xg_against": 1.11
+    },
+    "availability": {
+      "home_striker": "fit",
+      "away_playmaker": "suspended",
+      "away_center_back": "fit"
+    },
+    "schedule_context": {
+      "home_rest_days": 6,
+      "away_rest_days": 3,
+      "away_travel": "midweek continental trip"
+    },
+    "market_context": {
+      "home_win_price": 2.02,
+      "draw_price": 3.45,
+      "away_win_price": 3.95
+    }
+  }
+}

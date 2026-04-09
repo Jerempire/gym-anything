@@ -1,0 +1,30 @@
+{
+  "id": "nba_moneyline_probability@1",
+  "version": "1.0",
+  "env_id": "sports_env@0.1",
+  "description": "You are making a frozen NBA pregame forecast. Review /home/ga/Desktop/SportsTasks/nba_moneyline_probability/scenario.json and save a forecast to /home/ga/Documents/SportsForecasts/nba_moneyline_probability_forecast.json. The file must follow the shared forecast schema and assign a probability to the target 'home_team_win'.",
+  "difficulty": "medium",
+  "init": {
+    "timeout_sec": 300,
+    "max_steps": 40,
+    "reward_type": "sparse"
+  },
+  "hooks": {
+    "pre_task": "/workspace/tasks/nba_moneyline_probability/setup_task.sh",
+    "post_task": "/workspace/tasks/nba_moneyline_probability/export_result.sh"
+  },
+  "metadata": {
+    "scenario_id": "sports.nba.2026-001",
+    "forecast_path": "/home/ga/Documents/SportsForecasts/nba_moneyline_probability_forecast.json",
+    "expected_task_type": "binary_probability",
+    "expected_target": "home_team_win",
+    "outcome_ref": "sports/nba_moneyline_probability.hidden.json",
+    "pass_threshold": 65
+  },
+  "success": {
+    "mode": "program",
+    "spec": {
+      "program": "verifier.py::verify_nba_moneyline_probability"
+    }
+  }
+}

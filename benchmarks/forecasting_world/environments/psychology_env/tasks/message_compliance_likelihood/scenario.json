@@ -1,0 +1,30 @@
+{
+  "scenario_id": "psych.synthetic.2026-001",
+  "domain": "psychology",
+  "task_type": "binary_probability",
+  "target": "complies_with_request",
+  "synthetic_notice": "This case is fully synthetic and does not describe a real person.",
+  "case_summary": {
+    "setting": "team collaboration",
+    "request": "complete a difficult handoff document by end of day",
+    "relationship_to_requester": "direct peer, not manager"
+  },
+  "visible_signals": {
+    "baseline_behavior": {
+      "deadline_followthrough": "moderately reliable",
+      "recent_missed_commitments": 1,
+      "response_latency": "usually quick"
+    },
+    "context": {
+      "current_workload": "high",
+      "task_clarity": "high",
+      "social_pressure": "moderate",
+      "perceived_fairness": "high"
+    },
+    "recent_dialogue": {
+      "acknowledges_importance": true,
+      "expresses_time_pressure": true,
+      "asks_one_clarifying_question": true
+    }
+  }
+}

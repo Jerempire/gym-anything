@@ -1,0 +1,11 @@
+{
+  "scenario_id": "futures_flow.walk_forward.breaker.fold26",
+  "source_project": "futures-flow",
+  "strategy": "breaker",
+  "fold_number": 26,
+  "outcome": 1,
+  "oos_sharpe": 4.68,
+  "oos_trades": 8,
+  "oos_wr": 0.875,
+  "oos_pnl": 764.0
+}

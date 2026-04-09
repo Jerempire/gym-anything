@@ -1,0 +1,30 @@
+{
+  "id": "nfl_total_direction@1",
+  "version": "1.0",
+  "env_id": "sports_env@0.1",
+  "description": "You are making a frozen NFL total forecast. Review /home/ga/Desktop/SportsTasks/nfl_total_direction/scenario.json and save a forecast to /home/ga/Documents/SportsForecasts/nfl_total_direction_forecast.json. The file must follow the shared forecast schema and assign a probability to the target 'game_goes_over_total'.",
+  "difficulty": "medium",
+  "init": {
+    "timeout_sec": 300,
+    "max_steps": 40,
+    "reward_type": "sparse"
+  },
+  "hooks": {
+    "pre_task": "/workspace/tasks/nfl_total_direction/setup_task.sh",
+    "post_task": "/workspace/tasks/nfl_total_direction/export_result.sh"
+  },
+  "metadata": {
+    "scenario_id": "sports.nfl.2026-002",
+    "forecast_path": "/home/ga/Documents/SportsForecasts/nfl_total_direction_forecast.json",
+    "expected_task_type": "binary_probability",
+    "expected_target": "game_goes_over_total",
+    "outcome_ref": "sports/nfl_total_direction.hidden.json",
+    "pass_threshold": 65
+  },
+  "success": {
+    "mode": "program",
+    "spec": {
+      "program": "verifier.py::verify_nfl_total_direction"
+    }
+  }
+}
