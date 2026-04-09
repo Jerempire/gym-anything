@@ -1,0 +1,70 @@
+{
+  "packet_version": 1,
+  "hypothesis_id": "hyp_2026_04_09_reg_delay_cross_asset",
+  "recommendation": "reroute_for_revision",
+  "summary": {
+    "lab_passed": false,
+    "novelty_score": 0.78,
+    "robustness_score": 0.44,
+    "edge_confidence": "medium",
+    "primary_failure_mode": "Performance concentrated in one narrative cluster and two walk-forward folds."
+  },
+  "environment_results": [
+    {
+      "env": "forecast_hub_env",
+      "status": "pass",
+      "sample_size": 28,
+      "metrics": {
+        "candidate_brier": 0.179,
+        "baseline_brier": 0.196,
+        "question_win_rate": 0.61,
+        "edge_vs_prior": 0.017
+      }
+    },
+    {
+      "env": "polymarket_edge_env",
+      "status": "pass",
+      "sample_size": 24,
+      "metrics": {
+        "candidate_brier": 0.201,
+        "market_prior_brier": 0.214,
+        "edge_vs_prior": 0.013,
+        "decision_ev": 0.046
+      }
+    },
+    {
+      "env": "futures_flow_env",
+      "status": "fail",
+      "sample_size": 57,
+      "metrics": {
+        "avg_pnl": 1.82,
+        "baseline_avg_pnl": 1.77,
+        "sharpe": 0.31,
+        "baseline_sharpe": 0.29
+      },
+      "failure_notes": [
+        "Improvement is too small relative to variance.",
+        "Signal degrades outside trend-day filter."
+      ]
+    },
+    {
+      "env": "futures_walk_forward_env",
+      "status": "fail",
+      "sample_size": 10,
+      "metrics": {
+        "fold_pass_rate": 0.3,
+        "median_fold_sharpe": 0.08,
+        "baseline_fold_sharpe": 0.11
+      },
+      "failure_notes": [
+        "Out-of-sample fold stability is insufficient."
+      ]
+    }
+  ],
+  "actions": {
+    "meta_optimizer": "do_not_activate",
+    "next_step": "tighten regime filter and retest in futures replay only",
+    "candidate_eligibility": false
+  },
+  "notes": "Example output contract for replay evaluation. This is not a runtime result."
+}

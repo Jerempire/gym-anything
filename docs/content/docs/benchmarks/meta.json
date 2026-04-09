@@ -4,6 +4,7 @@
   "pages": [
     "index",
     "forecasting-world",
+    "hypothesis-lab",
     "tasks-verifiers"
   ]
 }

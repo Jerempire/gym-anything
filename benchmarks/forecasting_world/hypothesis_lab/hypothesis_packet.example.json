@@ -1,0 +1,60 @@
+{
+  "packet_version": 1,
+  "hypothesis_id": "hyp_2026_04_09_reg_delay_cross_asset",
+  "title": "Regulatory delay signals lead event repricing and intraday futures drift",
+  "source_project": "alpha-engine",
+  "origin_mode": "feature_cross",
+  "domains": [
+    "forecast",
+    "polymarket",
+    "price_action"
+  ],
+  "mechanism": "Event markets underreact to high-friction regulatory delay evidence, and futures drift occurs when narrative repricing leaks into broader risk sentiment.",
+  "claim": "A candidate using regulatory-delay evidence should outperform the current market or system prior on resolved event questions and should improve replay trade selection on linked futures sessions.",
+  "signal_spec": {
+    "feature": "reg_delay_cross_asset",
+    "signal_type": "cross_domain",
+    "parameters": {
+      "market_disagreement_floor": 0.08,
+      "evidence_delay_weight": 1.25,
+      "futures_session_filter": "trend_day"
+    },
+    "upstream_signals": [
+      "forecast_ensemble",
+      "polymarket_regulatory_delay",
+      "futures_liquidity_sweep"
+    ]
+  },
+  "baseline_to_beat": {
+    "forecast": "forecast_hub_current_baseline",
+    "polymarket": "market_implied_probability",
+    "price_action": "futures_flow_live_baseline"
+  },
+  "evaluation_plan": {
+    "target_envs": [
+      "forecast_hub_env",
+      "polymarket_edge_env",
+      "futures_flow_env",
+      "futures_walk_forward_env"
+    ],
+    "minimum_sample": {
+      "resolved_questions": 20,
+      "closed_trades": 50,
+      "walk_forward_folds": 8
+    },
+    "required_metrics": [
+      "brier_score",
+      "edge_vs_prior",
+      "avg_pnl",
+      "sharpe",
+      "fold_pass_rate"
+    ]
+  },
+  "invalidation_conditions": [
+    "No improvement versus prior across held-out event tasks",
+    "Positive result depends on a single fold or narrative cluster",
+    "Futures improvement vanishes outside trend sessions",
+    "Per-question win rate falls below 0.5"
+  ],
+  "notes": "This packet is an example contract for offline replay evaluation only."
+}

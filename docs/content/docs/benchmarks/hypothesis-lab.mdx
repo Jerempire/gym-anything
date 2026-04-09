@@ -1,0 +1,254 @@
+---
+title: Hypothesis Lab
+description: A structured offline proving ground for novel hypotheses before they enter live shadow loops.
+---
+
+`Hypothesis Lab` is the layer between idea generation and live shadow execution.
+
+Use it when a hypothesis is:
+
+- structurally new
+- cross-domain
+- expensive to shadow live
+- causal or strategy-like rather than a small parameter tweak
+- hard to trust from backtest output alone
+
+The intended stack is:
+
+```text
+alpha-engine / Hypothesis Explorer
+  -> Hypothesis Lab (gym-anything)
+  -> meta-optimizer candidate registry
+  -> futures-flow / polymarket-edge / forecast-hub shadow loops
+```
+
+## Why It Exists
+
+`meta-optimizer` is already a good runtime governor.
+
+It knows how to:
+
+- register a candidate
+- activate a candidate for shadow
+- compare shadow performance to a baseline
+- reject or promote after enough realized data
+
+That is the wrong place to discover or deeply falsify novel ideas.
+
+`Hypothesis Lab` keeps that exploratory work separate. It lets you test whether a new thesis survives replay, hidden outcomes, and adversarial checks before the live loop spends time on it.
+
+## The Four Lanes
+
+The lab uses a small curated subset of environments, not the full benchmark inventory.
+
+### 1. Discovery
+
+Goal: gather evidence and surface candidate ideas.
+
+Best-fit environment types:
+
+- browser research surfaces
+- document-heavy evidence tasks
+- frozen local dashboards
+- imported replay dossiers from forecast and market systems
+
+Examples:
+
+- `browser_research_env`
+- `forecast_hub_env`
+- `polymarket_edge_env`
+
+### 2. Formalization
+
+Goal: convert a vague thesis into a structured, testable claim.
+
+A formalized hypothesis should define:
+
+- mechanism
+- signal or trigger
+- target domain
+- baseline to beat
+- invalidation condition
+- replay test plan
+
+Best-fit environment types:
+
+- spreadsheets
+- coding environments
+- stats or notebook-style analysis surfaces
+- forecasting task packs that require structured outputs
+
+### 3. Replay Evaluation
+
+Goal: test the hypothesis against frozen or hidden outcomes.
+
+This is the core proving-ground stage.
+
+Best-fit environment types:
+
+- `forecast_hub_env`
+- `polymarket_edge_env`
+- `futures_flow_env`
+- `futures_walk_forward_env`
+- `markets_env`
+
+What gets measured:
+
+- Brier or log-style forecast quality
+- edge vs market or system prior
+- trade decision quality
+- Sharpe, avg PnL, regret, or fold stability
+- pass rate across held-out tasks
+
+### 4. Falsification
+
+Goal: break the hypothesis before live shadow does.
+
+Every strong candidate should answer:
+
+- what evidence would overturn this idea
+- what regime makes it fail
+- whether it depends on a hidden confounder
+- whether it only works in one fold or one narrative cluster
+
+This stage can reuse the same replay environments plus adversarial prompt/task variants.
+
+## When To Use Hypothesis Lab
+
+Send an idea here when it looks like:
+
+- "Polymarket misprices a specific class of regulatory delay signals"
+- "A futures microstructure pattern only works in trend sessions"
+- "A forecast calibration rule should only extremize under agreement"
+- "An event-market signal should transfer into intraday futures"
+
+Do not send every small tweak here.
+
+Keep direct `meta-optimizer` flow for changes like:
+
+- threshold from `0.30` to `0.35`
+- weight from `0.2` to `0.25`
+- stop or target sized slightly differently
+
+Those are normal candidate updates, not lab-worthy hypothesis work.
+
+## Handoff Contract
+
+The lab should consume a structured `hypothesis_packet` and emit a structured `replay_eval_result`.
+
+Reference examples live under:
+
+```text
+benchmarks/forecasting_world/hypothesis_lab/
+```
+
+The core inputs should include:
+
+- `hypothesis_id`
+- `title`
+- `source_project`
+- `origin_mode`
+- `domains`
+- `mechanism`
+- `claim`
+- `signal_spec`
+- `baseline_to_beat`
+- `evaluation_plan`
+- `invalidation_conditions`
+
+The core outputs should include:
+
+- pass or fail recommendation
+- environment-level scorecards
+- baseline comparisons
+- failure modes
+- novelty and robustness notes
+- recommendation for `skip`, `reroute`, or `approve_for_shadow`
+
+## Recommended File Layout
+
+The first slice should stay small and explicit.
+
+```text
+benchmarks/forecasting_world/hypothesis_lab/
+  README.md
+  hypothesis_packet.example.json
+  replay_eval_result.example.json
+```
+
+Recommended next implementation after the contract exists:
+
+```text
+benchmarks/forecasting_world/hypothesis_lab/
+  router.py
+  evaluators/
+    forecast_eval.py
+    polymarket_eval.py
+    futures_eval.py
+  prompts/
+    falsification_prompt.md
+    formalization_prompt.md
+```
+
+## Curated Environment Set
+
+Do not use all 250+ CUA environments here.
+
+Start with a focused set of roughly 12-20 environments grouped by job:
+
+- discovery: browser and dossier environments
+- formalization: spreadsheet, coding, notebook, and stats environments
+- replay: imported forecast, Polymarket, and futures environments
+- falsification: replay plus adversarial dossier variants
+
+For the current finance stack, the minimum viable lab is:
+
+- `browser_research_env`
+- `forecast_hub_env`
+- `polymarket_edge_env`
+- `futures_flow_env`
+- `futures_walk_forward_env`
+- one spreadsheet or coding environment for explicit rule formalization
+
+## How It Connects To Meta-Optimizer
+
+The connection should be simple.
+
+`meta-optimizer` should not own replay experimentation logic. It should only inspect the output packet.
+
+The recommended decisions are:
+
+- `skip`
+  The hypothesis is weak, duplicate, or already falsified.
+
+- `send_to_lab`
+  The hypothesis is novel enough to justify replay evaluation.
+
+- `approve_for_shadow`
+  The hypothesis cleared replay criteria and can become a real candidate.
+
+- `reroute_for_revision`
+  The hypothesis has promise but needs tighter formalization or a different baseline.
+
+That keeps responsibilities clean:
+
+- `alpha-engine` discovers
+- `gym-anything` proves or falsifies
+- `meta-optimizer` governs live candidate lifecycle
+
+## What Makes This Valuable
+
+This layer is useful because it can combine private replay data, hidden outcomes, and cross-domain priors before live deployment.
+
+That means the system can ask not just:
+
+- "Is this idea internally coherent?"
+
+but:
+
+- "Did it beat the prior?"
+- "Did it generalize out of sample?"
+- "Did it survive a falsification pass?"
+- "Is it worth spending shadow capacity on?"
+
+That is the real purpose of `Hypothesis Lab`.
